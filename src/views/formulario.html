@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-2 " id="logo">
+                    <div>
+                    <img class="logo" src="../img/LOGO.jpg" alt="logo" >
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
+                    <p class="tamano"><a href="">Redes sociales</a></p>
+                    <div class="input-group mb-3" id="buscador">                  
+                    </div>  
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">             
+                <p class="tamano"><a href="">Telefono</a></p>   
+             </div>
+        </div>
+
+        <hr id="separador">
+
+        <div class="row">
+            <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"></form>
+                <div class="col-lg-2 col-md-1"></div>          
+        
+                <div class="col-8">
+                    <h5>Ingresa tus Datos</h5>
+                    <br>
+                    <section class="container formulario">
+                        <br>
+                        <p class="nombre" id="datos">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre-usuario" id="nombre">
+                        </p>
+                        <p class="apellido" id="datos">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" name="apellido-usuario" id="apellido">
+                        </p>
+                        <p class="email" id="datos">
+                            <label for="email">Email:</label>
+                            <input type="email" name="mail" id="email">
+                        </p>
+                            <p class="contraseña" id="datos">
+                            <label for="contraseña">Contraseña:</label>
+                            <input type="password" name="contraseña" id="contraseña">
+                        </p>
+                        <p class="contraseña" id="datos" >
+                            <label for="contraseña">Confirmar contraseña:</label>
+                            <input type="password" name="contraseña">
+                        </p>
+                        <br>
+                    </section>
+                </div>
+              
+                <div class="col-lg-2 col-md-1"></div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-8">
+                    <div></div>
+                </div>
+                <div class="col-4 botton-1">
+                    <div><button type="button" class="btn btn-primary">Crear Cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <br>
+    
+        <div class="row" class="footer">
+            <div class="col">
+              <footer>
+                <h6 class="footereando">DATOS</h6>
+                <h6 class="footereando">LEGLES</h6>
+                <h6 class="footereando">CONTACTOS</h6>
+                <h6 class="footereando">PREGUNTAS FRECUENTES</h6>
+                <h6 class="footereando">AYUDA</h6>
+                <h6 class="footereando">TRABAJA CON NOSOTROS</h6>
+              </footer>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
