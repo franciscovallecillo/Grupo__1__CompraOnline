@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/destalleProducto.css">
+    <link rel="stylesheet" href="../../../public/css/main.css">
+    <link rel="stylesheet" href="../../../public/css/listaProductos.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -14,10 +19,9 @@
         <div class="row">
             <div class="col-4" id="logo">
                     <div><img class="logo" src="../../../public/img/LOGO.jpg" alt="logo" ></div>
-                    <p>PRUEBA!</p>
             </div>
 
-            <!-- <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
+            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
                 
                     <p class="tamano"><a href="">Redes sociales</a></p>
                     <div class="input-group mb-3" id="buscador">
@@ -34,7 +38,7 @@
                         <ul class="padreflotador tamano">
                             <li class='flota tamano' style="margin-left: 0px"><a class="nav-link colorNavegacion" href="#">Mis Compras</a></li>
                             <li class='flota tamano'><a class="nav-link colorNavegacion" href="#">Favoritos</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="#">Bolsos</a></li>
+                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="../carrito.html">Mi Bolso</a></li>
                         </ul>
             </div>
         </div>
@@ -43,25 +47,26 @@
         <div class="row">
             <div class="col-12">
 
-                <div class="menuNormal">
-                    <ul class="nav padreFlotador" >
-                        <li class='flota tamano colorNavegacion'>
-                            <select name="Categorias " class="select-css">
-                                <option value="value1">Categorias</option> 
-                                    <option value="value1">Hombre</option> 
-                                    <option value="value2">Mujer</option>
-                                    <option value="value3">Bebes</option>
-                            </select>
-                                </li> 
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Ofertas</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Nuevo mujer</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Nuevo Hombres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Nuevo bebes</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Nuevo accesorio</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Vender</a></li>
-                                <li class='flota tamano style="margin-left: 106px '><a class="nav-link colorNavegacion" href="#">Usuario</a></li>
-                    </ul>
-                </div>
+              <div class="menuNormal">
+                <ul class="nav padreFlotador" >
+                    <li class='flota tamano colorNavegacion'>
+                        <select name="Categorias " class="select-css">
+                            <option value="value0">Categorias</option> 
+                            <option value="value1">Mujer</option> 
+                            <option value="value2">Hombre</option>
+                            <option value="value3">Nene</option>
+                            <option value="value4">Accesorios</option>
+                        </select>
+                            </li> 
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Ofertas</a></li>
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Mujeres</a></li>
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Hombres</a></li>
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Nenes</a></li>
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Accesorios</a></li>
+                            <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Vender</a></li>
+                            <li class='flota tamano style="margin-left: 106px '><a class="nav-link colorNavegacion" href="#">Usuario</a></li>
+                </ul>
+            </div>
         
             </div>
 
@@ -85,7 +90,7 @@
             <div class="col-7 segundaColumna">
 
                 <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">MUJER</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -94,7 +99,7 @@
                   </div>
                   
                   <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/HOMBRE/hombre4.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">HOMBRE</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -103,7 +108,7 @@
                   </div>
                   
                   <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/NENES/nenes2.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">NENES</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -112,7 +117,7 @@
                   </div>
                   
                   <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -121,7 +126,7 @@
                   </div>
 
                   <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -130,7 +135,7 @@
                   </div>
 
                   <div  id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">MUJER</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -139,7 +144,7 @@
                   </div>
                   
                   <div id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/HOMBRE/hombre4.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">HOMBRE</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -148,7 +153,7 @@
                   </div>
 
                   <div  id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/NENES/nenes2.jpg" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">NENES</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -157,7 +162,7 @@
                   </div>
 
                   <div id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -166,7 +171,7 @@
                   </div>
 
                   <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="../img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
+                    <img src="../../../public/img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -185,16 +190,21 @@
         <br>
         <br>
         
-        <div class="row" class="footer">
-            <div class="col">
-                <div class="paginas">
-                    <a class="numPagina" href="">1</a>
-                    <a class="numPagina" href="">2</a>
-                    <a class="numPagina" href="">3</a>
-                    <a class="numPagina" href="">4</a>
-                    <a class="numPagina1" href="">Siguiente</a>
-                </div>
-            </div>
+        <nav class="paginas" aria-label="...">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Siguiente</a>
+            </li>
+          </ul>
+        </nav>
         </div>
         
         <br>
@@ -216,13 +226,9 @@
     </div>
 </div>
 
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    </div>
-
-    </div>
 </body>
 </html>
