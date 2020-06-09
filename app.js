@@ -22,4 +22,6 @@ app.use(rutasProductos);
 // app.use('/home',home)
 
 // app.use('/productos',rutasProductos)   
+
+console.log("hola")
                                                               
