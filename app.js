@@ -14,10 +14,12 @@ app.listen(8000, () => {
 // Se requiere el archivo donde esta la ruta
 const rutasProductos = require('./src/routes/productosRoutes.js')
 const home = require('./src/routes/homeRoutes.js')
+const user = require("./src/routes/userRoutes.js");
 
 // // Registro las rutas principales.
 app.use(home);
 app.use(rutasProductos);
+app.use(user);
 
 // app.use('/home',home)
 
