@@ -1,60 +1,65 @@
 
 
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
 
         <!-- Parte superior -->
         <div class="row">
-            <div class="col-4" id="logo">
-                    <div><a href="/home"><img class="logo" src="img/LOGO.jpg" alt="logo" ></a></div>
+            <div class="col-auto" id="logo">
+                <a href="/home"><img class="logo" src="img/LOGO.jpg" alt="logo" ></a>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
-                
-                    <p class="tamano"><a href="">Redes sociales</a></p>
-                    <div class="input-group mb-3" id="buscador">
+            <div class="col-auto p-0 flex-fill">
+                <div class="col-auto d-flex flex-row m-2 justify-content-around align-items-center menuNormal p-0">
+                    <div class="input-group flex-fill">
                         <input type="text" class="form-control" placeholder="Que quieres buscar?" aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
+                          <button class="btn btn-outline-secondary m-0" type="button" id="button-addon2">Buscar</button>
                         </div>
                       </div>
-                
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
-                   
-                <p class="tamano"><a href="">Telefono</a></p>
-                        <ul class="padreflotador tamano">
-                            <li class='flota tamano' style="margin-left: 0px"><a class="nav-link colorNavegacion" href="#">Mis Compras</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="#">Favoritos</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="/bolso">Tu Bolso</a></li>
-                        </ul>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-12">
-
-                <div class="menuNormal">
-                    <ul class="nav padreFlotador" >
-                        <li class='flota tamano colorNavegacion'>
-                            <select name="Categorias " class="select-css">
-                                <option value="value0">Categorias</option> 
-                                <option value="value1">Mujer</option> 
-                                <option value="value2">Hombre</option>
-                                <option value="value3">Nene</option>
-                                <option value="value4">Accesorios</option>
-                            </select>
-                                </li> 
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Ofertas</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Mujeres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Hombres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Nenes</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Accesorios</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/cargaProducto">Vender</a></li>
-                                <li class='flota tamano style="margin-left: 106px '><a class="nav-link colorNavegacion" href="/user">Usuario</a></li>
-                    </ul>
+                    <div class=" m-2">
+                        <a href="https://www.facebook.com/"><img class="icono" src="img/icons/facebook.svg"></a>
+                    </div>
+                    <div class=" m-2">
+                        <a href="https://www.facebook.com/"><img class="icono" src="img/icons/instagram.svg"></a>
+                    </div>
+                    <div class=" m-2">
+                        <a href="https://www.facebook.com/"><img class="icono" src="img/icons/twitter.svg"></a>
+                    </div>
                 </div>
+                <div class="col-auto d-flex">
+                    <select class="custom-select custom-select-sm form-control flex-inline">
+                        <option selected>Seleccione la categoría</option>
+                        <option value="1">Mujer</option>
+                        <option value="2">Hombre</option>
+                        <option value="3">Nene</option>
+                        <option value="4">Accesorios</option>
+                    </select>
+                    <div class="col-auto flex-inline">
+                        <ul class="nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Mis Compras</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Favoritos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../carrito.html">Tu Bolso</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/user">Usuario</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="col-12">
+
+                    <div class="menuNormal">
+                      <ul class="nav padreFlotador" >
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Ofertas</a></li>
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Mujeres</a></li>
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Hombres</a></li>
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Nenes</a></li>
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./listaProductos.html">Nuevo Accesorios</a></li>
+                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Vender</a></li>
+                                
+                        </ul>
+                    </div>
         
+               </div>
             </div>
 
         </div>
