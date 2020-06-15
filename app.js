@@ -15,11 +15,16 @@ app.listen(8000, () => {
 const rutasProductos = require('./src/routes/productosRoutes.js')
 const home = require('./src/routes/homeRoutes.js')
 const user = require("./src/routes/userRoutes.js");
+const carrito = require("./src/routes/carritoRoutes.js");
+const cargaProducto = require("./src/routes/formulariosRoutes.js");
+
 
 // // Registro las rutas principales.
 app.use(home);
 app.use(rutasProductos);
 app.use(user);
+app.use(carrito);
+app.use(cargaProducto);
 
 // app.use('/home',home)
 

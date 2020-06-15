@@ -1,21 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/main.css">
-</head>
+
+    <%- include('../partials/head.ejs') %>
+
 <body>
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-2 " id="logo">
-                    <div>
-                    <img class="logo" src="../../../public/img/LOGO.jpg" alt="logo" >
-                    </div>
+                <div><a href="/home"><img class="logo" src="img/LOGO.jpg" alt="logo" ></a></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
                     <p class="tamano"><a href="">Redes sociales</a></p>
@@ -60,6 +54,7 @@
                         </p>
                         <br>
                     </section>
+                    <div class="text-center my-3">Ya tengo una cuenta? <a href="/home">Inicia sesión</a></div>
                 </div>
               
                 <div class="col-lg-2 col-md-1"></div>
