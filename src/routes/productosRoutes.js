@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require("path");
 
-const productosControler = require(path.resolve(__dirname,"../controlers/productosControlers.js"))
+const productosControler = require(path.resolve(__dirname,"../controlers/productosControllers.js"))
 
 
 // No especifico productos dado que esto ya se encuentra definido en app.js
@@ -14,7 +14,8 @@ const productosControler = require(path.resolve(__dirname,"../controlers/product
 // router.get('/mujer', productosControler.detalleProductos)
 
 // Se crea la ruta
-router.get('/productos', productosControler.detalleProductos)
+router.get('/productos', productosControler.detalleProductos);
+router.get("/detalleProducto", productosControler.show);
 
 // router.get('/accesorios', productosControler.detalleProductos)
 

@@ -1,85 +1,28 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CargaProducto</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/css/main.css">
-</head>
+    <%- include('../partials/head.ejs') %>
+
 <body>
     <div class="container-fluid">
 
         <!-- Parte superior -->
-        <div class="row">
-            <div class="col-4" id="logo">
-                    <div><img class="logo" src="../../public/img/LOGO.jpg" alt="logo" ></div>
-            </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
-                
-                    <p class="tamano"><a href="">Redes sociales</a></p>
-                    <div class="input-group mb-3" id="buscador">
-                        <input type="text" class="form-control" placeholder="Que quieres buscar?" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
-                        </div>
-                      </div>
-                
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
-                   
-                <p class="tamano"><a href="">Telefono</a></p>
-                        <ul class="padreflotador tamano">
-                            <li class='flota tamano' style="margin-left: 0px"><a class="nav-link colorNavegacion" href="#">Mis Compras</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="#">Favoritos</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="carrito.html">Tu Bolso</a></li>
-                        </ul>
-            </div>
-        </div>
+        <%- include('../partials/primerDivGeneral.ejs') %>
 
-
-        <div class="row">
-            <div class="col-12">
-
-
-                <div class="menuNormal">
-                    <ul class="nav padreFlotador" >
-                        <li class='flota tamano colorNavegacion'>
-                            <select name="Categorias " class="select-css">
-                                <option value="value0">Categorias</option> 
-                                <option value="value1">Mujer</option> 
-                                <option value="value2">Hombre</option>
-                                <option value="value3">Nene</option>
-                                <option value="value4">Accesorios</option>
-                            </select>
-                                </li> 
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Ofertas</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./productos/listaProductos.html">Nuevo Mujeres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./productos/listaProductos.html">Nuevo Hombres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./productos/listaProductos.html">Nuevo Nenes</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="./productos/listaProductos.html">Nuevo Accesorios</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="#">Vender</a></li>
-                                <li class='flota tamano style="margin-left: 106px '><a class="nav-link colorNavegacion" href="#">Usuario</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
         <hr id="separador">
         <br>
         <div class="row">
             <div class="col-12">
-                <h5 class="TuBolso">Publica Tu Anuncio!!!</h5>
+                <h1 class="TuBolso">Publica Tu Anuncio!!!</h1>
             </div>
         </div>
+
         <br>
         <br>
-        <br>
+        
         <div class="row">
             <div class="col-12">
                 <br>
@@ -184,18 +127,8 @@
         <br>
         
         <br>
-        <div class="row" class="footer">
-            <div class="col">
-              <footer>
-                <h6 class="footereando">DATOS</h6>
-                <h6 class="footereando">LEGLES</h6>
-                <h6 class="footereando">CONTACTOS</h6>
-                <h6 class="footereando">PREGUNTAS FRECUENTES</h6>
-                <h6 class="footereando">AYUDA</h6>
-                <h6 class="footereando">TRABAJA CON NOSOTROS</h6>
-              </footer>
-            </div>
-        </div>
+        <%- include('../partials/footer.ejs') %>
+
     </div>
 
 

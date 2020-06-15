@@ -12,7 +12,11 @@ const productosControler = {
         res.send(urlId)
     },
     detalleProductos:function(req,res){
-        res.sendFile(path.resolve(__dirname,'../views/productos/listaProductos.html')) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
+        res.render(path.resolve(__dirname,"..","views","productos","listaProductos")) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
+
+    },
+    show:function(req,res){
+        res.render(path.resolve(__dirname,"..","views","productos","detalleProducto")) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
 
     }
     
