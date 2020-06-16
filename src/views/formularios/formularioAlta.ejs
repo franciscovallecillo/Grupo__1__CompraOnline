@@ -5,23 +5,13 @@
     <%- include('../partials/head.ejs') %>
 
 <body>
-    <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-2 " id="logo">
-                <div><a href="/home"><img class="logo" src="img/LOGO.jpg" alt="logo" ></a></div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
-                    <p class="tamano"><a href="">Redes sociales</a></p>
-                    <div class="input-group mb-3" id="buscador">                  
-                    </div>  
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">             
-                <p class="tamano"><a href="">Telefono</a></p>   
-             </div>
-        </div>
+    <%- include('../partials/primerDivGeneral.ejs') %>
+
 
         <hr id="separador">
+
+        <br>
 
         <div class="row">
             <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"></form>
