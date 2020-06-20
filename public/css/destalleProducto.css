@@ -12,11 +12,14 @@ background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, F
 }
 
 .logo{
-width: 195px;
-height: 60px;
+    width: 12rem;
+    height: 9rem;
 background-color: #FFEFBA;  /* fallback for old browsers */;
 }
 
+.icono{
+    width: 2rem;
+}
 
 .flota{
     float: left;
@@ -161,16 +164,34 @@ ul{
       display: none;
     }
     #logo{
-        display: none;
+        display: none;   
     }
     .menuNormal{
         display: none;    
     }
     .menuTelefono{
-        display: block
-        }
+        display: block;
+    }
     .descripcion{
         font-size: 10px;
+    }
+    .containerProducto{
+        height: 80vh;
+        width: 100%;
+        right: 20px;
+    }
+    .descripcionProducto{
+        right: 20px;
+    }
+    .imagenProducto{
+        height: 80vh;
+        width: 100%;
+    }
+    .botonesCompraCarrito{
+        right: 750px;
+    }
+    .formularioCarga{
+        display: inline-block;
     }
 
 }
@@ -191,18 +212,133 @@ ul{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* FORM DETALLE PRODUCTO */
+
+
+.todo{
+    margin-left: 35px;
+}
+
+.containerProducto{
+    height: 80vh;
+    border: solid 1px brown;
+}
+.imagenProducto{
+    height: 80vh;
+    width: 100%;
+    padding: 15px;
+}
+.descripcionProducto{
+    border: solid 1px brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.detalle{
+    padding: 30px;
+}
+
+
+.descripcionProducto2{
+    margin-left: 100px;
+    border: solid 1px brown;
+}
+
+
+
+
+
+.botonesCompraCarrito{
+    padding: 20px;
+    height: 15vh;
+    font-size: 15px;
+    margin-left: 850px;
+    position: relative;
+    margin-top: 15px;
+ 
+ 
+
+}*/
+
+.botonCompra{
+    width: 130px;
+    height: 100px;
+    font-size: 15px;
+    position: absolute;
+}
+.botonCarrito{
+    width: 130px;
+    height: 100px;
+    font-size: 15px;
+    margin-left: 50px;
+    position: absolute;
+}
+.button2{
+    width: 130px;
+    height: 60px;
+    font-size: 15px;
+}
+.buttonFormulario{
+    width: 150px;
+    height: 50px;
+    margin-left: 65px;
+}
+
+
+
+.formularioCarga{
+    width: 50%;
+    height: 150vh;
+    margin-left: 30px;
+    padding-left: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.precio{
+    margin-left: 100px;
+}
+
+.cargaImagen{
+    margin-left: 200px;
+}
+
+.caracteristicas{
+    padding-left: 400px;
+
+}
+
+/*
+#imagenFormulario{
+    margin-left: 22px;
+}
+#precioFormulario{
+    margin-left: 100px;
+}
+#tallesFormulario{
+    margin-left: 105px;
+}
+#coloresFormulario{
+    margin-left: 105px ;
+}
+#marcaFormulario{
+    margin-left: 100px ;
+}
+#generoFormulario{
+    margin-left: 90px;
+}
+#modeloFormulario{
+    margin-left: 87px ;
+}
+#materialFormulario{
+    margin-left: 83px;
+}
+#temporadaFormulario{
+    margin-left: 62px;
+}
+*/
+
+
+
+
+
 
 
 /*
@@ -267,156 +403,3 @@ ul{
     margin-bottom: 30px;
 }
 */
-
-.todo{
-    margin-left: 35px;
-}
-
-.containerProducto{
-    height: 80vh;
-    border: solid 1px black ;
-     
-
-}
-
-.imagenProducto{
-    height: 80vh;
-    width: 100%;
-    padding: 15px;
-
-}
-
-.descripcionProducto{
-    border: solid 1px black ;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.detalle{
-    padding: 30px;
-}
-.precio{
-   
-}
-
-.descripcionProducto2{
-    margin-left: 100px;
-    border-top: 1px black solid;
-}
-
-
-
-
-
-.botonesCompraCarrito{
-    padding: 20px;
-    height: 15vh;
-    font-size: 15px;
-    margin-left: 850px;
-    position: relative;
-    margin-top: 15px;
-
- 
-
-}*/
-
-.botonCompra{
-    width: 130px;
-    height: 100px;
-    font-size: 15px;
-    position: absolute;
-}
-
-.botonCarrito{
-    width: 130px;
-    height: 100px;
-    font-size: 15px;
-    margin-left: 50px;
-    position: absolute;
-}
-
-.button2{
-    width: 130px;
-    height: 60px;
-    font-size: 15px;
-}
-
-
-
-
-
-
-
-.formularioCarga{
-    border: solid 1px black;
-    width: 50%;
-    height: 90vh;
-    margin-left: 30px;
-    background-color: lightskyblue;
-    padding-left: 60px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.precio{
-    margin-left: 100px;
-}
-
-.cargaImagen{
-    margin-left: 200px;
-}
-
-.caracteristicas{
-    padding-left: 220px;
-}
-
-.generotexto{
-border: solid 1px black;
-width: 50%;
-height: 80vh;
-margin-left: -30px;
-background-color: lightskyblue
-}
-
-#imagenFormulario{
-    margin-left: 22px;
-}
-#precioFormulario{
-    margin-left: 100px;
-}
-#tallesFormulario{
-    margin-left: 105px;
-}
-#coloresFormulario{
-    margin-left: 105px ;
-}
-#marcaFormulario{
-    margin-left: 100px ;
-}
-#generoFormulario{
-    margin-left: 90px;
-}
-#modeloFormulario{
-    margin-left: 87px ;
-}
-#materialFormulario{
-    margin-left: 83px;
-}
-#temporadaFormulario{
-    margin-left: 62px;
-}
-
-.buttonFormulario{
-    width: 150px;
-    height: 50px;
-    margin-left: 65px;
-}
-
-.descripcion{
-    margin-left: 60px;
-    height: 30%;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-
-
-

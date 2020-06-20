@@ -1,19 +1,11 @@
 
 
-
 <!DOCTYPE html>
+
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css"> 
-    <link rel="stylesheet" href="css/listaProductos.css"> 
-    <link rel="stylesheet" href="css/primerDivGeneral.css">
 
+  <%- include('../partials/head.ejs') %>
 
-</head>
 <body>
 
   <%- include('../partials/primerDivGeneral.ejs') %>
@@ -29,11 +21,8 @@
         
         <div class="row listados">
 
-
-
-          <div class="col-3 primeraColumna">
-
-            <div class="btn-group">
+          <div class="col-12 primeraColumna">
+            <div class="btn-group filtro">
               <button type="button" class="btn btn-danger">Genero</button>
               <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
@@ -45,13 +34,9 @@
                 <a class="dropdown-item" href="#">Accesorios</a>
               </div>
             </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <div class="btn-group">
+            
+            
+            <div class="btn-group filtro">
               <button type="button" class="btn btn-danger">Talle</button>
               <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
@@ -62,13 +47,9 @@
                 <a class="dropdown-item" href="#">Large</a>
               </div>
             </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <div class="btn-group">
+            
+            
+            <div class="btn-group filtro">
               <button type="button" class="btn btn-danger">Color</button>
               <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
@@ -79,35 +60,33 @@
                 <a class="dropdown-item" href="#">Azul</a>
               </div>
             </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <select class="custom-select">
-              <option selected>Temporada</option>
-              <option value="1">Invierno</option>
-              <option value="2">Verano</option>
-              <option value="3">Otoño</option>
-              <option value="3">Primavera</option>
-            </select>
-
-
-
-
-    </div>
-            <div class="col-1 Columna">
+            
+            <div class="btn-group filtro">
+              <button type="button" class="btn btn-danger">Temporada</button>
+              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Invierno</a>
+                <a class="dropdown-item" href="#">Verno</a>
+                <a class="dropdown-item" href="#">Otoño</a>
+                <a class="dropdown-item" href="#">Primavera</a>
+              </div>
             </div>
 
-            <div class="col-7 segundaColumna">
+          </div>
+
+          
+          <div class="row" class="segmentoPadre">
+
+            <div class="col-12 segundaColumna">
 
                 <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
                     <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">MUJER</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="detalleProducto.html" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
                   
@@ -116,7 +95,7 @@
                     <div class="card-body">
                       <h5 class="card-title">HOMBRE</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
                   
@@ -125,7 +104,7 @@
                     <div class="card-body">
                       <h5 class="card-title">NENES</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
                   
@@ -134,7 +113,7 @@
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
 
@@ -143,7 +122,7 @@
                     <div class="card-body">
                       <h5 class="card-title">ACCESORIOS</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
 
@@ -152,72 +131,31 @@
                     <div class="card-body">
                       <h5 class="card-title">MUJER</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
+                      <a href="detalleProducto" class="btn btn-primary">Ver Producto</a>
                     </div>
                   </div>
-                  
-                  <div id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">HOMBRE</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                  </div>
-
-                  <div  id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">NENES</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                  </div>
-
-                  <div id="producto"  class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">ACCESORIOS</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                  </div>
-
-                  <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">ACCESORIOS</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                  </div>
-
             </div>
-
-        
-
-
-
+        </div>
         </div>
 
         <br>
         <br>
-        
+
+        <div class="col-12 tercerColumna">
         <nav class="paginas" aria-label="...">
           <ul class="pagination">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+            <li class="page-item">
+              <a class="page-link" href="#">Anterior</a>
             </li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active" aria-current="page">
-              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>
             <li class="page-item">
               <a class="page-link" href="#">Siguiente</a>
             </li>
           </ul>
         </nav>
+        </div>
         </div>
         
         <br>

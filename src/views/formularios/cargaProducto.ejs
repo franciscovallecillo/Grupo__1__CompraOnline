@@ -18,116 +18,118 @@
 
         <hr id="separador">
         <br>
-        <div class="row">
-            <div class="col-12">
-                <h1 class="TuBolso">Publica Tu Anuncio!!!</h1>
-            </div>
-        </div>
 
-        <br>
-        <br>
-        
-        <div class="row">
-            <div class="col-12">
-                <br>
-                <br>
-                <div class="formularioCarga">
-                    <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank">
-                        <br>
-                        <br>
-                        <p id="datos">
-                            <label for="nombre">Carga de Imagen:</label>
-                            <input id="imagenFormulario" class="cargaImagen" type="file" name="archivosubido"> 
-                        </p>
-                        <p class="precio" id="datos">
-                            <label for="nombre">Precio:</label>
-                            <input id="precioFormulario" type="text" name="nombre-usuario">
-                        </p>
-                        <p class="talles" id="datos">
-                            <label for="talles">Talles:</label>
-                            <select id="tallesFormulario" name="talle">
-                                <option value="value1">Small</option>
-                                <option value="value2">Medium</option>
-                                <option value="value3">Large</option>
-                            </select>
-                        </p>
-                        <p class="colores" id="datos">
-                            <label for="colores">Color:</label>
-                            <select id="coloresFormulario" name="color">
-                                <option value="value1">Amarillo</option>
-                                <option value="value2">Rojo</option>
-                                <option value="value3">Azul</option>
-                            </select>
-                        </p>
-                        <br>
-                        <br>
-                        <br>
-                        <h6 class="caracteristicas">Caracteristicas</h6>
-                        <br>
-                        <br>
-                        <p class="marca" id="datos">
-                            <label for="nombre">Marca:</label>
-                            <input id="marcaFormulario" type="text" name="marca">
-                        </p>
-                        <br>
-                        <p class="genero" id="datos">
-                            <label for="genero">Genero:</label>
-                            <input id="generoFormulario" type="text" name="genero">
-                        </p>
-                        <br>
-                        <p class="modelo" id="datos">
-                            <label for="modelo">Modelo:</label>
-                            <input id="modeloFormulario" type="text" name="modelo">
-                        </p>
-                        <br>
-                        <p class="material" id="datos">
-                            <label for="material">Material:</label>
-                            <input id="materialFormulario" type="text" name="material">
-                        </p>
-                        <br>
-                        <p class="temporada" id="datos">
-                            <label for="temporada">Temporada:</label>
-                            <select name="color" id="temporadaFormulario">
-                                <option value="Inv">Invierno</option>
-                                <option value="Ver">Verano</option>
-                                <option value="Oto">Otoño</option>
-                                <option value="Prim">Primavera</option>
-                            </select>
-                        </p>
-                    </form>
+
+
+        <form>
+            
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer01">Marca</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="Marca" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Modelo</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" value="Modelo" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer03">Material</label>
+                <input type="text" class="form-control is-valid" id="validationServer03" value="Material" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationServer04">Temporada</label>
+                <select class="custom-select is-valid" id="validationServer04" required>
+                  <option selected disabled value="">Temporada</option>
+                  <option>Invierno</option>
+                  <option>Verano</option>
+                  <option>Otoño</option>
+                  <option>Primavera</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationServer05">Genero</label>
+                <select class="custom-select is-valid" id="validationServer04" required>
+                    <option selected disabled value="">Genero</option>
+                    <option>Femenino</option>
+                    <option>Masculino</option>
+                  </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Talle</label>
+                    <select class="custom-select is-valid" id="validationServer04" required>
+                        <option selected disabled value="">Talle</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>S</option>
+                      </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Color</label>
+                    <select class="custom-select is-valid" id="validationServer04" required>
+                        <option selected disabled value="">Color</option>
+                        <option>Amarillo</option>
+                        <option>Rojo</option>
+                        <option>Azul</option>
+                      </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Precio</label>
+                    <input type="number" class="form-control is-valid" id="validationServer02" value="Precio" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Cantidad</label>
+                    <input type="number" class="form-control is-valid" id="validationServer02" value="Cantidad" required>
                 </div>
             </div>
-        </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <p class="descripcion" id="datos">
-                    <label for="descripcion">Descripcion:</label>
-                </p>                
+
+
+            <div class="form-row">
+                <div class="col-12">
+                  <label for="validationServer01">Resumen</label>
+                  <input type="text" class="form-control is-valid" id="validationServer01" value="Resumen" required>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <p class="descripcion" id="datos">
-                    <textarea name="marca" class="generotexto" cols="80" rows="20"></textarea>
-                </p>                
+            <br>
+            <div class="form-row">
+                <div class="col-12">
+                  <label for="validationServer01">Descripcion</label>
+                  <input type="text" class="form-control is-valid" id="validationServer01" value="Descripcion" required>
+                </div>
             </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <button  type="button" class="btn btn-primary buttonFormulario">Agregar Anuncio</button>
-                <button  type="button" class="btn btn-primary buttonFormulario">Guardar Cambios</button>
-                <button  type="button" class="btn btn-primary buttonFormulario">Eliminar Anuncio</button>
+            <br>
+
+            <div class="form-row">
+            <label for="validationServer01">Carga Imagen</label>
+            <input class="" type="file">
             </div>
-        </div>
-        <br>
-        <br>
-        <br>
+            <br>
+            <br>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                  Aceptas las condiciones?
+                </label>
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-12">
+                    <button  type="button" class="btn btn-primary buttonFormulario">Agregar Anuncio</button>
+                    <button  type="button" class="btn btn-primary buttonFormulario">Guardar Cambios</button>
+                    <button  type="button" class="btn btn-primary buttonFormulario">Eliminar Anuncio</button>
+                </div>
+            </div>
+            <br>
+          </form>
         <br>
         
         <br>

@@ -10,8 +10,8 @@ background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, F
 }
 
 .logo{
-width: 200px;
-height: 150px;
+    width: 12rem;
+    height: 9rem;
 background-color: #FFEFBA;  /* fallback for old browsers */;
 }
 
@@ -68,7 +68,7 @@ ul{
     height: 161px;
     background: #6FCF97;
 
-    border: 1px solid #828282;
+    border: solid 1px #CE543A ;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* display:none;
@@ -90,7 +90,7 @@ ul{
 }*/
 
 .segmentoHijo{
-    
+    border: solid 1px #CE543A ;
     margin-left: 30px;
 }*/
 
@@ -108,7 +108,7 @@ ul{
     max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid #aaa;
+    border: solid 1px #CE543A ;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
     border-radius: .3em;
     -moz-appearance: none;
@@ -258,13 +258,14 @@ h5 {
     height: 50vh;
     width: 40%;
     margin-left: 40px;
+    border: solid 1px #CE543A ;
 }
 
-.descrpcionProducto{
+.descripcionProductoCarrito{
     margin-left: 40px;
     height: 100px;
     width: 40%;
-    border: lightslategrey 1px solid;
+    border: solid 1px #CE543A ;
     background-color: lightskyblue
 }
 
@@ -293,7 +294,29 @@ button{
     right: 300px;
 }
 
+@media (max-width: 750px) {
+    .producto1{
+        height: 50vh;
+        width: 100%;
+        margin-left: 5px;
+        border: solid 1px #CE543A ;
+    }
+    .descripcionProductoCarrito{
+        margin-left: 5px;
+        height: 100px;
+        width: 100%;
+        border: solid 1px #CE543A ;
+    }
+    .descripcion{
+        font-size: 1em;
+    }
+    .botones{
+        margin-top: 15px;
+        position: relative;
+        left: 5px;
 
+    }
+}
 
 
 
@@ -362,101 +385,169 @@ background-color: lightskyblue
 }
 
 
+@media (max-width: 750px) {
+    .buttonFormulario{
+        width: 110px;
+        height: 60px;
+        margin-left: 20px;
+    }
+}
+
+
+
 
 
 /* FORM DETALLE PRODUCTO */
 
 
-/*
-.containerProducto{
-    padding: 15px;
-    height: 80vh;
-    display: flex;
-    width: 90%;
+.todo{
+    margin-left: 35px;
 }
-
-.imagenProducto{
-    width: 30%;
-    border: solid 1px black;
-    padding: 20px;
-    height: 100vh;
-}
-
-
-
-
-
-.descripcionProducto{
-    float: left;
-    width:10%;
-}
-
-.descrpcionProducto1{
-    padding: 20px;
-    padding-top: 50px;
-    border: solid 1px black;
-    margin-left: 30px;
-    background-color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /*display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    float: left;
-}
-
-.precio{
-    color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 90px;
-    margin-top: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.descrpcionProducto2{
-    padding: 20px;
-    border: solid 1px black;
-
-    height: 20vh;
-    background-color: white;
-    margin-left: 30px;  
-}
-
-#cantidadProducto{
-    margin-left: 80px;
-    margin-bottom: 30px;
-}
-*/
 
 .containerProducto{
     height: 80vh;
     border: solid 1px brown;
-    width: 90%;
 }
+.imagenProducto{
+    height: 80vh;
+    width: 100%;
+    padding: 15px;
+}
+.descripcionProducto{
+    border: solid 1px brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.detalle{
+    padding: 30px;
+}
+
+
+.descripcionProducto2{
+    margin-left: 100px;
+    border: solid 1px brown;
+}
+
+
+
 
 
 .botonesCompraCarrito{
-    padding: 50px;
-    float: left;
-    height: 20vh;
-    border: solid 1px brown;
-    background-color: burlywood;
+    padding: 20px;
+    height: 15vh;
+    font-size: 15px;
+    margin-left: 850px;
     position: relative;
+    margin-top: 15px;
+ 
+ 
 
 }*/
 
 .botonCompra{
+    width: 130px;
+    height: 100px;
+    font-size: 15px;
     position: absolute;
-    margin-right: 1000px;
-    margin-top: 190px;
+}
+.botonCarrito{
+    width: 130px;
+    height: 100px;
+    font-size: 15px;
+    margin-left: 50px;
+    position: absolute;
+}
+.button2{
+    width: 130px;
+    height: 60px;
+    font-size: 15px;
+}
+.buttonFormulario{
+    width: 150px;
+    height: 50px;
+    margin-left: 65px;
+}
 
+
+
+.formularioCarga{
+    width: 50%;
+    height: 150vh;
+    margin-left: 30px;
+    padding-left: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.precio{
+    margin-left: 100px;
+}
+
+.cargaImagen{
+    margin-left: 200px;
+}
+
+.caracteristicas{
+    padding-left: 400px;
 
 }
 
-.botonCarrito{
-    position: absolute;
-    float: left;
-    margin-right: 200px;
+
+
+
+/* LISTA DE PRODUCTOS */
+
+
+.primeraColumna{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.segundaColumna{
+    margin-top: 15px;
+}
+
+.filtro{
+    margin-left: 90px;
+}
+
+#producto{
+    margin: 20px;
+    border: solid 1px #CE543A ;
+    margin-left: 100px;
+}
+
+.paginas{
+    display: flex;
+    width: 40%;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 400px;
+    color: #CE543A ;
+    margin-left: 280px;
+}
+
+
+@media (max-width: 750px) {
+    .tercerColumna{
+        margin-left: 30px;
+    }
+    .paginas{
+        display: inline;
+    }
+    .segundaColumna{
+        margin-top: 15px;
+    }
+    #producto{
+        margin: 10px;
+        border: solid 1px #CE543A ;
+        margin-left: 90px;
+        width: 100%;
+    }
+    .primeraColumna{
+        margin-top: 0px;
+        float: left;
+    }
+    .filtro{
+        margin-left: 10px;
+    }
 }
