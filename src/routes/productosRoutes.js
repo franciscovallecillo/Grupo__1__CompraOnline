@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require("path");
 
-const productosControler = require(path.resolve(__dirname,"../controlers/productosControllers.js"))
+const productosControler = require(path.resolve(__dirname,"../controllers/productosControllers.js"))
 
 
 // No especifico productos dado que esto ya se encuentra definido en app.js

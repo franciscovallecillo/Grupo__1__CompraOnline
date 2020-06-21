@@ -17,6 +17,8 @@ const home = require('./src/routes/homeRoutes.js')
 const user = require("./src/routes/userRoutes.js");
 const carrito = require("./src/routes/carritoRoutes.js");
 const cargaProducto = require("./src/routes/formulariosRoutes.js");
+const favoritos = require("./src/routes/favoritosRoutes.js");
+const misCompras = require("./src/routes/misComprasRoutes.js")
 
 
 // // Registro las rutas principales.
@@ -25,6 +27,8 @@ app.use(rutasProductos);
 app.use(user);
 app.use(carrito);
 app.use(cargaProducto);
+app.use(favoritos);
+app.use(misCompras);
 
 // app.use('/home',home)
 

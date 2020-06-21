@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const cargaVendedor = require("../controlers/formulariosController");
+const cargaVendedor = require("../controllers/formulariosController");
 
 
 
