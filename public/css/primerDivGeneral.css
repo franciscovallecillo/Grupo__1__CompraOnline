@@ -3,6 +3,14 @@
 }
 
 .logo{
-    width: 12rem;
+    width: 9rem;
     height: 9rem;
+}
+
+.bg-darkorange{
+    background-color: #CE543A;
+}
+
+.enlinea{
+    display: inline;
 }
