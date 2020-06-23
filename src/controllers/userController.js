@@ -4,8 +4,11 @@ const controlador = {
     profile: (req,res)=>{
         res.render(path.resolve(__dirname,"../views/user.ejs"));
     },
-    login:(req,res)=>{
+    registro:(req,res)=>{
         res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"));
+    },
+    login: (req,res)=>{
+        res.render(path.resolve(__dirname,"../views/login.ejs"));
     },
 };
 

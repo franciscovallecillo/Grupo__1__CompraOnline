@@ -4,6 +4,7 @@ const path = require("path");
 const userController = require(path.resolve(__dirname,"../controllers/userController.js"));
 
 router.get("/user", userController.profile);
-router.get("/altaUsuario", userController.login);
+router.get("/altaUsuario", userController.registro);
+router.get("/login", userController.login);
 
 module.exports = router;
