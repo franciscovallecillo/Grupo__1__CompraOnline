@@ -1,60 +1,63 @@
+<div class="container-fluid">
 
+    <!--  -->
+    <nav class="navbar navbar-expand-lg row">
+        <!-- Logo -->
+        <div class="col-2 d-flex justify-content-center" id="logo">
+            <div><a class="navbar-brand" href="/home"><img class="logo" src="img/LOGO2.jpg" alt="logo" ></a></div>
+        </div>
 
-
-    <div class="container-fluid">
-
-        <!-- Parte superior -->
-        <div class="row">
-            <div class="col-4" id="logo">
-                    <div><a href="/home"><img class="logo" src="img/LOGO.jpg" alt="logo" ></a></div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-5 menuNormal">
-                
-                    <p class="tamano"><a href="">Redes sociales</a></p>
-                    <div class="input-group mb-3" id="buscador">
-                        <input type="text" class="form-control" placeholder="Que quieres buscar?" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="col-10">
+            <div class="row my-2">
+                <!-- Buscador -->
+                <div class="col-9">
+                    <div class="input-group d-flex align-items-stretch" id="buscador">
+                        <input type="text" class="input-group-prepend form-control border-dark" placeholder="Que quieres buscar?" aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
+                            <button class="btn btn-dark m-0 p-0 pl-2 pr-2" type="button" id="button-addon2"><img src="/img/icons/search.svg" class="" alt=""></button>
                         </div>
-                      </div>
-                
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
-                   
-                <p class="tamano"><a href="">Telefono</a></p>
-                        <ul class="padreflotador tamano">
-                            <li class='flota tamano' style="margin-left: 0px"><a class="nav-link colorNavegacion" href="/misCompras">Mis Compras</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="/favoritos">Favoritos</a></li>
-                            <li class='flota tamano'><a class="nav-link colorNavegacion" href="/bolso">Tu Bolso</a></li>
-                        </ul>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-12">
-
-                <div class="menuNormal">
-                    <ul class="nav padreFlotador" >
-                        <li class='flota tamano colorNavegacion'>
-                            <select name="Categorias " class="select-css">
-                                <option value="value0">Categorias</option> 
-                                <option value="value1"><a class="nav-link colorNavegacion" href="/productos">Mujer</a></option> 
-                                <option value="value2"><a class="nav-link colorNavegacion" href="/productos">Hombre</a></option>
-                                <option value="value3"><a class="nav-link colorNavegacion" href="/productos">Nene</a></option>
-                                <option value="value4"><a class="nav-link colorNavegacion" href="/productos">Accesorios</a></option>
-                            </select>
-                                </li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Mujeres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Hombres</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Nenes</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/productos">Nuevo Accesorios</a></li>
-                                <li class='flota tamano '><a class="nav-link colorNavegacion" href="/cargaProducto">Vender</a></li>
-                                <li class='flota tamano style="margin-left: 106px '><a class="nav-link colorNavegacion" href="/user">Usuario</a></li>
-                    </ul>
+                    </div>
                 </div>
-        
+                <!-- Redes Sociales -->
+                <div class="col-3 d-flex justify-content-around">
+                    <a href="https://www.facebook.com/" role="button" aria-pressed="true" title="Facebook"><img src="/img/icons/facebook.svg" class="icono" alt=""></a>
+                    <a href="https://www.instagram.com/" role="button" aria-pressed="true" title="Instagram"><img src="/img/icons/instagram.svg" class="icono" alt=""></a>
+                    <a href="https://twitter.com/" role="button" aria-pressed="true" title="Twitter"><img src="/img/icons/twitter.svg" class="icono" alt=""></a>
+                    <a class="btn  bg-darkorange text-light" href="#" role="button">Contactanos</a>
+                </div>
             </div>
 
+            <div class="row menuNormal my-2">
+                <!-- Categorías -->
+                <div class="dropdown col-2 d-flex justify-content-around">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorías</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/productos">Mujer</a>
+                        <a class="dropdown-item" href="/productos">Hombre</a>
+                        <a class="dropdown-item" href="/productos">Nene</a>
+                        <a class="dropdown-item" href="/productos">Accesorios</a>
+                    </div>
+                </div>
+
+                <!-- Nuevos productos -->
+                <ul class="nav nav-pills d-flex justify-content-around col-10" >
+                    <li class='nav-item'><a class="nav-link colorNavegacion" href="/productos">Nuevo Mujeres</a></li>
+                    <li class='nav-item'><a class="nav-link colorNavegacion" href="/productos">Nuevo Hombres</a></li>
+                    <li class='nav-item'><a class="nav-link colorNavegacion" href="/productos">Nuevo Nenes</a></li>
+                    <li class='nav-item'><a class="nav-link colorNavegacion" href="/productos">Nuevo Accesorios</a></li>
+                    <li class='nav-item'><a class="nav-link colorNavegacion" href="/cargaProducto">Vender</a></li>
+                </ul>
+            </div>
+
+            <!-- Opciones del usuario -->
+            <div class="row my-2 mx-0">
+                <ul class="nav col-9 d-flex justify-content-around">
+                    <li class="nav-item"><a class="nav-link colorNavegacion" href="/misCompras" title="Mis Compras"><img src="/img/icons/history.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-2"> Mis Compras</p></a></li>
+                    <li class="nav-item"><a class="nav-link colorNavegacion" href="/favoritos" title="Favoritos"><img src="/img/icons/favorito.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-2">Favoritos</p></a></li>
+                    <li class="nav-item"><a class="nav-link colorNavegacion" href="/bolso" title="Tu Bolso"><img src="/img/icons/bag.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-2">Tu Bolso</p></a></li>
+                    <li class="nav-item"><a class="nav-link colorNavegacion" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-2">Usuario</p></a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
+</div>
