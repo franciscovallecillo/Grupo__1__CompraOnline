@@ -14,75 +14,56 @@
         <br>
 
         <div class="row">
-            <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"></form>
-                <div class="col-lg-2 col-md-1"></div>          
-        
-                <div class="col-8">
-                    <h5>Ingresa tus Datos</h5>
-                    <br>
-                    <section class="container formulario">
-                        <br>
-                        <p class="nombre" id="datos">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" name="nombre-usuario" id="nombre">
-                        </p>
-                        <p class="apellido" id="datos">
-                            <label for="apellido">Apellido:</label>
-                            <input type="text" name="apellido-usuario" id="apellido">
-                        </p>
-                        <p class="email" id="datos">
-                            <label for="email">Email:</label>
-                            <input type="email" name="mail" id="email">
-                        </p>
-                            <p class="contraseña" id="datos">
-                            <label for="contraseña">Contraseña:</label>
-                            <input type="password" name="contraseña" id="contraseña">
-                        </p>
-                        <p class="contraseña" id="datos" >
-                            <label for="contraseña">Confirmar contraseña:</label>
-                            <input type="password" name="contraseña">
-                        </p>
-                        <br>
-                    </section>
-                    <div class="text-center my-3">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
-                </div>
-              
-                <div class="col-lg-2 col-md-1"></div>
-
+            <div class="col-12">
+                <h1 class="TuBolso">Ingresa tus Datos</h1>
             </div>
-
-            <br>
-
+        </div>
+<br>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-8">
-                    <div></div>
-                </div>
-                <div class="col-4 botton-1">
-                    <div><button type="button" class="btn btn-primary">Crear Cuenta</button>
+                <div class="col-8 mx-auto bg-light pt-2 ">
+                    <div class="signup-form">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="apellido" placeholder="Apellido" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Confirmar contraseña" required="required">
+                            </div>
+                            <div class="form-group ">
+                                <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                            </div>
+                        </form>
                     </div>
-                </div>
-            </div>
-        </form>
-        <br>
-        <br>
-    
-        <div class="row" class="footer">
-            <div class="col">
-              <footer>
-                <h6 class="footereando">DATOS</h6>
-                <h6 class="footereando">LEGLES</h6>
-                <h6 class="footereando">CONTACTOS</h6>
-                <h6 class="footereando">PREGUNTAS FRECUENTES</h6>
-                <h6 class="footereando">AYUDA</h6>
-                <h6 class="footereando">TRABAJA CON NOSOTROS</h6>
-              </footer>
+                </div>                        
             </div>
         </div>
 
-
-
+        <div class="text-center my-3">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
     </div>
+  
 
+
+</form>
+<br>
+<br>
+
+        <div class="container-fluid">
+
+        <%- include('../partials/footer.ejs') %>
+
+        </div>
+
+</div>
 
 
 
