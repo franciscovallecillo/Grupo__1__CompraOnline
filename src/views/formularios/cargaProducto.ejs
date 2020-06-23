@@ -21,12 +21,12 @@
 
 
 
-        <form>
+        <form action="" method="POST">
             
             <div class="form-row">
               <div class="col-md-6 mb-3">
-                <label for="validationServer01">Marca</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="Marca" required>
+                <label for="validationServer01">Marca (*)</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="Marca" required="required">
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationServer02">Modelo</label>
@@ -40,8 +40,8 @@
                 <input type="text" class="form-control is-valid" id="validationServer03" value="Material" required>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationServer04">Temporada</label>
-                <select class="custom-select is-valid" id="validationServer04" required>
+                <label for="validationServer04">Temporada (*)</label>
+                <select class="custom-select is-valid" id="validationServer04" required="required">
                   <option selected disabled value="">Temporada</option>
                   <option>Invierno</option>
                   <option>Verano</option>
@@ -50,8 +50,8 @@
                 </select>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationServer05">Genero</label>
-                <select class="custom-select is-valid" id="validationServer04" required>
+                <label for="validationServer05">Genero (*)</label>
+                <select class="custom-select is-valid" id="validationServer04" required="required">
                     <option selected disabled value="">Genero</option>
                     <option>Femenino</option>
                     <option>Masculino</option>
@@ -61,8 +61,8 @@
 
             <div class="form-row">
                 <div class="col-md-3 mb-3">
-                    <label for="validationServer05">Talle</label>
-                    <select class="custom-select is-valid" id="validationServer04" required>
+                    <label for="validationServer05">Talle (*)</label>
+                    <select class="custom-select is-valid" id="validationServer04" required="required">
                         <option selected disabled value="">Talle</option>
                         <option>L</option>
                         <option>M</option>
@@ -70,8 +70,8 @@
                       </select>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="validationServer05">Color</label>
-                    <select class="custom-select is-valid" id="validationServer04" required>
+                    <label for="validationServer05">Color (*)</label>
+                    <select class="custom-select is-valid" id="validationServer04" required="required">
                         <option selected disabled value="">Color</option>
                         <option>Amarillo</option>
                         <option>Rojo</option>
@@ -79,20 +79,20 @@
                       </select>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="validationServer05">Precio</label>
-                    <input type="number" class="form-control is-valid" id="validationServer02" value="Precio" required>
+                    <label for="validationServer05">Precio (*)</label>
+                    <input type="number" class="form-control is-valid" id="validationServer02" value="Precio" required="required">
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="validationServer05">Cantidad</label>
-                    <input type="number" class="form-control is-valid" id="validationServer02" value="Cantidad" required>
+                    <label for="validationServer05">Cantidad (*)</label>
+                    <input type="number" class="form-control is-valid" id="validationServer02" value="Cantidad" required="required">
                 </div>
             </div>
 
 
             <div class="form-row">
                 <div class="col-12">
-                  <label for="validationServer01">Resumen</label>
-                  <input type="text" class="form-control is-valid" id="validationServer01" value="Resumen" required>
+                  <label for="validationServer01">Resumen (*)</label>
+                  <input type="text" class="form-control is-valid" id="validationServer01" value="Resumen" required="required">
                 </div>
             </div>
             <br>
@@ -106,9 +106,12 @@
 
             <div class="form-row">
             <label for="validationServer01">Carga Imagen</label>
-            <input class="" type="file">
+            <input class="" type="file" placeholder="seleccionar imagen">
             </div>
             <br>
+
+            <p >(*) campos obligatorios</p>
+
             <br>
 
             <div class="form-group">

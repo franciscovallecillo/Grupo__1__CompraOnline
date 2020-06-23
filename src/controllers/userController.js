@@ -5,7 +5,7 @@ const controlador = {
         res.render(path.resolve(__dirname,"../views/user.ejs"));
     },
     login:(req,res)=>{
-        res.render(path.resolve(__dirname,"../views/formularios/formularioAlta.ejs"));
+        res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"));
     },
 };
 

@@ -280,11 +280,11 @@ h5 {
     right: 400px;
 }
 
-button{
+.button{
     width: 100px;
     margin-top: 5px;
     text-align: center;
-}
+} 
 
 .button2{
     width: 130px;
@@ -292,6 +292,7 @@ button{
     font-size: 15px;
     position: absolute;
     right: 300px;
+    margin-top: 5px;
 }
 
 @media (max-width: 750px) {
@@ -381,15 +382,17 @@ background-color: lightskyblue
 .buttonFormulario{
     width: 150px;
     height: 50px;
-    margin-left: 65px;
+    margin-left: 100px;
+    
 }
 
 
 @media (max-width: 750px) {
     .buttonFormulario{
-        width: 110px;
+        width: 80px;
         height: 60px;
-        margin-left: 20px;
+        margin-top: 10px;
+
     }
 }
 
