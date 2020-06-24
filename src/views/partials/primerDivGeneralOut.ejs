@@ -52,12 +52,30 @@
 
             <!-- Opciones del usuario -->
             <div class="row my-0 my-lg-2 mx-0">
-                <ul class="nav col col-lg-9 d-flex justify-content-around">
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/misCompras" title="Mis Compras"><img src="/img/icons/history.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"> Mis Compras</p></a></li>
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/favoritos" title="Favoritos"><img src="/img/icons/favorito.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Favoritos</p></a></li>
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/bolso" title="Tu Bolso"><img src="/img/icons/bag.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Tu Bolso</p></a></li>
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Usuario</p></a></li>
-                </ul>
+                <div class="col d-flex justify-content-end">
+                    <a class="nav-link colorNavegacion p-1" href="#" title="Usuario"></a>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" title="Empezar"><img src="/img/icons/user.svg" class="icono enlinea" alt=""></button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">¡Empecemos!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="modal-footer justify-content-center row-cols-1">
+                                    <a type="button" class="btn bg-darkorange border-dark font-weight-bold" href="/altaUsuario">Registrarse</a>
+                                    <p class="d-flex justify-content-center">ó</p>
+                                    <a type="button" class="btn bg-darkorange border-dark font-weight-bold" href="/login">Iniciar Sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </nav>

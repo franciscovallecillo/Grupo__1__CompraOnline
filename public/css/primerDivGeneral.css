@@ -1,5 +1,5 @@
 .icono{
-    width: 2rem;
+    width: 1.5rem;
 }
 
 .icono2{
@@ -7,14 +7,78 @@
 }
 
 .logo{
-    width: 9rem;
-    height: 9rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 .bg-darkorange{
     background-color: #CE543A;
+    height: 2rem;
 }
 
 .enlinea{
     display: inline;
 }
+
+.marginli{
+    margin: 0 !important;
+}
+
+.fuenteform{
+    font-size: 0.8rem;
+}
+
+.fuenteformtit{
+    font-size: 1.6rem;
+}
+
+.fuenteformsub{
+    font-size: 1.3rem;
+}
+
+ @media (min-width: 768px){
+    .logo{
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .letrali{
+        font-size: small;
+    }
+
+    .fuenteform{
+        font-size: 1rem;
+    }
+
+    .fuenteformtit{
+        font-size: 2rem;
+    }
+
+    .fuenteformsub{
+        font-size: 1.5rem;
+    }
+ }
+
+ @media (min-width: 992px){
+    .icono{
+        width: 2rem;
+    }
+
+    .logo{
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .bg-darkorange{
+        background-color: #CE543A;
+    }
+
+    .enlinea{
+        display: inline;
+    }
+
+    .letrali{
+        font-size: initial;
+    }
+ }
+    
