@@ -3,15 +3,11 @@
 							Trabajo Integrador
 
 
-
-
-
 1.	Crear el repositorio del proyecto y agregar colaboradores El nombre del repositorio será grupo_#_nombre donde # será su número de grupo y nombre será el nombre del proyecto
 
 - Grupo_1_CompraOnline
 
 https://github.com/franciscovallecillo/Grupo__1__CompraOnline
-
 
 
 
@@ -32,8 +28,7 @@ Nuestro objetivo será darles la posibilidad a aquellas empresas textiles, produ
 
 	Desde nuestro sitio los usuarios podrán adquirir distintos tipos de prendas, según el sexo y edad, asi como también accesorios de vestir. Nuestro público serán todas aquellas personas que prioricen la compra online. Apuntaremos nuestros esfuerzos a un segmento de clase media baja que no le interese la ropa de “marca”, tanto mujer como hombre de 18 a 65 años.
 	
-	El grupo está compuesto por Santiago Ruedo y Francisco Vallecillo, ambos de 28 años de edad egresados de la UCES, de las carreras de Comercio Exterior y Dirección de Negocios respectivamente.
-
+	El grupo está compuesto por Fernando Fleck, de 33 años, Santiago Ruedo y Francisco Vallecillo, ambos de 28 años de egresados de la UCES, de las carreras de Comercio Exterior y Dirección de Negocios respectivamente.
 
 
 
@@ -54,7 +49,6 @@ https://www.falabella.com.ar/falabella-ar/#
 https://www.maria-cher.com.ar/
 https://www.portsaid.com.ar/#
 https://www.ginebrabsas.com/shop.html
-
 
 
 
