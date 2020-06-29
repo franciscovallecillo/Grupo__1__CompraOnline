@@ -2,15 +2,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Producto</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/destalleProducto.css">
-    <link rel="stylesheet" href="ccs/estilos.css">
-    
-</head>
+
+    <%- include('../partials/head.ejs') %>
+
 <body>
     
     <%- include('../partials/primerDivGeneral.ejs') %>
@@ -70,9 +64,9 @@
 
         
     <div class="row">
-        <div class="col-12 botonesCompraCarrito">
-            <button type="button" class="btn btn-primary botonCompra button2">Comprar Ahora</button>
-            <button type="button" class="btn btn-primary botonCarrito button2">Agregar al Bolso</button>
+        <div class="col-12 botonesDetalleCompra">
+            <button type="button" class="btn btn-primary botonCompra button3">Comprar Ahora</button>
+            <button type="button" class="btn btn-primary botonCompra2 button3">Agregar al Bolso</button>
         </div>
     </div>
     
@@ -82,7 +76,7 @@
         <div class="col-lg-12 col-sm-10">
             <br>
             <br>
-            <div class="formularioCarga">
+            <div class="formularioDetalle">
                 <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank">
                     <br>
                     <p class="caracteristicas" id="datos">
@@ -123,24 +117,13 @@
     <br>
     <br>
 
-        <div class="row" class="footer">
-            <div class="col">
-              <footer>
-                <h6 class="footereando">DATOS</h6>
-                <h6 class="footereando">LEGLES</h6>
-                <h6 class="footereando">CONTACTOS</h6>
-                <h6 class="footereando">PREGUNTAS FRECUENTES</h6>
-                <h6 class="footereando">AYUDA</h6>
-                <h6 class="footereando">TRABAJA CON NOSOTROS</h6>
-              </footer>
-            </div>
-        </div>
-    </div>
+
+
 </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<%- include('../partials/footer.ejs') %>
+
+<%- include('../partials/scriptBootstrap.ejs') %>
 
 </body>
 </html>

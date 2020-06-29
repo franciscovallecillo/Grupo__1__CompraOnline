@@ -153,8 +153,18 @@ ul{
 
    .footereando{
        display: inline-block;
-       padding:40px;
+       padding:20px;
        font-weight: bold; 
+       margin-left: 30px;
+   }
+   
+   .links{
+       padding-top: 20px;
+   }
+   
+   .linksredes{
+       float: left;
+       margin-left: 55px;
    }
 
    @media (max-width: 750px) {
@@ -174,6 +184,15 @@ ul{
         font-size: 10px;
     }
 
+    .linksredes{
+        margin-left: 8px;
+    }
+    .footereando{
+        margin-left: 20px;
+        font-size: 10px;
+        padding: 0%;
+        margin-top: 10px;
+    }
 }
 
 /* @media (min-width: 800px) {
@@ -400,6 +419,7 @@ background-color: lightskyblue
 
 
 
+
 /* FORM DETALLE PRODUCTO */
 
 
@@ -424,42 +444,33 @@ background-color: lightskyblue
     padding: 30px;
 }
 
-
 .descripcionProducto2{
     margin-left: 100px;
     border: solid 1px brown;
 }
 
-
-
-
-
-.botonesCompraCarrito{
+.botonesDetalleCompra{
     padding: 20px;
     height: 15vh;
     font-size: 15px;
     margin-left: 850px;
     position: relative;
     margin-top: 15px;
- 
- 
-
-}*/
-
+}
 .botonCompra{
     width: 130px;
     height: 100px;
     font-size: 15px;
     position: absolute;
 }
-.botonCarrito{
+.botonCompra2{
     width: 130px;
     height: 100px;
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 150px;
     position: absolute;
 }
-.button2{
+.button3{
     width: 130px;
     height: 60px;
     font-size: 15px;
@@ -469,10 +480,7 @@ background-color: lightskyblue
     height: 50px;
     margin-left: 65px;
 }
-
-
-
-.formularioCarga{
+.formularioDetalle{
     width: 50%;
     height: 150vh;
     margin-left: 30px;
@@ -480,17 +488,26 @@ background-color: lightskyblue
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.precio{
-    margin-left: 100px;
-}
 
-.cargaImagen{
-    margin-left: 200px;
-}
-
-.caracteristicas{
-    padding-left: 400px;
-
+@media (max-width: 750px) {  
+    .containerProducto{
+        height: 80vh;
+        width: 100%;
+        right: 20px;
+    }
+    .descripcionProducto{
+        right: 20px;
+    }
+    .imagenProducto{
+        height: 80vh;
+        width: 100%;
+    }
+    .botonesDetalleCompra{
+        right: 750px;
+    }
+    .formularioDetalle{
+        display: inline-block;
+    }
 }
 
 

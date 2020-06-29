@@ -1,5 +1,87 @@
+/* 
+.icono{
+    width: 1.5rem;
+}
 
+.icono2{
+    width: 1rem;
+}
 
+.logo{
+    width: 5rem;
+    height: 5rem;
+}
+
+.bg-darkorange{
+    background-color: #CE543A;
+    height: 2rem;
+}
+
+.enlinea{
+    display: inline;
+}
+
+.marginli{
+    margin: 0 !important;
+}
+
+.fuenteform{
+    font-size: 0.8rem;
+}
+
+.fuenteformtit{
+    font-size: 1.6rem;
+}
+
+.fuenteformsub{
+    font-size: 1.3rem;
+}
+
+ @media (min-width: 768px){
+    .logo{
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .letrali{
+        font-size: small;
+    }
+
+    .fuenteform{
+        font-size: 1rem;
+    }
+
+    .fuenteformtit{
+        font-size: 2rem;
+    }
+
+    .fuenteformsub{
+        font-size: 1.5rem;
+    }
+ }
+
+ @media (min-width: 992px){
+    .icono{
+        width: 2rem;
+    }
+
+    .logo{
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .bg-darkorange{
+        background-color: #CE543A;
+    }
+
+    .enlinea{
+        display: inline;
+    }
+
+    .letrali{
+        font-size: initial;
+    }
+ } */
 
 
 /* HOME */
@@ -70,7 +152,7 @@ ul{
     height: 161px;
     background: #6FCF97;
 
-    border: 1px solid #828282;
+    border: solid 1px #CE543A ;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* display:none;
@@ -92,7 +174,7 @@ ul{
 }*/
 
 .segmentoHijo{
-    
+    border: solid 1px #CE543A ;
     margin-left: 30px;
 }*/
 
@@ -110,7 +192,7 @@ ul{
     max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid #aaa;
+    border: solid 1px #CE543A ;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
     border-radius: .3em;
     -moz-appearance: none;
@@ -155,45 +237,45 @@ ul{
 
    .footereando{
        display: inline-block;
-       padding:40px;
+       padding:20px;
        font-weight: bold; 
+       margin-left: 30px;
    }
-
+   
+   .links{
+       padding-top: 20px;
+   }
+   
+   .linksredes{
+       float: left;
+       margin-left: 55px;
+   }
    @media (max-width: 750px) {
     #buscador {
       display: none;
     }
     #logo{
-        display: none;   
+        display: none;
     }
     .menuNormal{
         display: none;    
     }
     .menuTelefono{
-        display: block;
-    }
+        display: block
+        }
     .descripcion{
         font-size: 10px;
     }
-    .containerProducto{
-        height: 80vh;
-        width: 100%;
-        right: 20px;
-    }
-    .descripcionProducto{
-        right: 20px;
-    }
-    .imagenProducto{
-        height: 80vh;
-        width: 100%;
-    }
-    .botonesCompraCarrito{
-        right: 750px;
-    }
-    .formularioCarga{
-        display: inline-block;
-    }
 
+    .linksredes{
+        margin-left: 8px;
+    }
+    .footereando{
+        margin-left: 20px;
+        font-size: 10px;
+        padding: 0%;
+        margin-top: 10px;
+    }
 }
 
 /* @media (min-width: 800px) {
@@ -302,6 +384,29 @@ ul{
 
 .caracteristicas{
     padding-left: 400px;
+
+}
+
+
+@media (max-width: 750px) {  
+    .containerProducto{
+        height: 80vh;
+        width: 100%;
+        right: 20px;
+    }
+    .descripcionProducto{
+        right: 20px;
+    }
+    .imagenProducto{
+        height: 80vh;
+        width: 100%;
+    }
+    .botonesCompraCarrito{
+        right: 750px;
+    }
+    .formularioCarga{
+        display: inline-block;
+    }
 
 }
 
