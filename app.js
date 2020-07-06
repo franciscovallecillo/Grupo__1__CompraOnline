@@ -1,6 +1,14 @@
 const express = require('express');   // Modulos internos los importo sin barra. 
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
+
+
+//Considerar que al enviar los datos desde el formulario los mismos lleguen al Servidor
+app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(express.json());
+
 
 
 app.set('view engine','ejs')   // Le digo a la aplicación que usare el motor de plantillas de ejs. 
@@ -11,6 +19,9 @@ app.listen(8000, () => {
     console.log('Servidor arranco correctamente en el puerto 8000.')
 })
 
+
+
+
 // Se requiere el archivo donde esta la ruta
 const rutasProductos = require('./src/routes/productosRoutes.js')
 const home = require('./src/routes/homeRoutes.js')
@@ -19,6 +30,7 @@ const carrito = require("./src/routes/carritoRoutes.js");
 const cargaProducto = require("./src/routes/formulariosRoutes.js");
 const favoritos = require("./src/routes/favoritosRoutes.js");
 const misCompras = require("./src/routes/misComprasRoutes.js")
+const admin = require("./src/routes/adminRoutes.js");
 
 
 // // Registro las rutas principales.
@@ -29,6 +41,7 @@ app.use(carrito);
 app.use(cargaProducto);
 app.use(favoritos);
 app.use(misCompras);
+app.use(admin);
 
 // app.use('/home',home)
 

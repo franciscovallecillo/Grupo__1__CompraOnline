@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const home = require('../controllers/homeControles.js')
+const home = require('../controllers/homeController.js')
 
 
 // router.get('/', home.vistaPrincipal)
