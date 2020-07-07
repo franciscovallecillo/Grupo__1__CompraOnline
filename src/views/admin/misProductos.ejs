@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    
+  <%- include('../partials/head.ejs') %>
+
+<body>
+    
+    <%- include('../partials/primerDivGeneral.ejs') %>
+        
+    <hr id="separador">
+    <br>
+    <h1 class="text-center text-success display-5 mt-5 pt-2">Administra tus Publicaciones</h1>
+    <section class="row">
+        <article class="col-12" >
+            <a class="nav-link" href="/cargaProducto"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+        </article>
+    </section>
+
+    <table class="table mt-5">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nombre del Produco</th>
+              <th>Ver</th>
+              <th>Editar</th>
+              <th>Borrar</th>
+          </tr>
+    </thead>
+    <tbody>
+        <% productos.forEach(producto => { %>
+            <tr>
+                <td><%= producto.id %> </td>
+                <td><%= producto.marca%> </td>
+                <td><a href="/misProductos/detail/<%= producto.id%>"><ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/misProductos/edit/<%= producto.id%>"><ion-icon name="create-outline"></ion-icon></a></td>
+                <td><a href="/misProductos/delete/<%= producto.id%>?_method=DELETE"><ion-icon name="trash-outline"></ion-icon></a></td>
+            </tr>
+        <% }) ; %>
+        
+
+    </tbody>
+
+    </table>    
+
+
+
+<%- include('../partials/footer.ejs') %>
+
+<%- include('../partials/scriptBootstrap.ejs') %>
+
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+</body>
+</html>

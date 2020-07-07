@@ -1,0 +1,132 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+        <form action="/misProductos/edit/guardar/<%= mostrarProducto.id%>?_method=PUT" method="POST" >
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                <label for="validationServer01">Marca (*)</label>
+                <input name="marca" type="text" class="form-control is-valid" id="validationServer01" placeholder="Marca" required="required" value="<%= mostrarProducto.marca%>">
+                </div>
+                <div class="col-md-6 mb-3">
+                <label for="validationServer02">Modelo</label>
+                <input name="modelo" type="text" class="form-control is-valid" id="validationServer02" placeholder="Modelo" value="<%= mostrarProducto.modelo%>" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationServer05">Tipo de Producto (*)</label>
+                <select name="producto" class="custom-select is-valid" id="validationServer04" required="required" value="<%= mostrarProducto.producto%>">
+                    <option selected disabled value="">Producto</option>
+                    <option>Mujer</option>
+                    <option>Hombre</option>
+                    <option>Nene</option>
+                    <option>Accesorio</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer04">Temporada (*)</label>
+                <select name="temporada" class="custom-select is-valid" id="validationServer04" required="required" value="<%= mostrarProducto.temporada%>">
+                <option selected disabled value="">Temporada</option>
+                <option>Invierno</option>
+                <option>Verano</option>
+                <option>Otoño</option>
+                <option>Primavera</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer05">Genero (*)</label>
+                <select name="genero" class="custom-select is-valid" id="validationServer04" required="required" value="<%= mostrarProducto.genero%>">
+                    <option selected disabled value="">Genero</option>
+                    <option>Femenino</option>
+                    <option>Masculino</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Talle (*)</label>
+                    <select name="talle" class="custom-select is-valid" id="validationServer04" required="required" value="<%= mostrarProducto.talle%>">
+                        <option selected disabled value="">Talle</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>S</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Color (*)</label>
+                    <select name="color" class="custom-select is-valid" id="validationServer04" required="required" value="<%= mostrarProducto.color%>">
+                        <option selected disabled value="">Color</option>
+                        <option>Amarillo</option>
+                        <option>Rojo</option>
+                        <option>Azul</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Precio (*)</label>
+                    <input name="precio" type="number" class="form-control is-valid" id="validationServer02" placeholder="Precio" required="required" value="<%= mostrarProducto.precio%>">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationServer05">Cantidad (*)</label>
+                    <input name="cantidad" type="number" class="form-control is-valid" id="validationServer02" placeholder="Cantidad" required="required" value="<%= mostrarProducto.cantidad%>">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-12">
+                <label for="validationServer01">Resumen (*)</label>
+                <input name="resumen" type="text" class="form-control is-valid" id="validationServer01" placeholder="Resumen" required="required" value="<%= mostrarProducto.resumen%>">
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col-12">
+                <label for="validationServer01">Descripcion</label>
+                <input name="descripcion" type="text" class="form-control is-valid" id="validationServer01" placeholder="Descripcion" value="<%= mostrarProducto.descripcion%>">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-row">
+            <label for="validationServer01">Carga Imagen</label>
+            <input name="imagen" class="" type="file" placeholder="seleccionar imagen" value="<%= mostrarProducto.imagen%>">
+            </div>
+            <br>
+
+            <p >(*) campos obligatorios</p>
+
+            <br>
+
+            <div class="form-group">
+            <div class="form-check">
+                <input name="aceptacion" class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                Aceptas las condiciones?
+                </label>
+            </div>
+            </div>
+
+            <button  type="submit" class="btn btn-primary buttonFormulario">Guardar Cambios</button>
+
+        </form>
+
+
+
+<%- include('../partials/scriptBootstrap.ejs') %>
+
+</html>
+
+
+

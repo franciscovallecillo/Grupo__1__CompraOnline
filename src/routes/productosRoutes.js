@@ -5,23 +5,17 @@ const path = require("path");
 const productosControler = require(path.resolve(__dirname,"../controllers/productosControllers.js"))
 
 
-// No especifico productos dado que esto ya se encuentra definido en app.js
 
-// Estas rutas en realidad adelante llevan productos/ , pero no se específica dado que en app.js se pone productos y engloba todas las rutas que le correspondan.
-// router.get('/id/:id', productosControler.idSelectionado)   // Importo del controler, ahi esta toda la función. 
-
-
-// router.get('/mujer', productosControler.detalleProductos)
-
-// Se crea la ruta
+// Ruta Visualizacion de Productos de Compra
 router.get('/productos', productosControler.detalleProductos);
+
+// Detalle de Producto para comprar
 router.get("/detalleProducto", productosControler.show);
 
-// router.get('/accesorios', productosControler.detalleProductos)
 
-// router.get('/nenes', productosControler.detalleProductos)
 
-// router.get('/detalle', productosControler.detalleProductos)
+
+
 
 module.exports = router
 // Exporto el router para que lo use app.module
