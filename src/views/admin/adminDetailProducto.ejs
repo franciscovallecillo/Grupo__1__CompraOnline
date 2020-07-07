@@ -1,37 +1,40 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
-
-    <%- include('../partials/head.ejs') %>
-
+<html lang="es">
+<%- include('../partials/head.ejs') %>
 <body>
+    <%- include('../partials/primerDivGeneral.ejs') %>
 
-
-    
-
-    <div class="card">
-        <ul class="list-group">
-            <li class="list-group-item">Marca: <%= mostrarProducto.marca%></li>
-            <li class="list-group-item">Modelo: <%= mostrarProducto.modelo%></li>
-            <li class="list-group-item">Producto: <%= mostrarProducto.producto%></li>
-            <li class="list-group-item">Temporada: <%= mostrarProducto.temporada%></li>
-            <li class="list-group-item">Genero: <%= mostrarProducto.genero%></li>
-            <li class="list-group-item">Talle: <%= mostrarProducto.talle%></li>
-            <li class="list-group-item">Color: <%= mostrarProducto.color%></li>
-            <li class="list-group-item">Precio: <%= mostrarProducto.precio%></li>
-            <li class="list-group-item">Cantidad: <%= mostrarProducto.cantidad%></li>
-            <li class="list-group-item">Resumen: <%= mostrarProducto.resumen%></li>
-            <li class="list-group-item">Descripcion: <%= mostrarProducto.descripcion%></li>
-            <li class="list-group-item ">Imagen: <img class="img-thumbnail" src="/imagenes<%= mostrarProducto.imagen%>" alt=""></li>
-            <li class="list-group-item">Aceptacion: <%= mostrarProducto.aceptacion%></li>
-        </ul>
-    
-        <a class="btn btn-danger" href="/misProductos"><h4 class="text-center">Volver</h4></a>
+    <hr id="separador">
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <ul class="list-group">
+                        <li class="list-group-item">Marca: <%= mostrarProducto.marca%></li>
+                        <li class="list-group-item">Modelo: <%= mostrarProducto.modelo%></li>
+                        <li class="list-group-item">Producto: <%= mostrarProducto.producto%></li>
+                        <li class="list-group-item">Temporada: <%= mostrarProducto.temporada%></li>
+                        <li class="list-group-item">Genero: <%= mostrarProducto.genero%></li>
+                        <li class="list-group-item">Talle: <%= mostrarProducto.talle%></li>
+                        <li class="list-group-item">Color: <%= mostrarProducto.color%></li>
+                        <li class="list-group-item">Precio: <%= mostrarProducto.precio%></li>
+                        <li class="list-group-item">Cantidad: <%= mostrarProducto.cantidad%></li>
+                        <li class="list-group-item">Resumen: <%= mostrarProducto.resumen%></li>
+                        <li class="list-group-item">Descripcion: <%= mostrarProducto.descripcion%></li>
+                        <li class="list-group-item ">Imagen: <img class="img-thumbnail" src="/imagenesProdCargados/<%= mostrarProducto.imagen%>" alt=""></li>
+                        <li class="list-group-item">Aceptacion: <%= mostrarProducto.aceptacion%></li>
+                    </ul>
+                
+                    <a class="btn btn-danger" href="/misProductos"><h4 class="text-center">Volver</h4></a>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <%- include('../partials/footer.ejs') %>
 
-
+    <%- include('../partials/scriptBootstrap.ejs') %>
 
 
 </body>

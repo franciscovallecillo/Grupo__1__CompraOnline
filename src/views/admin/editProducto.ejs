@@ -3,14 +3,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include('../partials/head2.ejs') %>
 <body>
     
 </body>
+<%- include('../partials/primerDivGeneral.ejs') %>
+
         <form action="/misProductos/edit/guardar/<%= mostrarProducto.id%>?_method=PUT" method="POST" >
 
             <div class="form-row">
@@ -124,8 +122,11 @@
 
 
 
-<%- include('../partials/scriptBootstrap.ejs') %>
+        <%- include('../partials/footer.ejs') %>
 
+        <%- include('../partials/scriptBootstrap.ejs') %>
+    
+    
 </html>
 
 
