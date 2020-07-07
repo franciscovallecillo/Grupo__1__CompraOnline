@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg row">
         <!-- Logo -->
         <div class="col-3 col-md-3 col-lg-2 d-flex justify-content-center" id="logo">
-            <a class="" href="/home"><img class="logo" src="img/LOGO2.jpg" alt="logo" ></a>
+            <a class="" href="/home"><img class="logo" src="img/logo.png" alt="logo" ></a>
         </div>
 
         <div class="col-9 col-md-9 col-lg-10">
@@ -23,8 +23,63 @@
                     <a class="d-none d-lg-flex p-1" href="https://www.facebook.com/" role="button" aria-pressed="true" title="Facebook"><img src="/img/icons/facebook.svg" class="icono" alt=""></a>
                     <a class="d-none d-lg-flex p-1" href="https://www.instagram.com/" role="button" aria-pressed="true" title="Instagram"><img src="/img/icons/instagram.svg" class="icono" alt=""></a>
                     <a class="d-none d-lg-flex p-1" href="https://twitter.com/" role="button" aria-pressed="true" title="Twitter"><img src="/img/icons/twitter.svg" class="icono" alt=""></a>
-                    <a class="btn btn-sm align-self-center bg-darkorange text-light d-none d-lg-flex p-1" href="#" role="button">Contactanos</a>
-                    <a class="d-sm-flex align-self-center d-lg-none" href="#" role="button" aria-pressed="true" title="Contactanos"><img src="/img/icons/contact.svg" class="icono" alt=""></a>
+                    
+                    <!-- Button trigger modal -->
+                    
+                    <a class="btn btn-sm align-self-center bg-darkorange text-light d-none d-lg-flex p-1" data-toggle="modal" data-target="#contactModal" href="#" role="button">Contactanos</a>
+                    <a class="d-sm-flex align-self-center d-lg-none" data-toggle="modal" data-target="#contactModal" href="#" role="button" aria-pressed="true" title="Contactanos"><img src="/img/icons/contact.svg" class="icono" alt=""></a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Contactanos</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row m-0">
+                                        <h5 class="text-left">Nuestras redes sociales son:</h5>
+                                        <div class="col-12 nav d-flex justify-content-around mb-4">
+                                            <div class="nav-item"><img src="/img/icons/facebook.svg" class="icono2" alt=""><a class="p-2 text-reset font-italic" href="https://www.facebook.com/" role="button" aria-pressed="true" title="Facebook">Facebook</a></div>
+                                            <div class="nav-item"><img src="/img/icons/instagram.svg" class="icono2" alt=""><a class="p-2 font-italic text-reset" href="https://www.instagram.com/" role="button" aria-pressed="true" title="Instagram">Instagram</a></div>
+                                            <div class="nav-item"><img src="/img/icons/twitter.svg" class="icono2" alt=""><a class="p-2 font-italic text-reset" href="https://twitter.com/" role="button" aria-pressed="true" title="Twitter">Twitter</a></div>
+                                        </div>
+                                        <h5 class="text-left">También podés comunicarte al: </h5>
+                                        <div class="col-12"><p>Teléfono: (011) 4321-9876</p></div>
+                                        <div class="col-12 mb-4"><p>E-mail: contacto@compraonline.com</p></div>
+                                        <div class="form-group row">
+                                            <h5 class="col text-left">O completa el siguinte formulario y nos estaremos comunicando con vos:</h5>
+                                            <div class="form-inline form-group col-12 d-flex">
+                                                <label class="col-auto fuenteform" for="nombreComprador">Nombre Completo: </label>
+                                                <input type="text" class="form-control fuenteform flex-fill" id="nombreComprador" placeholder="Nombre Completo">
+                                            </div>
+                                            <div class="form-inline form-group col-12 d-flex">
+                                                <label class="col-auto fuenteform" for="emailComprador">E-mail: </label>
+                                                <input type="email" class="form-control flex-fill fuenteform" id="emailComprador" placeholder="email@ejemplo.com">
+                                            </div>
+                                            <div class="form-inline form-group col-12 d-flex">
+                                                <label class="col-auto fuenteform" for="telefonoComprador">Teléfono (Opcional): </label>
+                                                <input type="tel" class="form-control fuenteform flex-fill" id="telefonoComprador" placeholder="11 1234-5678">
+                                            </div>
+                                            <div class="col-12 form-group d-flex">
+                                                <label class="col-auto fuenteform" for="consultaComprador">Consulta:</label>
+                                                <textarea class="col form-control flex-fill" id="consultaComprador" rows="3"></textarea>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-dark">Enviar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -39,25 +94,19 @@
                         <a class="dropdown-item" href="/productos">Accesorios</a>
                     </div>
                 </div>
-
-                <!-- Nuevos productos -->
-                <ul class="nav nav-pills nav-fill d-flex justify-content-around align-items-center col col-lg-10 d-none d-lg-flex" >
-                    <li class="nav-item marginli letrali"><a class="nav-link colorNavegacion p-0" href="/productos">Nuevo Mujeres</a></li>
-                    <li class="nav-item marginli letrali"><a class="nav-link colorNavegacion p-0" href="/productos">Nuevo Hombres</a></li>
-                    <li class="nav-item marginli letrali"><a class="nav-link colorNavegacion p-0" href="/productos">Nuevo Nenes</a></li>
-                    <li class="nav-item marginli letrali"><a class="nav-link colorNavegacion p-0" href="/productos">Nuevo Accesorios</a></li>
-                    <li class="nav-item marginli letrali"><a class="nav-link colorNavegacion p-0" href="/cargaProducto">Vender</a></li>
-                </ul>
-            </div>
-
-            <!-- Opciones del usuario -->
-            <div class="row my-0 my-lg-2 mx-0">
+                
+                <!-- Opciones del usuario -->
                 <ul class="nav col col-lg-9 d-flex justify-content-around">
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/misCompras" title="Mis Compras"><img src="/img/icons/history.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"> Mis Compras</p></a></li>
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/favoritos" title="Favoritos"><img src="/img/icons/favorito.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Favoritos</p></a></li>
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/bolso" title="Tu Bolso"><img src="/img/icons/bag.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Tu Bolso</p></a></li>
+                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/cargaProducto" title="Vender"><img src="/img/icons/sell.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Vender</p></a></li>
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Usuario</p></a></li>
                 </ul>
+            </div>
+
+            <div class="row my-0 my-lg-2 mx-0">
+                
             </div>
         </div>
     </nav>
