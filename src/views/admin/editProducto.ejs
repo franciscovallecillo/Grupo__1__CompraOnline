@@ -3,11 +3,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head2.ejs') %>
+
+    <%- include('../partials/head.ejs') %>
+
 <body>
     
-</body>
+
+
 <%- include('../partials/primerDivGeneral.ejs') %>
+
+<div class="container-fluid">
+
+<hr id="separador">
+
 
         <form action="/misProductos/edit/guardar/<%= mostrarProducto.id%>?_method=PUT" method="POST" >
 
@@ -120,12 +128,17 @@
 
         </form>
 
+    </div>
 
+    <br>
 
+    <br>
+    
         <%- include('../partials/footer.ejs') %>
 
         <%- include('../partials/scriptBootstrap.ejs') %>
-    
+
+    </body>
     
 </html>
 

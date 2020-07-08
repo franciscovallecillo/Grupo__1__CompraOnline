@@ -9,7 +9,9 @@
 
 https://github.com/franciscovallecillo/Grupo__1__CompraOnline
 
+- Table de Gestion en Trello ::::: E-commerce Grupo 1
 
+https://trello.com/b/VZcFkHCJ/e-commerce-grupo-1
 
 
 2.	Definir la temática del Market Place 
