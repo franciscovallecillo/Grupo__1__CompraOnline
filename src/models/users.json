@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Fernando",
+    "apellido": "Fleck",
+    "email": "fernafleck@gmail.com",
+    "contraseña": "$2b$10$eJNHNhmOfYNMa88eNCKHk.Lk.Kot.K4mArfvzBFyRjIvv40nvdGu."
+  },
+  {
+    "id": 2,
+    "nombre": "fulano",
+    "apellido": "detal",
+    "email": "algo@gmail.com",
+    "contraseña": "$2b$10$nDM23r9qDxp5qLOciq2SQ.0CPwVa24pJKh9.Jtwoa/J6op6tR9wNG"
+  },
+  {
+    "id": 3,
+    "nombre": "qwe",
+    "apellido": "asd",
+    "email": "qwe@qwe.com",
+    "contraseña": "$2b$10$wCyITFgw0QhbV6Gkd.VMAOcP7a0Gmi85GFKOODy5/8cBynRWAPjA6"
+  }
+]
