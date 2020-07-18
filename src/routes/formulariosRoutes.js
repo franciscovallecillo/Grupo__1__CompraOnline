@@ -3,6 +3,7 @@ const router = express.Router();
 const formularioCarga = require("../controllers/formulariosController");
 const multer = require('multer');
 const path = require('path');
+const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -16,8 +17,8 @@ const upload= multer({ storage })
 
 // router.get('/', home.vistaPrincipal)
 
-router.get('/cargaProducto', formularioCarga.show);
-router.post('/cargaProducto/carga', upload.single('imagen'), formularioCarga.carga);
+router.get('/cargaProducto', logMiddleware,formularioCarga.show);
+router.post('/cargaProducto/carga',logMiddleware, upload.single('imagen'), formularioCarga.carga);
 
 
 

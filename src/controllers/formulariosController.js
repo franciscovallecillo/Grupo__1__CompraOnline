@@ -7,7 +7,10 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/pro
 
 const formularioCarga = {
     show:(req,res) => {
-        res.render(path.resolve(__dirname,"..","views","formularios", "cargaProducto")) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
+        let productos = "nada"
+        let nombreUsuario = req.session.nombre;
+        let productosUsuario = [productos,nombreUsuario]
+        res.render(path.resolve(__dirname,"..","views","formularios", "cargaProducto"),{productosUsuario}) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
     },
     carga:(req,res) => {
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')));

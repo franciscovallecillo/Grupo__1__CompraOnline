@@ -6,7 +6,9 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/pro
 const adminController = {
     listadoAdmin:function(req,res){
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')));
-        res.render(path.resolve(__dirname,"..","views","admin","misProductos"),{productos}) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
+        let nombreUsuario = req.session.nombre;
+        let productosUsuario = [productos,nombreUsuario]
+        res.render(path.resolve(__dirname,"..","views","admin","misProductos"),{productosUsuario}) // Otra forma de ir al archivo. path resolve, para no tener confilcto sea cual sea el sistema operativo.
     },
     detalleAdmin:function(req,res){
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')));

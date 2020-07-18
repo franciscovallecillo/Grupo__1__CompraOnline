@@ -2,6 +2,7 @@ const express = require('express');   // Modulos internos los importo sin barra.
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require("express-session")
 
 
 //Considerar que al enviar los datos desde el formulario los mismos lleguen al Servidor
@@ -9,6 +10,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(express.json());
 
+// Session
+app.use(session({secret: "1234"}));
 
 
 app.set('view engine','ejs')   // Le digo a la aplicación que usare el motor de plantillas de ejs. 

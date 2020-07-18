@@ -19,5 +19,47 @@
     "apellido": "asd",
     "email": "qwe@qwe.com",
     "contraseña": "$2b$10$wCyITFgw0QhbV6Gkd.VMAOcP7a0Gmi85GFKOODy5/8cBynRWAPjA6"
+  },
+  {
+    "id": 4,
+    "nombre": "Francisco",
+    "apellido": "Vallecillo",
+    "email": "fran_valle91@hotmail.com",
+    "contraseña": "hola"
+  },
+  {
+    "id": 5,
+    "nombre": "santiago",
+    "apellido": "rueda",
+    "email": "santiagorueda@msn.com",
+    "contraseña": "$2b$10$4noMNDTl/D1hhZaLGH32qOQeMgeFXG953nbay8LZ8Ll0mdGz6ML.O"
+  },
+  {
+    "id": 6,
+    "nombre": "agus",
+    "apellido": "perez",
+    "email": "agus@hotmail.com",
+    "contraseña": "$2b$10$vOBn.sAjavOd2XpGiChztus6kJBI6f.Dt9xM1n7SXWsq24osrDkOq"
+  },
+  {
+    "id": 7,
+    "nombre": "Fran",
+    "apellido": "Vallecillo",
+    "email": "fran@hotmail.com",
+    "contraseña": "$2b$10$sVpuLCvQFBx9zFeGCtsGQeF0lLuxU2zRj1s4Beq9RZYtGL9XX6oO6"
+  },
+  {
+    "id": 8,
+    "nombre": "pepe",
+    "apellido": "pepe",
+    "email": "pepe@hotmail.com",
+    "contraseña": "$2b$10$4RFtZtSClgckvVzwFiVQweHx9zTBdmmZweQOB9..Y46ldnz35hf/O"
+  },
+  {
+    "id": 9,
+    "nombre": "Tartas",
+    "apellido": "Vallecillo",
+    "email": "galuesol9@gmail.com",
+    "contraseña": "$2b$10$95Ntw9DgR9z.Nip7BSQK1u7z0hehI3VLC9cUGtxG3q5wE/bXzN31a"
   }
 ]

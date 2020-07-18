@@ -6,60 +6,43 @@ body{
     background: #FFEFBA;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
-
 .logo{
     width: 12rem;
     height: 9rem;
 background-color: #FFEFBA;  /* fallback for old browsers */;
 }
-
 .icono{
     width: 2rem;
 }
-
 .flota{
     float: left;
 }
-
-
-
 .padreFlotador{
     overflow: hidden;
     box-sizing: border-box;
 }
-
 .noFlotes{
     clear: both;
 }
-
 li{
     list-style: none;
     margin-left: 10px;
 }
-
 ul{
     padding: 0px;
 }
-
 .tamano{
     font-size: 14px;
 }
-
-
 #separador{
     border-bottom: solid 50px #CE543A ;
     
 }
-
-
 .TamanoImagen{
     width: 1497px;
     height: 354px
 }
-
-
 .ofertasEspeciales{
     text-align: center;
     margin-left: 35px;
@@ -74,12 +57,9 @@ ul{
     /* display:none;
     visibility: hidden; */
     }
-
-
 .colorNavegacion{
     color:black
 }
-
 /*.segmentoPadre{
     display: flex;
     flex-wrap: wrap;
@@ -88,14 +68,10 @@ ul{
     align-items: center;
     
 }*/
-
 .segmentoHijo{
     border: solid 1px #CE543A ;
     margin-left: 30px;
 }*/
-
-
-
 .select-css {
     display: block;
     font-size: 16px;
@@ -626,7 +602,9 @@ background-color: lightskyblue
     color: #CE543A ;
     margin-left: 280px;
 }
-
+.segmentoHijo:hover{
+    background-color: #CE543A;
+}
 
 @media (max-width: 992px) {
     .segmentoPadre{
