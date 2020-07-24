@@ -13,10 +13,12 @@ const adminController = {
     detalleAdmin:function(req,res){
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')));
         let productoId = req.params.id;
+        let nombreUsuario = req.session.nombre;
         for ( let i = 0; i < productos.length ; i++){
             if ( productoId == productos[i].id){
                 let mostrarProducto = productos[i];
-                res.render(path.resolve(__dirname,"..","views","admin","adminDetailProducto"),{mostrarProducto});
+                let productosUsuario = [mostrarProducto,nombreUsuario]
+                res.render(path.resolve(__dirname,"..","views","admin","adminDetailProducto"),{productosUsuario});
             }
         }
     
@@ -24,10 +26,12 @@ const adminController = {
     editAdmin:function(req,res){
         let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')));
         let productoId = req.params.id;
+        let nombreUsuario = req.session.nombre;
         for ( let i = 0; i < productos.length ; i++){
             if ( productoId == productos[i].id){
                 let mostrarProducto = productos[i];
-                res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{mostrarProducto});
+                let productosUsuario = [mostrarProducto,nombreUsuario]
+                res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{productosUsuario});
             }
         }
     },

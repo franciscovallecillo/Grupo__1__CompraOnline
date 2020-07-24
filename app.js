@@ -52,3 +52,7 @@ app.use(admin);
 
 console.log("hola")
                                                               
+
+
+// npm install --save mysql2
+// npm install -g sequelize sequelize-cli
