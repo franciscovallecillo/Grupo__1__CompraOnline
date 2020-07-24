@@ -61,5 +61,12 @@
     "apellido": "Vallecillo",
     "email": "galuesol9@gmail.com",
     "contraseña": "$2b$10$95Ntw9DgR9z.Nip7BSQK1u7z0hehI3VLC9cUGtxG3q5wE/bXzN31a"
+  },
+  {
+    "id": 10,
+    "nombre": "qwe",
+    "apellido": "qwe",
+    "email": "qwe@qwe.qweqwe",
+    "contraseña": "$2b$10$/miR1AHrNDMvwGmWyP7jCennRoGq7AEtaxTuiUOj.ZZawk/Oc51hG"
   }
 ]

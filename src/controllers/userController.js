@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require('fs');
 const bcrypt = require('bcrypt');
+const {check, validationResult, body} = require('express-validator');
+
 
 
 const controlador = {
@@ -23,27 +25,35 @@ const controlador = {
     },
 
     registro:(req,res)=>{
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
 
-        let idNuevo = usuarios.length+1;
+        let errors = validationResult(req);
 
-        let nuevoUsuario = {
-            id: idNuevo,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            contraseña: bcrypt.hashSync(req.body.password,10)
+        if (errors.isEmpty()){
+
+            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
+
+            let idNuevo = usuarios.length+1;
+
+            let nuevoUsuario = {
+                id: idNuevo,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                contraseña: bcrypt.hashSync(req.body.password,10)
+            }
+
+            usuarios.push(nuevoUsuario);
+
+            usuariosJson = JSON.stringify(usuarios,null,2);
+
+            fs.writeFileSync(path.resolve(__dirname, '../models/users.json'),usuariosJson);
+
+            let usuarioRegistrado = nuevoUsuario;
+
+            res.render(path.resolve(__dirname,"../views/user.ejs"), {usuarioRegistrado});
+        } else {
+            res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: errors.errors});
         }
-
-        usuarios.push(nuevoUsuario);
-
-        usuariosJson = JSON.stringify(usuarios,null,2);
-
-        fs.writeFileSync(path.resolve(__dirname, '../models/users.json'),usuariosJson);
-
-        let usuarioRegistrado = nuevoUsuario;
-
-        res.render(path.resolve(__dirname,"../views/user.ejs"), {usuarioRegistrado});
     },
     
     pageLogin: (req,res)=>{
