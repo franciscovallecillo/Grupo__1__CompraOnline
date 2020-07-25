@@ -12,20 +12,62 @@ const controlador = {
             console.log("Chequeando usuario "+i);
             console.log("ID que busco "+req.session.idUser);
             if (req.session.idUser == users[i].id){
-                let userDB = users[i];
-                console.log(userDB);
-                res.render(path.resolve(__dirname,"../views/user.ejs"), {userDB});
+                let productosUsuario = users[i];
+                console.log(productosUsuario);
+                res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
                 //console.log("No deberia imprimir");
             };
         }
         //res.render(path.resolve(__dirname,"../views/user.ejs"), {userDB});        
     },
 
-    profileEmpty: (req,res)=>{
-        let productos = "nada"
-        let nombreUsuario = req.session.nombre;
-        let productosUsuario = [productos,nombreUsuario]
-        res.render(path.resolve(__dirname,"../views/user2.ejs"),{productosUsuario})
+    profileUpdate: (req,res)=>{
+
+        let errors = validationResult(req);
+        
+        if (errors.isEmpty()){
+
+            let users = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
+
+            for (let i = 0; i < users.length; i++) {
+                if (req.session.idUser==users[i].id) {
+                    let pass = users[i].contraseña;
+                    users[i] = {
+                        id: req.session.idUser,
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.email,
+                        contraseña: pass,
+                        usuario: req.body.usuario,
+                        dni: req.body.dni,
+                        telefono: req.body.telefono,
+                        calle: req.body.calle,
+                        altura: req.body.altura,
+                        dpto: req.body.dpto,
+                        ciudad: req.body.ciudad,
+                        provincia: req.body.provincia,
+                        cp: req.body.cp,
+                        titularTarjeta: req.body.titularTarjeta,
+                        dniTitular: req.body.dniTitular,
+                        tarjeta: req.body.tarjeta,
+                        nroTarjeta: req.body.nroTarjeta,
+                        vencimiento: req.body.vencimiento
+                    }
+
+                    let productosUsuario = users[i];
+
+                    usuariosJson = JSON.stringify(users,null,2);
+
+                    fs.writeFileSync(path.resolve(__dirname, '../models/users.json'),usuariosJson);
+
+                    res.render(path.resolve(__dirname,"../views/updateSuccessful.ejs"), {productosUsuario});
+                }
+                
+            }
+
+        } else {
+            res.render(path.resolve(__dirname,"../views/user.ejs"), {errors: errors.errors});
+        }
     },
 
     formularioRegistro:(req,res)=>{
@@ -59,19 +101,16 @@ const controlador = {
 
             fs.writeFileSync(path.resolve(__dirname, '../models/users.json'),usuariosJson);
 
-            let usuarioRegistrado = nuevoUsuario;
+            let productosUsuario = nuevoUsuario;
 
-            res.render(path.resolve(__dirname,"../views/user.ejs"), {usuarioRegistrado});
+            res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
         } else {
             res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: errors.errors});
         }
     },
     
     pageLogin: (req,res)=>{
-        let productos = "nada"
-        let nombreUsuario = req.session.nombre;
-        let userDB = [productos,nombreUsuario]
-        res.render(path.resolve(__dirname,"../views/login.ejs"),{userDB});
+        res.render(path.resolve(__dirname,"../views/login.ejs"));
     },
 
     login: (req,res)=>{
@@ -90,30 +129,33 @@ const controlador = {
     },
     login2: (req,res)=>{
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
-        for (let i=0 ; i<usuarios.length ; i++){
-            console.log(usuarios[i].email)
-            if ( usuarios[i].email === req.body.email){
-                console.log("paso por acá");
-                
-                let check = bcrypt.compareSync(req.body.password,usuarios[i].contraseña);
-                console.log(check);
-                if ( check === true){
-                    console.log("te doy acceso a otra pagina");
-                    req.session.log = "si";
-                    req.session.nombre = usuarios[i].nombre;
-                    req.session.idUser = usuarios[i].id;
-                    res.redirect("/user");
-                } else {
-                    console.log("contraseña incorrecta");
+
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()){
+            for (let i=0 ; i<usuarios.length ; i++){
+                if ( usuarios[i].email === req.body.email){
+                    console.log("paso por acá");
+                    
+                    let check = bcrypt.compareSync(req.body.password,usuarios[i].contraseña);
+                    console.log(check);
+                    if ( check === true){
+                        console.log("te doy acceso a otra pagina");
+                        req.session.log = "si";
+                        req.session.nombre = usuarios[i].nombre;
+                        req.session.idUser = usuarios[i].id;
+                        res.redirect("/user");
+                    } else {
+                        console.log("contraseña incorrecta");
+                        res.redirect("/login");
+                    }
                 }
-
-            } else {
-                console.log("usuario no registrado")
-             
             }
-            break;
+            console.log("usuario no registrado");
+            res.redirect("/login");
+        } else {
+            res.render(path.resolve(__dirname,"../views/formularios/login.ejs"), {errors: errors.errors});
         }
-
     }
 }
 

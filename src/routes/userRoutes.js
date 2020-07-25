@@ -9,10 +9,13 @@ const fs = require('fs');
 
 
 router.get("/user", logMiddleware, userController.profile);
-router.get("/user2",logMiddleware, userController.profileEmpty);
-//router.post("/user", userController.profile);
+router.put("/user/:idUser", logMiddleware, [
+    check('nombre').isLength().withMessage('Completar Nombre'),
+    check('apellido').isLength().withMessage('Completar Apellido'),
+    check('email').isEmail().withMessage('Email invalido')
+], userController.profileUpdate);
 router.get("/altaUsuario",userController.formularioRegistro);
-router.post("/altaUsuario", logDBMiddleware, [
+router.post("/altaUsuario", logMiddleware, [
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido'),
@@ -35,7 +38,10 @@ router.post("/altaUsuario", logDBMiddleware, [
     }).withMessage('Contraseñas no coinciden')
 ], userController.registro);
 router.get("/login", userController.pageLogin);
-router.post("/login", userController.login2);
+router.post("/login", logDBMiddleware, [
+    check('email').isEmail().withMessage('Email invalido'),
+    check('password').isLength({min: 3}).withMessage('La contraseña debe tener 3 o mas caracteres')
+], userController.login2);
 // ver nano porque hay 2 login y que hace c/u, el que se llama /login2 que hice cumple el rol de un login tradicional
 
 

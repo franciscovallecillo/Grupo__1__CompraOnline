@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "nombre": "Fernando",
-    "apellido": "Fleck",
-    "email": "fernafleck@gmail.com",
-    "contraseña": "$2b$10$eJNHNhmOfYNMa88eNCKHk.Lk.Kot.K4mArfvzBFyRjIvv40nvdGu."
+    "nombre": "fulano",
+    "apellido": "detal",
+    "email": "algo@gmail.com",
+    "contraseña": "$2b$10$nDM23r9qDxp5qLOciq2SQ.0CPwVa24pJKh9.Jtwoa/J6op6tR9wNG"
   },
   {
     "id": 2,
@@ -68,5 +68,47 @@
     "apellido": "qwe",
     "email": "qwe@qwe.qweqwe",
     "contraseña": "$2b$10$/miR1AHrNDMvwGmWyP7jCennRoGq7AEtaxTuiUOj.ZZawk/Oc51hG"
+  },
+  {
+    "id": 11,
+    "nombre": "Fernando",
+    "apellido": "Fleck",
+    "email": "fernafleck@gmail.com",
+    "contraseña": "$2b$10$zTA.sCrE.HDqT9.0tOBXrejtST3wvGGEo8PPzOf9kI3Edr2ws4NjK",
+    "usuario": "fer",
+    "dni": "33212222",
+    "telefono": "1234324234",
+    "calle": "ertertre",
+    "altura": "",
+    "dpto": "",
+    "ciudad": "ertert",
+    "provincia": "qeer",
+    "cp": "1427",
+    "titularTarjeta": "ertert",
+    "dniTitular": "",
+    "tarjeta": "",
+    "nroTarjeta": "",
+    "vencimiento": ""
+  },
+  {
+    "id": 12,
+    "nombre": "Sara",
+    "apellido": "sara",
+    "email": "sara@gmail.com",
+    "contraseña": "$2b$10$DjOUDuJVei2yEyX34QEQG.zXPBfNthLq.RO3EyfWnG.kiXbymbmFG",
+    "usuario": "",
+    "dni": "",
+    "telefono": "",
+    "calle": "",
+    "altura": "",
+    "dpto": "",
+    "ciudad": "",
+    "provincia": "",
+    "cp": "",
+    "titularTarjeta": "",
+    "dniTitular": "",
+    "tarjeta": "",
+    "nroTarjeta": "",
+    "vencimiento": ""
   }
 ]
