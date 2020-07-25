@@ -103,11 +103,35 @@
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/bolso" title="Tu Bolso"><img src="/img/icons/bag.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Tu Bolso</p></a></li>
                     <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/misProductos" title="Vender"><img src="/img/icons/sell.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Vender</p></a></li>
                     
-                    <% if( productosUsuario[1] != undefined) { %>
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user2" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"><%= productosUsuario[1] %></p></a></li>
+                    <% if( userDB.id !== undefined) { %>
+                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"><%= userDB.nombre %></p></a></li>
                     <% } else { %>
-                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user2" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Usuario</p></a></li>
+                    <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Usuario</p></a></li>
                     <% } %>
+
+                    <!--<div class="col d-flex justify-content-end">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" title="¡Empezar!"><img src="/img/icons/on.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">¡Empezar!</p></a></button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">¡Empecemos!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="modal-footer justify-content-center row-cols-1">
+                                    <a type="button" class="btn bg-darkorange border-dark font-weight-bold" href="/altaUsuario">Registrarse</a>
+                                    <p class="d-flex justify-content-center">ó</p>
+                                    <a type="button" class="btn bg-darkorange border-dark font-weight-bold" href="/login">Iniciar Sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>-->
 
                 </ul>
             </div>

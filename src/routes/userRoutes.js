@@ -35,7 +35,7 @@ router.post("/altaUsuario", logDBMiddleware, [
     }).withMessage('Contraseñas no coinciden')
 ], userController.registro);
 router.get("/login", userController.pageLogin);
-router.post("/login", userController.login);
+router.post("/login", userController.login2);
 // ver nano porque hay 2 login y que hace c/u, el que se llama /login2 que hice cumple el rol de un login tradicional
 
 
