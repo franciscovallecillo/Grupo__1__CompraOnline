@@ -7,40 +7,54 @@
     <hr id="separador">
         
     <div class="container">
-        <form class="row" method="POST" action="/user/<%= productosUsuario.id %>?_method=PUT">
+        <form class="row" method="POST" enctype="multipart/form-data" action="/user/<%= productosUsuario.id %>?_method=PUT">
 
             <div class="form-group text-center col-12">
                 <h1 class="fuenteformtit">Tus Datos</h1>
             </div>
-
-            <!-- Datos de la cuenta -->
             <div class="form-group col-12">
               <h2 class="fuenteformsub">Datos de la Cuenta</h2>
             </div>
-            <div class="form-inline form-group col-12 col-md-6 d-flex">
-              <label class="col-auto" for="userName">Nombre de Usuario: </label>
-              <div class="input-group flex-fill">
-                <div class="input-group-prepend">
-                  <span class="input-group-text fuenteform" id="basic-addon1">@</span>
+            <div class="col-12 col-md-8 m-0 p-0">
+                <!-- Datos de la cuenta -->
+                
+                <div class="form-inline form-group col-12 d-flex">
+                  <label class="col-auto" for="userName">Nombre de Usuario: </label>
+                  <div class="input-group flex-fill">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text fuenteform" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control fuenteform" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="usuario" value="<%= productosUsuario.usuario %>">
+                  </div>
                 </div>
-                <input type="text" class="form-control fuenteform" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="usuario" value="<%= productosUsuario.usuario %>">
-              </div>
+                <div class="form-inline form-group col-12 d-flex">
+                  <label class="col-auto fuenteform" for="emailUser">E-mail: </label>
+                  <input type="email" class="form-control flex-fill fuenteform" id="emailUser" placeholder="email@ejemplo.com" name="email" value="<%= productosUsuario.email %>">
+                </div>
+                <div class="form-inline form-group d-flex col-12">
+                  <label for="changePassword" class="col-auto fuenteform">Cambiar Contraseña: </label>
+                  <input type="password" class="form-control fuenteform col-auto flex-fill" id="changePassword" name="password" value="***">
+                </div>
+                <div class="form-inline form-group d-flex col-12">
+                  <label for="repeatPassword" class="col-auto fuenteform">Reescribir Contraseña: </label>
+                  <input type="password" class="form-control fuenteform col-auto flex-fill" id="repeatPassword" name="password2" value="***">
+                </div>
+                <div class="form-inline form-group d-flex col-12">
+                  <label for="avatar" class="col-auto fuenteform">Insertar avatar: </label>
+                  <input type="file" class="mt-1 form-control-file fuenteform col-auto flex-fill col-md-6" id="avatar" name="avatar" value="<%= productosUsuario.avatar %>">
+                </div>
             </div>
-            <div class="form-inline form-group col-12 col-md-6 d-flex">
-              <label class="col-auto fuenteform" for="emailUser">E-mail: </label>
-              <input type="email" class="form-control flex-fill fuenteform" id="emailUser" placeholder="email@ejemplo.com" name="email" value="<%= productosUsuario.email %>">
+            <div class="d-flex align-items-center justify-content-center
+            col-12 col-md-4">
+            <% if( productosUsuario.avatar !=undefined){ %>
+              <img src="/img/avatar/<%= productosUsuario.avatar %>" class="rounded w-75" alt="...">
+            <% } else { %>
+              <img src="/img/avatar/avatarEmpty.jpg" class="rounded w-75" alt="...">
+            <% } %>
             </div>
-            <div class="form-inline form-group d-flex col-12 col-md-6">
-              <label for="changePassword" class="col-auto fuenteform">Cambiar Contraseña: </label>
-              <input type="password" class="form-control fuenteform col-auto flex-fill" id="changePassword" name="password" value="***">
-            </div>
-            <div class="form-inline form-group d-flex col-12 col-md-6">
-              <label for="repeatPassword" class="col-auto fuenteform">Reescribir Contraseña: </label>
-              <input type="password" class="form-control fuenteform col-auto flex-fill" id="repeatPassword" name="password2" value="***">
-            </div>
-            <div class="form-inline form-group d-flex ml-auto">
+            <!--<div class="form-inline form-group d-flex ml-auto">
               <button type="submit" class="btn btn-dark form-control fuenteform">Guardar</button>
-            </div>
+            </div>-->
          <!-- </form>-->
 
          <!-- <form class="row" method="POST" action="/user/<%= productosUsuario.id %>?_method=PUT">-->
@@ -90,16 +104,16 @@
                 <label class="col-4 fuenteform" for="inputZip">CP: </label>
                 <input type="text" class="form-control fuenteform col-8" id="inputZip" name="cp" value="<%= productosUsuario.cp %>">
               </div>
-              <div class="form-inline form-group d-flex ml-auto">
+              <!--<div class="form-inline form-group d-flex ml-auto">
                 <button type="submit" class="btn btn-dark fuenteform form-control">Guardar</button>
-              </div>
+              </div>-->
 
           <!--</form>-->
 
           <!--<form class="row" method="POST" action="/user/<%= productosUsuario.id %>?_method=PUT">-->
 
             <!-- Datos de las tarjetas -->
-            <div class="form-group col-12">
+            <div class="form-group col-12 mt-4">
               <h2 class="fuenteformsub">Tarjetas del Usuario</h2>
             </div>
             <div class="form-inline form-group col-12 col-md-6 d-flex">

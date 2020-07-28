@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
+const { log } = require("console");
 
 
 
@@ -23,9 +24,10 @@ const controlador = {
 
     profileUpdate: (req,res)=>{
 
-        let errors = validationResult(req);
+        //let errors = validationResult(req);
         
-        if (errors.isEmpty()){
+        //if (errors.isEmpty()){
+            console.log(req);
 
             let users = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
 
@@ -38,6 +40,7 @@ const controlador = {
                         apellido: req.body.apellido,
                         email: req.body.email,
                         contraseña: pass,
+                        avatar: req.files[0].filename,
                         usuario: req.body.usuario,
                         dni: req.body.dni,
                         telefono: req.body.telefono,
@@ -65,9 +68,9 @@ const controlador = {
                 
             }
 
-        } else {
-            res.render(path.resolve(__dirname,"../views/user.ejs"), {errors: errors.errors});
-        }
+        //} else {
+            //res.render(path.resolve(__dirname,"../views/user.ejs"), {errors: errors.errors});
+        //}
     },
 
     formularioRegistro:(req,res)=>{

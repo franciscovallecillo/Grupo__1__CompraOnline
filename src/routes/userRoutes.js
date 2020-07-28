@@ -6,14 +6,26 @@ const userController = require(path.resolve(__dirname,"../controllers/userContro
 const logDBMiddleware = require('../middlewares/logDBMiddleware');
 const {check, validationResult, body} = require('express-validator');
 const fs = require('fs');
+const multer = require('multer');
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/img/avatar');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+   
+var upload = multer({ storage: storage });
 
 
 router.get("/user", logMiddleware, userController.profile);
-router.put("/user/:idUser", logMiddleware, [
+router.put("/user/:idUser", logMiddleware, /*[
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido')
-], userController.profileUpdate);
+],*/upload.any() , userController.profileUpdate);
 router.get("/altaUsuario",userController.formularioRegistro);
 router.post("/altaUsuario", logMiddleware, [
     check('nombre').isLength().withMessage('Completar Nombre'),
