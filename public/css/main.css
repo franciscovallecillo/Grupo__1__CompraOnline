@@ -25,6 +25,9 @@ background-color: #FFEFBA;  /* fallback for old browsers */;
 .noFlotes{
     clear: both;
 }
+.links{
+    color: #B5193A;
+}
 li{
     list-style: none;
     margin-left: 10px;
@@ -40,8 +43,10 @@ ul{
     
 }
 .TamanoImagen{
-    width: 1497px;
-    height: 354px
+    height: 80vh;
+}
+.jumbo{
+    background-color: #B5193A;
 }
 .ofertasEspeciales{
     text-align: center;
@@ -328,7 +333,7 @@ h5 {
     .botones{
         left: 600px;
     }
-    .descripcionProductoCarrito
+    .descripcionProductoCarrito{
         height: 100vh;
     }
     .descripcion{
@@ -627,6 +632,9 @@ background-color: lightskyblue
         width: 100%;
         margin-left: 50px;
     }
+    .TamanoImagen{
+        height: 60vh;
+    }
     .primeraColumna{
         margin-top: 0px;
         float: left;
@@ -651,9 +659,11 @@ background-color: lightskyblue
     .filtro{
         margin-left: 30px;
     }
-    .paginas{
 
+    .TamanoImagen{
+        height: 40vh;
     }
+    
     .numeroPagina{
         display: none;
         margin-right: 1000px;
