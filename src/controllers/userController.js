@@ -3,6 +3,7 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
 const { log } = require("console");
+const db = require('../database/models');
 
 
 
@@ -19,7 +20,10 @@ const controlador = {
                 //console.log("No deberia imprimir");
             };
         }
-        //res.render(path.resolve(__dirname,"../views/user.ejs"), {userDB});        
+        //res.render(path.resolve(__dirname,"../views/user.ejs"), {userDB});
+
+        //Base de Datos
+        db.user
     },
 
     profileUpdate: (req,res)=>{
@@ -82,7 +86,20 @@ const controlador = {
 
     registro:(req,res)=>{
 
-        let errors = validationResult(req);
+        //DB
+
+        db.Users.create({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: req.body.password
+        });
+
+        res.redirect("/home");
+
+        //JSON
+
+        /*let errors = validationResult(req);
 
         if (errors.isEmpty()){
 
@@ -109,7 +126,7 @@ const controlador = {
             res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
         } else {
             res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: errors.errors});
-        }
+        }*/
     },
     
     pageLogin: (req,res)=>{
@@ -147,7 +164,7 @@ const controlador = {
                         req.session.log = "si";
                         req.session.nombre = usuarios[i].nombre;
                         req.session.idUser = usuarios[i].id;
-                        res.redirect("/user");
+                        res.redirect("/user/:idUser");
                     } else {
                         console.log("contraseña incorrecta");
                         res.redirect("/login");

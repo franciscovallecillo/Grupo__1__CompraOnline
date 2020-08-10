@@ -20,19 +20,19 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-router.get("/user", logMiddleware, userController.profile);
+router.get("/user/:idUser", logMiddleware, userController.profile);
 router.put("/user/:idUser", logMiddleware, /*[
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido')
 ],*/upload.any() , userController.profileUpdate);
 router.get("/altaUsuario",userController.formularioRegistro);
-router.post("/altaUsuario", logMiddleware, [
+router.post("/altaUsuario",  [
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido'),
     check('password').isLength({min: 3}).withMessage('La contraseña debe tener 3 o mas caracteres'),
-    check('password2').isLength({min: 3}).withMessage('La contraseña debe tener 3 o mas caracteres'),
+    check('password2').isLength({min: 3}).withMessage('La contraseña debe tener 3 o mas caracteres'),/*
     body('email').custom(function(value){
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
         for (let i = 0; i < usuarios.length; i++) {
@@ -41,7 +41,7 @@ router.post("/altaUsuario", logMiddleware, [
             }
         }
         return true;
-    }).withMessage('Usuario ya existente'),
+    }).withMessage('Usuario ya existente'),*/
     body('password2').custom(function(value, {req}){
         if (value !== req.body.password){
             return false;
