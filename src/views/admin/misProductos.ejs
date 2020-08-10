@@ -39,11 +39,11 @@
     <tbody>
         <% productosUsuario[0].forEach(producto => { %>
             <tr>
-                <td><%= producto.id %> </td>
+                <td><%= producto.product_id %> </td>
                 <td><%= producto.marca%> </td>
-                <td><a href="/misProductos/detail/<%= producto.id%>"><ion-icon name="eye-outline"></ion-icon></a></td>
-                <td><a href="/misProductos/edit/<%= producto.id%>"><ion-icon name="create-outline"></ion-icon></a></td>
-                <td><a href="/misProductos/delete/<%= producto.id%>?_method=DELETE"><ion-icon name="trash-outline"></ion-icon></a></td>
+                <td><a href="/misProductos/detail/<%= producto.product_id%>"><ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/misProductos/edit/<%= producto.product_id%>"><ion-icon name="create-outline"></ion-icon></a></td>
+                <td><a href="/misProductos/delete/<%= producto.product_id%>?_method=DELETE"><ion-icon name="trash-outline"></ion-icon></a></td>
             </tr>
         <% }) ; %>
         
