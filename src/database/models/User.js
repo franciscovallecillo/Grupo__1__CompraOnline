@@ -7,19 +7,20 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nombre: {type: dataTypes.STRING},
-        apellido: {type: dataTypes.STRING},
-        email: {type: dataTypes.STRING},
-        password: {type: dataTypes.STRING},
-        avatar: {type: dataTypes.STRING},
-        dni: {type: dataTypes.INTEGER},
-        phone: {type: dataTypes.INTEGER},
-        calle: {type: dataTypes.INTEGER},
-        altura:{type: dataTypes.INTEGER},
-        apartment: {type: dataTypes.STRING},
-        ciudad: {type: dataTypes.STRING},
-        provincia: {type: dataTypes.STRING},
-        postalcode: {type: dataTypes.INTEGER}
+        nombre: dataTypes.STRING,
+        apellido: dataTypes.STRING,
+        email: dataTypes.STRING,
+        password: dataTypes.STRING,
+        usuario: dataTypes.STRING,
+        avatar: dataTypes.STRING,
+        dni: dataTypes.INTEGER,
+        telefono: dataTypes.INTEGER,
+        calle: dataTypes.INTEGER,
+        altura: dataTypes.INTEGER,
+        departamento: dataTypes.STRING,
+        ciudad: dataTypes.STRING,
+        provincia: dataTypes.STRING,
+        cp: dataTypes.INTEGER
     };
     let config = {
         tableName: "users",

@@ -3,13 +3,24 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {check, validationResult, body} = require('express-validator');
 const { log } = require("console");
-const db = require('../database/models');
+const {Users} = require('../database/models');
 
 
 
 const controlador = {
     profile: (req,res)=>{
-        let users = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
+
+        //DB
+
+        Users.findByPk(req.session.idUser)
+        .then((productosUsuario)=>{
+            console.log('VARIABLE '+productosUsuario.dataValues.nombre);
+            res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
+        }).catch(error => console.log(error));
+
+        //JSON
+
+        /*let users = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
         for ( let i = 0; i < users.length ; i++){
             console.log("Chequeando usuario "+i);
             console.log("ID que busco "+req.session.idUser);
@@ -19,19 +30,48 @@ const controlador = {
                 res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
                 //console.log("No deberia imprimir");
             };
-        }
+        }*/
         //res.render(path.resolve(__dirname,"../views/user.ejs"), {userDB});
-
-        //Base de Datos
-        db.user
     },
 
     profileUpdate: (req,res)=>{
 
+        //DB
+
+        Users.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            avatar: req.files ? req.files[0].filename : 'avatarEmpty.jpg',
+            usuario: req.body.usuario,
+            dni: req.body.dni,
+            telefono: req.body.telefono,
+            calle: req.body.calle,
+            altura: req.body.altura,
+            dpto: req.body.dpto,
+            ciudad: req.body.ciudad,
+            provincia: req.body.provincia,
+            cp: req.body.cp,
+            titularTarjeta: req.body.titularTarjeta,
+            dniTitular: req.body.dniTitular,
+            tarjeta: req.body.tarjeta,
+            nroTarjeta: req.body.nroTarjeta,
+            vencimiento: req.body.vencimiento
+        },
+        {
+            where: {
+                id: req.session.idUser
+            }
+        });
+        
+        res.redirect('/user/'+req.params.id);
+
+        //JSON
+
         //let errors = validationResult(req);
         
         //if (errors.isEmpty()){
-            console.log(req);
+            /*console.log(req);
 
             let users = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
 
@@ -70,7 +110,7 @@ const controlador = {
                     res.render(path.resolve(__dirname,"../views/updateSuccessful.ejs"), {productosUsuario});
                 }
                 
-            }
+            }*/
 
         //} else {
             //res.render(path.resolve(__dirname,"../views/user.ejs"), {errors: errors.errors});
@@ -78,9 +118,9 @@ const controlador = {
     },
 
     formularioRegistro:(req,res)=>{
-        let productos = "nada"
+        let productos = "nada";
         let nombreUsuario = req.session.nombre;
-        let productosUsuario = [productos,nombreUsuario]
+        let productosUsuario = [productos,nombreUsuario];
         res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"),{productosUsuario});
     },
 
@@ -88,14 +128,35 @@ const controlador = {
 
         //DB
 
-        db.Users.create({
+        Users.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then((resultado)=>{
+            if(resultado==null){
+                Users.create({
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password,10)
+                }).then(
+                    res.redirect("/login")
+                ).catch(error => console.log(error));
+            }else{
+                res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: resultado.email+' ya existe'});
+            }
+            //console.log("SOY EL RESULTADO "+resultado.email+" HASTA ACA");
+        }).catch(error => console.log(error));
+
+        /*Users.create({
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            password: req.body.password
-        });
+            password: bcrypt.hashSync(req.body.password,10)
+        }).then(
+            res.redirect("/login")
+        ).catch(error => console.log(error));*/
 
-        res.redirect("/home");
 
         //JSON
 
@@ -133,7 +194,7 @@ const controlador = {
         res.render(path.resolve(__dirname,"../views/login.ejs"));
     },
 
-    login: (req,res)=>{
+    /*login: (req,res)=>{
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
 
         for ( let i = 0; i < usuarios.length ; i++){
@@ -146,9 +207,32 @@ const controlador = {
                 console.log("Usuario no encontrado");
             }
         }
-    },
-    login2: (req,res)=>{
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
+    },*/
+
+    login: (req,res)=>{
+        
+        //DB
+
+        Users.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then((resultado)=>{
+            if(resultado==null){
+                res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: "E-mail inexistente. ¡Podes registrarte aqui!"});
+            }else if(bcrypt.compareSync(req.body.password, resultado.password)){
+                req.session.log = "si";
+                req.session.nombre = resultado.nombre;
+                req.session.idUser = resultado.id;
+                res.redirect("/user/"+resultado.id);
+            } else {
+                res.render(path.resolve(__dirname,"../views/login.ejs"), {errors: "Contraseña invalida"});
+            }
+        }).catch(error => console.log(error));
+
+        //JSON
+
+        /*let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/users.json'), {encoding: 'utf-8'}));
 
         let errors = validationResult(req);
 
@@ -175,7 +259,35 @@ const controlador = {
             res.redirect("/login");
         } else {
             res.render(path.resolve(__dirname,"../views/formularios/login.ejs"), {errors: errors.errors});
-        }
+        }*/
+    },
+
+    logout: (req,res)=>{
+        req.session.log = "no";
+        req.session.nombre = null;
+        req.session.idUser = null;
+        res.redirect("/home");
+    },
+
+    deletePage: (req,res)=>{
+        let productosUsuario = {
+            id: req.session.idUser,
+            nombre: req.session.nombre
+        };
+        res.render(path.resolve(__dirname,"../views/delete.ejs"), {productosUsuario});
+    },
+
+    delete: (req,res)=>{
+        Users.destroy({
+            where: {
+                id: req.session.idUser
+            }
+        });
+
+        req.session.idUser = undefined;
+        req.session.log = "no";
+
+        res.redirect('/home');
     }
 }
 

@@ -17,23 +17,23 @@
 <hr id="separador">
 
 
-        <form action="/misProductos/edit/guardar/<%= productosUsuario[0].product_id%>?_method=PUT" method="POST" >
+        <form action="/misProductos/edit/guardar/<%= productosUsuario.detalleProducto.product_id%>?_method=PUT" method="POST" >
 
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                 <label for="validationServer01">Marca (*)</label>
-                <input name="marca" type="text" class="form-control is-valid" id="validationServer01" placeholder="Marca" required="required" value="<%= productosUsuario[0].marca%>">
+                <input name="marca" type="text" class="form-control is-valid" id="validationServer01" placeholder="Marca" required="required" value="<%= productosUsuario.detalleProducto.marca%>">
                 </div>
                 <div class="col-md-6 mb-3">
                 <label for="validationServer02">Modelo</label>
-                <input name="modelo" type="text" class="form-control is-valid" id="validationServer02" placeholder="Modelo" value="<%= productosUsuario[0].modelo%>" required>
+                <input name="modelo" type="text" class="form-control is-valid" id="validationServer02" placeholder="Modelo" value="<%= productosUsuario.detalleProducto.modelo%>" required>
                 </div>
             </div>
 
             <div class="form-row">
             <div class="col-md-6 mb-3">
                 <label for="validationServer05">Categoria (*)</label>
-                <select name="producto" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario[0].producto%>">
+                <select name="producto" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.producto%>">
                     <option selected disabled value="">Categoria</option>
                     <option>Mujer</option>
                     <option>Hombre</option>
@@ -44,7 +44,7 @@
             <div class="col-md-3 mb-3">
                 <label for="validationServer04">Temporada (*)</label>
                 <select name="temporada" class="custom-select is-valid" id="validationServer04" required="required">
-                <option selected disabled  value="<%= productosUsuario[0].temporada%>">Temporada</option>
+                <option selected disabled  value="<%= productosUsuario.detalleProducto.temporada%>">Temporada</option>
                 <option>Invierno</option>
                 <option>Verano</option>
                 <option>Otoño</option>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="validationServer05">Genero (*)</label>
-                <select name="genero" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario[0].genero%>">
+                <select name="genero" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.genero%>">
                     <option selected disabled value="">Genero</option>
                     <option>Femenino</option>
                     <option>Masculino</option>
@@ -64,7 +64,7 @@
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Talle (*)</label>
-                    <select name="talle" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario[0].talle%>">
+                    <select name="talle" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.talle%>">
                         <option selected disabled value="">Talle</option>
                         <option>L</option>
                         <option>M</option>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Color (*)</label>
-                    <select name="color" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario[0].color%>">
+                    <select name="color" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.color%>">
                         <option selected disabled value="">Color</option>
                         <option>Amarillo</option>
                         <option>Rojo</option>
@@ -82,32 +82,32 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Precio (*)</label>
-                    <input name="precio" type="number" class="form-control is-valid" id="validationServer02" placeholder="Precio" required="required" value="<%= productosUsuario[0].precio%>">
+                    <input name="precio" type="number" class="form-control is-valid" id="validationServer02" placeholder="Precio" required="required" value="<%= productosUsuario.detalleProducto.precio%>">
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Cantidad (*)</label>
-                    <input name="cantidad" type="number" class="form-control is-valid" id="validationServer02" placeholder="Cantidad" required="required" value="<%= productosUsuario[0].cantidad%>">
+                    <input name="cantidad" type="number" class="form-control is-valid" id="validationServer02" placeholder="Cantidad" required="required" value="<%= productosUsuario.detalleProducto.cantidad%>">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-12">
                 <label for="validationServer01">Resumen (*)</label>
-                <input name="resumen" type="text" class="form-control is-valid" id="validationServer01" placeholder="Resumen" required="required" value="<%= productosUsuario[0].resumen%>">
+                <input name="resumen" type="text" class="form-control is-valid" id="validationServer01" placeholder="Resumen" required="required" value="<%= productosUsuario.detalleProducto.resumen%>">
                 </div>
             </div>
             <br>
             <div class="form-row">
                 <div class="col-12">
                 <label for="validationServer01">Descripcion</label>
-                <input name="descripcion" type="text" class="form-control is-valid" id="validationServer01" placeholder="Descripcion" value="<%= productosUsuario[0].descripcion%>">
+                <input name="descripcion" type="text" class="form-control is-valid" id="validationServer01" placeholder="Descripcion" value="<%= productosUsuario.detalleProducto.descripcion%>">
                 </div>
             </div>
             <br>
 
             <div class="form-row">
             <label for="validationServer01">Carga Imagen</label>
-            <input name="imagen" class="" type="file" placeholder="seleccionar imagen" value="<%= productosUsuario[0].imagen%>">
+            <input name="imagen" class="" type="file" placeholder="seleccionar imagen" value="<%= productosUsuario.detalleProducto.imagen%>">
             </div>
             <br>
 

@@ -24,14 +24,8 @@
                 <div class="col-8 mx-auto bg-light pt-2 ">
                     <div class="signup-form">
                         <% if (typeof errors != 'undefined') { %>
-                            <p style="color: red;">¡ERROR!</p>
-                            <ul>
-                                <% for (let i = 0; i<errors.length; i++) { %>
-                                    <li>
-                                        <%= errors[i].msg %>
-                                    </li>
-                                <% } %>
-                            </ul>
+                            <p class='text-light bg-danger text-center'>¡ERROR!</p>
+                            <p class='text-danger text-center'><%= errors %></p>
                         <% } %>
                         <form class="row" action="/altaUsuario" method="post">
                             <div class="form-group col-12">
@@ -50,7 +44,7 @@
                                 <input type="password" class="form-control" name="password2" placeholder="Confirmar contraseña" >
                             </div>
                             <div class="form-inline form-group d-flex ml-auto mr-4">
-                                <button type="submit" class="btn btn-primary fuenteform">Crear Cuenta</button>
+                                <button type="submit" class="btn btn-dark fuenteform">Crear Cuenta</button>
                             </div>
                         </form>
                     </div>

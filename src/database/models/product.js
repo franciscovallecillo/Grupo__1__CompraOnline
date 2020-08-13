@@ -22,12 +22,12 @@ module.exports = function (sequelize, dataTypes ) {
     };
     
     // Esto no hace falta si a la tabla le pongo el updateAd,deleteAd,creatAd y se respeta el nombre de la tabla
-    /*let config = {
-        tableName: 'Producto',
+    let config = {
+        tableName: 'products',
         timestamps: false
-    };*/
+    };
 
-    const Product = sequelize.define(alias, cols)
+    const Product = sequelize.define(alias, cols, config)
     Product.associate = function(models) {
         Product.belongsTo(
             models.Users,

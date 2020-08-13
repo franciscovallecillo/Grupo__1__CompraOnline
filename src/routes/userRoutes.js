@@ -7,6 +7,8 @@ const logDBMiddleware = require('../middlewares/logDBMiddleware');
 const {check, validationResult, body} = require('express-validator');
 const fs = require('fs');
 const multer = require('multer');
+//const {Users} = require('../database/models');
+
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -20,12 +22,14 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-router.get("/user/:idUser", logMiddleware, userController.profile);
-router.put("/user/:idUser", logMiddleware, /*[
+router.get("/user/:id", logMiddleware, userController.profile);
+router.put("/user/:id", logMiddleware, /*[
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido')
 ],*/upload.any() , userController.profileUpdate);
+router.get("/delete", logMiddleware, userController.deletePage);
+router.delete("/delete", logMiddleware, userController.delete);
 router.get("/altaUsuario",userController.formularioRegistro);
 router.post("/altaUsuario",  [
     check('nombre').isLength().withMessage('Completar Nombre'),
@@ -53,11 +57,11 @@ router.get("/login", userController.pageLogin);
 router.post("/login", logDBMiddleware, [
     check('email').isEmail().withMessage('Email invalido'),
     check('password').isLength({min: 3}).withMessage('La contraseña debe tener 3 o mas caracteres')
-], userController.login2);
+], userController.login);
 // ver nano porque hay 2 login y que hace c/u, el que se llama /login2 que hice cumple el rol de un login tradicional
+router.get("/cerrar", userController.logout);
 
 
-
-router.post("/login2", userController.login2);
+//router.post("/login2", userController.login2);
 
 module.exports = router;

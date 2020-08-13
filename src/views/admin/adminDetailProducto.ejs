@@ -11,19 +11,19 @@
             <div class="col-12">
                 <div class="card">
                     <ul class="list-group">
-                        <li class="list-group-item">Marca: <%= productosUsuario[0].marca%></li>
-                        <li class="list-group-item">Modelo: <%= productosUsuario[0].modelo%></li>
-                        <li class="list-group-item">Producto: <%= productosUsuario[0].producto%></li>
-                        <li class="list-group-item">Temporada: <%= productosUsuario[0].temporada%></li>
-                        <li class="list-group-item">Genero: <%= productosUsuario[0].genero%></li>
-                        <li class="list-group-item">Talle: <%= productosUsuario[0].talle%></li>
-                        <li class="list-group-item">Color: <%= productosUsuario[0].color%></li>
-                        <li class="list-group-item">Precio: <%= productosUsuario[0].precio%></li>
-                        <li class="list-group-item">Cantidad: <%= productosUsuario[0].cantidad%></li>
-                        <li class="list-group-item">Resumen: <%= productosUsuario[0].resumen%></li>
-                        <li class="list-group-item">Descripcion: <%= productosUsuario[0].descripcion%></li>
-                        <li class="list-group-item ">Imagen: <img class="img-thumbnail" src="/imagenesProdCargados/<%= productosUsuario[0].imagen%>" alt=""></li>
-                        <li class="list-group-item">Aceptacion: <%= productosUsuario[0].aceptacion%></li>
+                        <li class="list-group-item">Marca: <%= productosUsuario.detalleProducto.marca%></li>
+                        <li class="list-group-item">Modelo: <%= productosUsuario.detalleProducto.modelo%></li>
+                        <li class="list-group-item">Producto: <%= productosUsuario.detalleProducto.producto%></li>
+                        <li class="list-group-item">Temporada: <%= productosUsuario.detalleProducto.temporada%></li>
+                        <li class="list-group-item">Genero: <%= productosUsuario.detalleProducto.genero%></li>
+                        <li class="list-group-item">Talle: <%= productosUsuario.detalleProducto.talle%></li>
+                        <li class="list-group-item">Color: <%= productosUsuario.detalleProducto.color%></li>
+                        <li class="list-group-item">Precio: <%= productosUsuario.detalleProducto.precio%></li>
+                        <li class="list-group-item">Cantidad: <%= productosUsuario.detalleProducto.cantidad%></li>
+                        <li class="list-group-item">Resumen: <%= productosUsuario.detalleProducto.resumen%></li>
+                        <li class="list-group-item">Descripcion: <%= productosUsuario.detalleProducto.descripcion%></li>
+                        <li class="list-group-item ">Imagen: <img class="img-thumbnail" src="/imagenesProdCargados/<%= productosUsuario.detalleProducto.imagen%>" alt=""></li>
+                        <li class="list-group-item">Aceptacion: <%= productosUsuario.detalleProducto.aceptacion%></li>
                     </ul>
                 
                     <a class="btn btn-danger" href="/misProductos"><h4 class="text-center">Volver</h4></a>

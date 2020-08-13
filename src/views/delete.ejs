@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <%- include('./partials/primerDivGeneral.ejs') %>
+
+    <hr id="separador">
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="TuBolso bg-danger text-light">¿¡¿¡¿¡Estás seguro de que queres eliminar tu perfil!?!?!?</h1>
+            <h2 class="TuBolso bg-warning">Una vez eliminado no podras recuperarlo</h2>
+            <form class="row" method="POST" enctype="multipart/form-data" action="/delete?_method=DELETE">
+                <button type="submit" class="btn btn-danger fuenteform form-control">Eliminar definitivamente</button>
+            </form>
+        </div>
+    </div>
+  
+  <%- include('./partials/footer.ejs') %>
+  
+  <%- include('./partials/scriptBootstrap.ejs') %>
+
+
+</body>
+
+
+</html>

@@ -2,9 +2,10 @@ const path = require("path");
 
 const controlador = {
     favoritos: (req,res)=>{
-        let productos = "nada"
-        let nombreUsuario = req.session.nombre;
-        let productosUsuario = [productos,nombreUsuario]
+        let productosUsuario = {
+            id: req.session.idUser,
+            nombre: req.session.nombre
+        };
         res.render(path.resolve(__dirname,"../views/favoritos.ejs"),{productosUsuario});
     }
 };

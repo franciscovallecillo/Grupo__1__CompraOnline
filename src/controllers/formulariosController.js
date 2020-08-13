@@ -33,7 +33,7 @@ const formularioCarga = {
             cantidad: req.body.cantidad,
             resumen: req.body.resumen,
             descripcion: req.body.descripcion,
-            imagen: req.file ? req.file.filename : "",
+            imagen: req.files ? req.files[0].filename : "",
         })
      
         res.redirect('/cargaProducto');

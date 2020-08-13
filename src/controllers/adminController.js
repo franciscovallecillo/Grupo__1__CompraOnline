@@ -13,13 +13,16 @@ const {Product} = require("../database/models");
 
 const adminController = {               // OK
     listadoAdmin:function(req,res){
-        let nombreUsuario = req.session.nombre;
 
         Product
         .findAll()
         .then(productos =>{
             //return res.send(platos)
-            let productosUsuario = [productos,nombreUsuario]
+            let productosUsuario = {
+                productos: productos,
+                nombre: req.session.nombre,
+                id: req.session.idUser
+            };
             console.log(productos);
             res.render(path.resolve(__dirname , '..','views','admin','misProductos') , {productosUsuario});
         })           
@@ -29,11 +32,13 @@ const adminController = {               // OK
 
     detalleAdmin:function(req,res){        // OK
         let productoId = req.params.id;
-        let nombreUsuario = req.session.nombre;
         Product 
         .findByPk(productoId)
         .then(detalleProducto =>{
-            let productosUsuario = [detalleProducto,nombreUsuario]
+            let productosUsuario = {
+                detalleProducto: detalleProducto,
+                nombre: req.session.nombre
+            };
             res.render(path.resolve(__dirname,"..","views","admin","adminDetailProducto"),{productosUsuario});
         })
 
@@ -42,11 +47,13 @@ const adminController = {               // OK
 
     editAdmin:function(req,res){            // OK
     let productoId = req.params.id;
-    let nombreUsuario = req.session.nombre;
     Product 
     .findByPk(productoId)
     .then(detalleProducto =>{
-        let productosUsuario = [detalleProducto,nombreUsuario]
+        let productosUsuario = {
+            detalleProducto: detalleProducto,
+            nombre: req.session.nombre
+        };
         res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{productosUsuario});
     })
 
@@ -72,7 +79,7 @@ const adminController = {               // OK
             cantidad: req.body.cantidad,
             resumen: req.body.resumen,
             descripcion: req.body.descripcion,
-            imagen: req.file ? req.file.filename : "",
+            imagen: req.files ? req.files[0].filename : "",
         },{
             where:{
                 product_id: idNumero
