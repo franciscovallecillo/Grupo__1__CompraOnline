@@ -26,7 +26,13 @@
         <br>
         <br>
 
-        <form action="/cargaProducto/carga" method="POST" enctype="multipart/form-data">
+        <div class='text-light bg-danger text-center'>
+          <ul id="erroresJs" class="erroresLogin">
+                          
+          </ul>
+        </div>
+
+        <form id="formProductoJs" action="/cargaProducto/carga" method="POST" enctype="multipart/form-data">
              <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationServer01">Marca (*)</label>
