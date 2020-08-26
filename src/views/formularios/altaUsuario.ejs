@@ -27,7 +27,18 @@
                             <p class='text-light bg-danger text-center'>¡ERROR!</p>
                             <p class='text-danger text-center'><%= errors %></p>
                         <% } %>
-                        <form class="row" action="/altaUsuario" method="post">
+
+
+                        
+                        <!--Aquí muestro los errores del lado del Js-Front -->
+                        <div class='text-light bg-danger text-center'>
+                            <ul id="erroresJs" class="erroresAltaUsuario">
+                    
+                            </ul>
+                        </div>
+
+
+                        <form class="row" id="formulario"  action="/altaUsuario" method="post">
                             <div class="form-group col-12">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre" >
                             </div>
@@ -64,6 +75,7 @@
 
 </div>
 
+<script src="/js/registro.js"></script>
 <%- include('../partials/footer.ejs') %>
 
 <%- include('../partials/scriptBootstrap.ejs') %>

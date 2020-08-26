@@ -36,18 +36,18 @@
              <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationServer01">Marca (*)</label>
-                  <input name="marca" type="text" class="form-control is-valid" id="validationServer01" placeholder="Marca" required="required">
+                  <input name="marca" type="text" class="form-control" id="validationServer01" placeholder="Marca">
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="validationServer02">Modelo</label>
-                  <input name="modelo" type="text" class="form-control is-valid" id="validationServer02" placeholder="Modelo" required>
+                  <input name="modelo" type="text" class="form-control" id="validationServer02" placeholder="Modelo">
                 </div>
               </div>
 
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationServer05">Categoria (*)</label>
-                <select name="categoria" class="custom-select is-valid" id="validationServer04" required="required">
+                <select name="categoria" class="custom-select" id="validationServer04">
                     <option selected disabled value="">Categoria</option>
                     <option>Mujer</option>
                     <option>Hombre</option>
@@ -57,7 +57,7 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="validationServer04">Temporada (*)</label>
-                <select name="temporada" class="custom-select is-valid" id="validationServer04" required="required">
+                <select name="temporada" class="custom-select" id="validationServer04">
                   <option selected disabled value="">Temporada</option>
                   <option>Invierno</option>
                   <option>Verano</option>
@@ -67,7 +67,7 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="validationServer05">Genero (*)</label>
-                <select name="genero" class="custom-select is-valid" id="validationServer04" required="required">
+                <select name="genero" class="custom-select" id="validationServer04">
                     <option selected disabled value="">Genero</option>
                     <option>Femenino</option>
                     <option>Masculino</option>
@@ -78,7 +78,7 @@
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Talle (*)</label>
-                    <select name="talle" class="custom-select is-valid" id="validationServer04" required="required">
+                    <select name="talle" class="custom-select" id="validationServer04">
                         <option selected disabled value="">Talle</option>
                         <option>L</option>
                         <option>M</option>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Color (*)</label>
-                    <select name="color" class="custom-select is-valid" id="validationServer04" required="required">
+                    <select name="color" class="custom-select" id="validationServer04">
                         <option selected disabled value="">Color</option>
                         <option>Amarillo</option>
                         <option>Rojo</option>
@@ -96,25 +96,25 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Precio (*)</label>
-                    <input name="precio" type="number" class="form-control is-valid" id="validationServer02" placeholder="Precio" required="required">
+                    <input name="precio" type="number" class="form-control" id="validationServer02" placeholder="Precio">
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Cantidad (*)</label>
-                    <input name="cantidad" type="number" class="form-control is-valid" id="validationServer02" placeholder="Cantidad" required="required">
+                    <input name="cantidad" type="number" class="form-control" id="validationServer02" placeholder="Cantidad">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-12">
                   <label for="validationServer01">Resumen (*)</label>
-                  <input name="resumen" type="text" class="form-control is-valid" id="validationServer01" placeholder="Resumen" required="required">
+                  <input name="resumen" type="text" class="form-control" id="validationServer01" placeholder="Resumen">
                 </div>
             </div>
             <br>
             <div class="form-row">
                 <div class="col-12">
                   <label for="validationServer01">Descripcion</label>
-                  <input name="descripcion" type="text" class="form-control is-valid" id="validationServer01" placeholder="Descripcion" required>
+                  <input name="descripcion" type="text" class="form-control" id="validationServer01" placeholder="Descripcion">
                 </div>
             </div>
             <br>
@@ -131,7 +131,7 @@
 
             <div class="form-group">
               <div class="form-check">
-                <input name="aceptacion" class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <input name="aceptacion" class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required="required">
                 <label class="form-check-label" for="invalidCheck3">
                   Aceptas las condiciones?
                 </label>
@@ -154,7 +154,8 @@
 
     </div>
 
-
+    <script src="/js/productos.js"></script>
+    
     <%- include('../partials/scriptBootstrap.ejs') %>
     
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>

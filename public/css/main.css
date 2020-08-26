@@ -263,15 +263,13 @@ h5 {
 
 .descripcionProductoCarrito{
     margin-left: 40px;
-    height: 100px;
+    height: 30vh;
     width: 40%;
     border: solid 1px #CE543A ;
     background-color: lightskyblue
 }
 
 .descripcion{
-    height: 100%;
-    width: 100%;
     padding: 10px;
 } 
 
@@ -332,9 +330,6 @@ h5 {
 @media (min-width: 768px) {
     .botones{
         left: 600px;
-    }
-    .descripcionProductoCarrito{
-        height: 100vh;
     }
     .descripcion{
         font-size: 0.8rem;

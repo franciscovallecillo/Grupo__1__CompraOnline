@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head.ejs') %>
+<%- include('./partials/head.ejs') %>
 
 <body>
-    
+
     <%- include('./partials/primerDivGeneral.ejs') %>
 
     <hr id="separador">
@@ -20,62 +18,74 @@
     <br>
 
     <div class="container-fluid">
-    
 
-    <section class="bg-home pt-15">
-        <div class="container">
-            <div class="row">
-                <div class="col-8 mx-auto bg-light pt-2 ">
-                    <div class="signup-form">
-                        <% if (typeof errors != 'undefined') { %>
+
+        <section class="bg-home pt-15">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 mx-auto bg-light pt-2 ">
+                        <div class="signup-form">
+                            <% if (typeof errors != 'undefined') { %>
                             <p class='text-light bg-danger text-center'>¡ERROR!</p>
                             <% if (typeof errors == 'string') { %>
-                                <p class='text-danger text-center'><%= errors %></p>
+                            <p class='text-danger text-center'><%= errors %></p>
                             <% } %>
                             <ul>
                                 <% for (let i = 0; i<errors.length; i++) { %>
-                                    <li class='text-danger text-center'>
-                                        <%= errors[i].msg %>
-                                    </li>
+                                <li class='text-danger text-center'>
+                                    <%= errors[i].msg %>
+                                </li>
                                 <% } %>
                             </ul>
-                        <% } %>
-                        <form action="/login" method="post">
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            <% } %>
+
+                            <!--Aquí muestro los errores del lado del Js-Front -->
+                            <div class='text-light bg-danger text-center'>
+                                <ul id="erroresJs" class="erroresLogin">
+
+                                </ul>
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Contraseña">
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordame">
-                                <label class="form-check-label" for="exampleCheck1">Recordáme</label>
-                            </div>
-                            <div class="form-group d-flex justify-content-around">
-                                <button type="submit" class="btn btn-dark">Ingresar</button>
-                                <button class="btn btn-light"><a class="text-dark" href="/altaUsuario">O no tenes cuenta?</a></button>
-                            </div>
-                        </form>
-                        
+
+                            <form id="formularioJs" action="/login" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Contraseña">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordame">
+                                    <label class="form-check-label" for="exampleCheck1">Recordáme</label>
+                                </div>
+                                <div class="form-group d-flex justify-content-around">
+                                    <button type="submit" class="btn btn-dark">Ingresar</button>
+                                    <button class="btn btn-light"><a class="text-dark" href="/altaUsuario">O no tenes
+                                            cuenta?</a></button>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
-                </div>                        
+                </div>
             </div>
-        </div>
-    </section>
-        </div>
-      </div>
+        </section>
+    </div>
+    </div>
 
-      <br>
-      <br>
-      <br>
-      <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-      
-  </div>
-  
-  <%- include('./partials/footer.ejs') %>
-  
-  <%- include('./partials/scriptBootstrap.ejs') %>
+
+    </div>
+
+    <script src="/js/login.js"></script>
+    
+    <%- include('./partials/footer.ejs') %>
+
+    <%- include('./partials/scriptBootstrap.ejs') %>
 
 
 </body>
