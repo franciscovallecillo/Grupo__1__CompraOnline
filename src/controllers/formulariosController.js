@@ -1,6 +1,8 @@
-const path = require('path')
-const fs = require("fs")
+const path = require('path');
+const fs = require("fs");
 const { response } = require('express');
+const {check, validationResult, body} = require('express-validator');
+
 // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../models/products.json')))
 
 // Se requiere la Base de Datos
@@ -19,24 +21,32 @@ const formularioCarga = {
     },
     carga:(req,res) => {
 
-        Product
-        .create({
+        let errors = validationResult(req);
 
-            marca: req.body.marca,
-            modelo: req.body.modelo,
-            producto: req.body.producto,
-            temporada: req.body.temporada,
-            genero: req.body.genero,
-            talle: req.body.talle,
-            color: req.body.color,
-            precio: req.body.precio,
-            cantidad: req.body.cantidad,
-            resumen: req.body.resumen,
-            descripcion: req.body.descripcion,
-            imagen: req.files ? req.files[0].filename : "",
-        })
-     
-        res.redirect('/cargaProducto');
+        if(errors.isEmpty()){
+
+            Product
+            .create({
+
+                marca: req.body.marca,
+                modelo: req.body.modelo,
+                producto: req.body.producto,
+                temporada: req.body.temporada,
+                genero: req.body.genero,
+                talle: req.body.talle,
+                color: req.body.color,
+                precio: req.body.precio,
+                cantidad: req.body.cantidad,
+                resumen: req.body.resumen,
+                descripcion: req.body.descripcion,
+                imagen: req.files ? req.files[0].filename : "",
+            })
+        
+            res.redirect('/cargaProducto');
+        }else{
+            console.log("AAAAAAAAAAAAAAAAAAA"+{errors: errors.errors});
+            res.render(path.resolve(__dirname,"../views/formularios/cargaProducto.ejs"), {errors: errors.errors});
+        }
     }
     
 };

@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
     <%- include('../partials/head.ejs') %>
@@ -24,13 +21,27 @@
             </div>
         </div>
         <br>
+        <% if (typeof errors != 'undefined') { %>
+          <p class='text-light bg-danger text-center'>¡ERROR!</p>
+          <% if (typeof errors == 'string') { %>
+              <p class='text-danger text-center'><%= errors %></p>
+          <% }else{ %>
+              <ul>
+                  <% for (let i=0; i < errors.length ; i++){ %>
+                      <li class='text-danger text-center'>
+                          <%= errors[i].msg %>
+                      </li>
+                  <% } %>
+              </ul>
+          <% } %>
+        <% } %>
         <br>
 
-        <div class='text-light bg-danger text-center'>
+        <!--<div class='text-light bg-danger text-center'>
           <ul id="erroresJs" class="erroresLogin">
                           
           </ul>
-        </div>
+        </div>-->
 
         <form id="formProductoJs" action="/cargaProducto/carga" method="POST" enctype="multipart/form-data">
              <div class="form-row">

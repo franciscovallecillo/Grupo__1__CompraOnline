@@ -26,17 +26,18 @@
                     <div class="col-8 mx-auto bg-light pt-2 ">
                         <div class="signup-form">
                             <% if (typeof errors != 'undefined') { %>
-                            <p class='text-light bg-danger text-center'>¡ERROR!</p>
-                            <% if (typeof errors == 'string') { %>
-                            <p class='text-danger text-center'><%= errors %></p>
-                            <% } %>
-                            <ul>
-                                <% for (let i = 0; i<errors.length; i++) { %>
-                                <li class='text-danger text-center'>
-                                    <%= errors[i].msg %>
-                                </li>
+                                <p class='text-light bg-danger text-center'>¡ERROR!</p>
+                                <% if (typeof errors == 'string') { %>
+                                    <p class='text-danger text-center'><%= errors %></p>
+                                <% } else { %>
+                                <ul>
+                                    <% for (let i = 0; i < errors.length; i++) { %>
+                                    <li class='text-danger text-center'>
+                                        <%= errors[i].msg %>
+                                    </li>
+                                    <% } %>
+                                </ul>
                                 <% } %>
-                            </ul>
                             <% } %>
 
                             <!--Aquí muestro los errores del lado del Js-Front -->

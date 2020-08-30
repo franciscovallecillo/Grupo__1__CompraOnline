@@ -25,7 +25,17 @@
                     <div class="signup-form">
                         <% if (typeof errors != 'undefined') { %>
                             <p class='text-light bg-danger text-center'>¡ERROR!</p>
-                            <p class='text-danger text-center'><%= errors %></p>
+                            <% if (typeof errors == 'string') { %>
+                                <p class='text-danger text-center'><%= errors %></p>
+                            <% }else{ %>
+                                <ul>
+                                    <% for (let i=0; i < errors.length ; i++){ %>
+                                        <li class='text-danger text-center'>
+                                            <%= errors[i].msg %>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            <% } %>
                         <% } %>
 
 

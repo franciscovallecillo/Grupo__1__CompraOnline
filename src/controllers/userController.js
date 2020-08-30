@@ -128,25 +128,31 @@ const controlador = {
 
         //DB
 
-        Users.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then((resultado)=>{
-            if(resultado==null){
-                Users.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password,10)
-                }).then(
-                    res.redirect("/login")
-                ).catch(error => console.log(error));
-            }else{
-                res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: resultado.email+' ya existe'});
-            }
-            //console.log("SOY EL RESULTADO "+resultado.email+" HASTA ACA");
-        }).catch(error => console.log(error));
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then((resultado)=>{
+                if(resultado==null){
+                    Users.create({
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.email,
+                        password: bcrypt.hashSync(req.body.password,10)
+                    }).then(
+                        res.redirect("/login")
+                    ).catch(error => console.log(error));
+                }else{
+                    res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: resultado.email+' ya existe'});
+                }
+                //console.log("SOY EL RESULTADO "+resultado.email+" HASTA ACA");
+            }).catch(error => console.log(error));
+        }else{
+            return res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"),{errors: errors.errors})
+        }
 
         /*Users.create({
             nombre: req.body.nombre,
@@ -213,22 +219,29 @@ const controlador = {
         
         //DB
 
-        Users.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then((resultado)=>{
-            if(resultado==null){
-                res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: "E-mail inexistente. ¡Podes registrarte aqui!"});
-            }else if(bcrypt.compareSync(req.body.password, resultado.password)){
-                req.session.log = "si";
-                req.session.nombre = resultado.nombre;
-                req.session.idUser = resultado.id;
-                res.redirect("/user/"+resultado.id);
-            } else {
-                res.render(path.resolve(__dirname,"../views/login.ejs"), {errors: "Contraseña invalida"});
-            }
-        }).catch(error => console.log(error));
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
+            Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then((resultado)=>{
+                if(resultado==null){
+                    res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: "E-mail inexistente. ¡Podes registrarte aqui!"});
+                }else if(bcrypt.compareSync(req.body.password, resultado.password)){
+                    req.session.log = "si";
+                    req.session.nombre = resultado.nombre;
+                    req.session.idUser = resultado.id;
+                    res.redirect("/user/"+resultado.id);
+                } else {
+                    res.render(path.resolve(__dirname,"../views/login.ejs"), {errors: "Contraseña invalida"});
+                }
+            }).catch(error => console.log(error));
+        }else{
+            res.render(path.resolve(__dirname,"../views/login.ejs"), {errors: errors.errors});
+        }
 
         //JSON
 
