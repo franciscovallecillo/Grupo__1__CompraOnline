@@ -19,6 +19,7 @@ module.exports = function (sequelize, dataTypes ) {
         temporada: dataTypes.STRING,
         talle: dataTypes.STRING,
         color: dataTypes.STRING,
+        categoria: dataTypes.STRING,
     };
     
     // Esto no hace falta si a la tabla le pongo el updateAd,deleteAd,creatAd y se respeta el nombre de la tabla

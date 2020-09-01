@@ -40,6 +40,7 @@ CREATE TABLE `products` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `id` int DEFAULT NULL,
+  `categoria` varchar(45) NOT NULL,
   PRIMARY KEY (`product_id`),
   KEY `id` (`id`),
   CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `users` (`id`)

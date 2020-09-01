@@ -86,6 +86,7 @@ const adminController = {               // OK
                 resumen: req.body.resumen,
                 descripcion: req.body.descripcion,
                 imagen: req.files ? req.files[0].filename : "",
+                categoria: req.body.categoria,
             },{
                 where:{
                     product_id: idNumero

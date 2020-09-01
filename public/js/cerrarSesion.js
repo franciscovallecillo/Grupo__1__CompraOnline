@@ -10,7 +10,7 @@ window.addEventListener('onload',function(){
             if ( confirmacion == true ){
                //  window.location // res.render ??
             } else {
-                a
+                res.render("/productos")
             }
     });
     

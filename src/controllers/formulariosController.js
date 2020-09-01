@@ -40,9 +40,10 @@ const formularioCarga = {
                 resumen: req.body.resumen,
                 descripcion: req.body.descripcion,
                 imagen: req.files ? req.files[0].filename : "",
+                categoria: req.body.categoria,
             })
         
-            res.redirect('/cargaProducto');
+            res.redirect('/misProductos');
         }else{
             console.log("AAAAAAAAAAAAAAAAAAA"+{errors: errors.errors});
             res.render(path.resolve(__dirname,"../views/formularios/cargaProducto.ejs"), {errors: errors.errors});

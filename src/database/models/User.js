@@ -20,7 +20,12 @@ module.exports = (sequelize, dataTypes) => {
         departamento: dataTypes.STRING,
         ciudad: dataTypes.STRING,
         provincia: dataTypes.STRING,
-        cp: dataTypes.INTEGER
+        cp: dataTypes.INTEGER,
+        dniTitular: dataTypes.INTEGER,
+        titularTarjeta: dataTypes.STRING,
+        nroTarjeta: dataTypes.INTEGER,
+        tarjeta: dataTypes.STRING,
+        vencimiento: dataTypes.STRING,
     };
     let config = {
         tableName: "users",
