@@ -1,9 +1,10 @@
-const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
+const loginMiddleware = require("../middlewares/loginMiddleware");
 const express = require("express");
 const router = express.Router();
 const path = require("path");
 const userController = require(path.resolve(__dirname,"../controllers/userController.js"));
 const logDBMiddleware = require('../middlewares/logDBMiddleware');
+const actualizaMiddleware = require('../middlewares/actualizaMiddleware');
 const {check, validationResult, body} = require('express-validator');
 const fs = require('fs');
 const multer = require('multer');
@@ -22,14 +23,15 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-router.get("/user/:id", logMiddleware, userController.profile);
-router.put("/user/:id", logMiddleware, /*[
+router.get("/user/:id", loginMiddleware, userController.profile);
+router.put("/user/:id", loginMiddleware, /*[
     check('nombre').isLength().withMessage('Completar Nombre'),
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido')
 ],*/upload.any() , userController.profileUpdate);
-router.get("/delete", logMiddleware, userController.deletePage);
-router.delete("/delete", logMiddleware, userController.delete);
+router.get("/updateSuccessful", loginMiddleware, actualizaMiddleware, userController.updateSuccessful);
+router.get("/delete", loginMiddleware, userController.deletePage);
+router.delete("/delete", loginMiddleware, userController.delete);
 router.get("/altaUsuario",userController.formularioRegistro);
 router.post("/altaUsuario",  [
     check('nombre').isLength({min: 2}).withMessage('Completar Nombre'),

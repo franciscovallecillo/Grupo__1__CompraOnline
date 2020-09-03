@@ -100,8 +100,7 @@
                    
                 
                 <!-- Opciones del usuario -->
-                <% if(typeof productosUsuario == 'undefined' || productosUsuario.nombre == null) { %>
-
+                <% if(typeof locals.usuario == 'undefined' || locals.usuario.nombre == null) { %>
                     <div class="col d-flex justify-content-end">
                         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" title="¡Empezar!"><img src="/img/icons/on.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">¡Empezar!</p></a></button>
     
@@ -138,7 +137,7 @@
                         <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/bolso" title="Tu Bolso"><img src="/img/icons/bag.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Tu Bolso</p></a></li>
                         <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/misProductos" title="Vender"><img src="/img/icons/sell.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Vender</p></a></li>
                         
-                        <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user/<%= productosUsuario.id %>" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"><%= productosUsuario.nombre %></p></a></li>
+                        <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user/<%= locals.usuario.id %>" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"><%= locals.usuario.nombre %></p></a></li>
                         <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/cerrar" title="Cerrar Sesión"><img src="/img/icons/cerrar-sesion.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Cerrar Sesión</p></a></li>
                         
                         <!--<li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/user" title="Usuario"><img src="/img/icons/user.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">Usuario</p></a></li>

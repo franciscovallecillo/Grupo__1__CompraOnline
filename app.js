@@ -2,7 +2,10 @@ const express = require('express');   // Modulos internos los importo sin barra.
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
-const session = require("express-session")
+const session = require("express-session");
+const accessMiddleware = require('./src/middlewares/accessMiddleware');
+const cookieParser = require('cookie-parser');
+
 
 
 //Considerar que al enviar los datos desde el formulario los mismos lleguen al Servidor
@@ -37,6 +40,8 @@ const admin = require("./src/routes/adminRoutes.js");
 
 
 // // Registro las rutas principales.
+app.use(cookieParser());
+app.use(accessMiddleware);
 app.use(home);
 app.use(rutasProductos);
 app.use(user);

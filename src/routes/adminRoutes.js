@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require("path");
-const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
+const loginMiddleware = require("../middlewares/loginMiddleware");
 const adminController = require(path.resolve(__dirname,"../controllers/adminController.js"));
 const {check, validationResult, body} = require('express-validator');
 
@@ -10,10 +10,10 @@ const {check, validationResult, body} = require('express-validator');
 
 
 //administrador
-router.get("/misProductos",logMiddleware, adminController.listadoAdmin);
-router.get("/misProductos/detail/:id",logMiddleware, adminController.detalleAdmin);
-router.get("/misProductos/edit/:id",logMiddleware, adminController.editAdmin);
-router.put("/misProductos/edit/guardar/:id",logMiddleware, [
+router.get("/misProductos",loginMiddleware, adminController.listadoAdmin);
+router.get("/misProductos/detail/:id",loginMiddleware, adminController.detalleAdmin);
+router.get("/misProductos/edit/:id",loginMiddleware, adminController.editAdmin);
+router.put("/misProductos/edit/guardar/:id",loginMiddleware, [
     check('marca').isLength({min: 5}).withMessage('Nombre muy corto (5 caracteres minimo)'),
     check('descripcion').isLength({min: 20}).withMessage('La descripcion debe tener 20 caracteres como minimo'),
     body('imagen').custom(function (value, { req }) {
@@ -35,7 +35,7 @@ router.put("/misProductos/edit/guardar/:id",logMiddleware, [
       }
     }).withMessage('Los archivos deben tener extensión JPG, JPEG, PNG o GIF')
   ], adminController.editAdminSave);
-router.get("/misProductos/delete/:id",logMiddleware, adminController.deleteAdmin);
+router.get("/misProductos/delete/:id",loginMiddleware, adminController.deleteAdmin);
 
 
 module.exports = router
