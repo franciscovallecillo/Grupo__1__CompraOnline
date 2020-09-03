@@ -80,6 +80,14 @@ const productosControler = {
             res.render(path.resolve(__dirname, "..","views", "productos", "listaProductos"), {productos:productos,productosUsuario:productosUsuario})
         })
     },
+    showDos : function (req,res) {
+        Product.findByPk(req.params.id)
+        .then((productoDetalle) => {
+            res.render(path.resolve(__dirname,"..","views","productos","detalleProducto"),{productoDetalle})
+        })
+        
+        
+    },
 
 }
 

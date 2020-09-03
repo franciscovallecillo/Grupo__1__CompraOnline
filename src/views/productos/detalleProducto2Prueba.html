@@ -1,0 +1,127 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('../partials/head.ejs') %>
+
+<body>
+    
+    <%- include('../partials/primerDivGeneral.ejs') %>
+        
+        <hr id="separador">
+        <br>
+
+
+        <br>
+             
+ <div class="row todo">
+            <div class="col-lg-7 col-sm-12 containerProducto" >
+                <div><img  class="imagenProducto" src="img/NENES/nenes1.jpg" alt=""></div>
+            </div>
+            <div class="col-lg-4 col-sm-12 descripcionProducto">
+                <div class="descrpcionProducto1">
+                    <p class="detalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sapiente libero saepe ea! Excepturi eius illo, inventore delectus voluptatem ipsum.</p>
+                    
+                    <p class="precio" id="datos">Precio:</p>
+                    
+                    <hr>
+                    <div class="descrpcionProducto2">
+                        
+                        <p class="talles" id="datos">
+                            <label for="">Talles:</label>
+                            <select id="tallesFormulario" name="talle">
+                                <option value="s">Small</option>
+                                <option value="m">Medium</option>
+                                <option value="l">Large</option>
+                            </select>
+                        </p>
+                        <p class="colores" id="datos">
+                            <label for="">Color:</label>
+                            <select id="coloresFormulario" name="color">
+                                <option value="amarillo">Amarillo</option>
+                                <option value="rojo">Rojo</option>
+                                <option value="azul">Azul</option>
+                            </select>
+                        </p>
+                        <p class="cantidad" id="datos">
+                            <label for="">Cantidad:</label>
+                            <input id="cantidadProducto" type="text" name="cantidad">
+                        </p>
+                    </div> 
+
+                </div>
+
+            </div>
+
+            
+        </div>
+        
+
+    </div>
+
+    <div class="row">
+        <div class="botonesDetalleCompra">
+            <button type="button" class="btn btn-primary botonCompra button3">Comprar Ahora</button>
+            <button type="button" class="btn btn-primary botonCompra2 button3">Agregar al Bolso</button>
+        </div>
+    </div>
+    
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <br>
+            <div class="caracteristicasTotales">
+                    <br>
+                    <p class="caracteristicas" id="datos">
+                        <label for="nombre"><strong><h4>Caracteristicas</h4></strong></label>
+                    </p>
+                    <br>
+                    <br>
+                    <p class="marca" id="datos">
+                        <label for="nombre"><strong>Marca:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+                    <br>
+                    <p class="genero" id="datos">
+                        <label for="genero"><strong>Genero:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+                    <br>
+                    <p class="modelo" id="datos">
+                        <label for="modelo"><strong>Modelo:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+                    <br>
+                    <p class="material" id="datos">
+                        <label for="material"><strong>Material:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+                    <br>
+                    <p class="temporada" id="datos">
+                        <label for="temporada"><strong>Temporada:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+                    <br>
+                    <p class="temporada" id="datos">
+                    <label for="descripcion"><strong>Descripcion:</strong><p>Lorem ipsum dolor sit amet.</p></label>
+                    </p>
+            </div>
+        </div>
+    </div> 
+
+
+    <br>
+    <br>
+    <br>
+
+
+
+</div>
+
+<%- include('../partials/footer.ejs') %>
+
+<%- include('../partials/scriptBootstrap.ejs') %>
+
+</body>
+</html>
