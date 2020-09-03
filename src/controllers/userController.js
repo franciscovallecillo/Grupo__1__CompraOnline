@@ -12,10 +12,10 @@ const controlador = {
 
         //DB
 
-        Users.findByPk(req.session.idUser)
-        .then((productosUsuario)=>{
-            console.log('VARIABLE '+productosUsuario.dataValues.nombre);
-            res.render(path.resolve(__dirname,"../views/user.ejs"), {productosUsuario});
+        Users.findByPk(req.session.usuario.id)
+        .then(()=>{
+            //console.log('MOSTRANDO USUARIO');
+            res.render(path.resolve(__dirname,"../views/user.ejs"));
         }).catch(error => console.log(error));
 
         //JSON
@@ -38,33 +38,36 @@ const controlador = {
 
         //DB
 
+        console.log("USUARIO ID: "+req.session.usuario.id);
+        console.log("REQ FILES: "+JSON.stringify(req.files));
+
         Users.update({
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            avatar: req.files ? req.files[0].filename : 'avatarEmpty.jpg',
-            usuario: req.body.usuario,
-            dni: req.body.dni,
-            telefono: req.body.telefono,
-            calle: req.body.calle,
-            altura: req.body.altura,
-            dpto: req.body.dpto,
-            ciudad: req.body.ciudad,
-            provincia: req.body.provincia,
-            cp: req.body.cp,
-            titularTarjeta: req.body.titularTarjeta,
-            dniTitular: req.body.dniTitular,
-            tarjeta: req.body.tarjeta,
-            nroTarjeta: req.body.nroTarjeta,
-            vencimiento: req.body.vencimiento
+            avatar: req.file ? req.file.filename : 'avatarEmpty.jpg',
+            usuario: req.body.usuario ? req.body.usuario : null,
+            dni: req.body.dni ? req.body.dni : null,
+            telefono: req.body.telefono ? req.body.telefono : null,
+            calle: req.body.calle ? req.body.calle : null,
+            altura: req.body.altura ? req.body.altura : null,
+            dpto: req.body.dpto ? req.body.dpto : null,
+            ciudad: req.body.ciudad ? req.body.ciudad : null,
+            provincia: req.body.provincia ? req.body.provincia : null,
+            cp: req.body.cp ? req.body.cp : null,
+            titularTarjeta: req.body.titularTarjeta ? req.body.titularTarjeta : null,
+            dniTitular: req.body.dniTitular ? req.body.dniTitular : null,
+            tarjeta: req.body.tarjeta ? req.body.tarjeta : null,
+            nroTarjeta: req.body.nroTarjeta ? req.body.nroTarjeta : null,
+            vencimiento: req.body.vencimiento ? req.body.vencimiento : null
         },
         {
             where: {
-                id: req.session.idUser
+                id: req.session.usuario.id
             }
-        });
+        }).catch(error => console.log(error));
         
-        res.redirect('/user/'+req.params.id);
+        res.redirect('/updateSuccessful');
 
         //JSON
 
@@ -117,11 +120,13 @@ const controlador = {
         //}
     },
 
+    updateSuccessful: (req,res)=>{
+        res.render(path.resolve(__dirname,"../views/updateSuccessful.ejs"));
+    }
+    ,
+
     formularioRegistro:(req,res)=>{
-        let productos = "nada";
-        let nombreUsuario = req.session.nombre;
-        let productosUsuario = [productos,nombreUsuario];
-        res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"),{productosUsuario});
+        res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"));
     },
 
     registro:(req,res)=>{
@@ -220,6 +225,7 @@ const controlador = {
         //DB
 
         let errors = validationResult(req);
+        res.locals.usuario = false;
 
         if(errors.isEmpty()){
 
@@ -228,13 +234,18 @@ const controlador = {
                     email: req.body.email
                 }
             }).then((resultado)=>{
-                if(resultado==null){
+                //console.log("Tengo la variable: "+JSON.stringify(resultado));
+                if(resultado===null){
                     res.render(path.resolve(__dirname,"../views/formularios/altaUsuario.ejs"), {errors: "E-mail inexistente. ¡Podes registrarte aqui!"});
                 }else if(bcrypt.compareSync(req.body.password, resultado.password)){
-                    req.session.log = "si";
-                    req.session.nombre = resultado.nombre;
-                    req.session.idUser = resultado.id;
-                    res.redirect("/user/"+resultado.id);
+                    //console.log("Compare contraseñas y pase");
+                    req.session.usuario = resultado;
+                    res.locals.usuario = req.session.usuario;
+                    //console.log("Variable LOCALLLLLLSSSSSS: "+JSON.stringify(res.locals.usuario));
+                    req.body.recordarme ? res.cookie('email',resultado.email,{maxAge: 1000 * 60 * 60 * 24}) : console.log("No se recuerda");
+                    //req.session.nombre = resultado.nombre;
+                    //req.session.idUser = resultado.id;
+                    res.redirect("/user/"+req.session.usuario.id);
                 } else {
                     res.render(path.resolve(__dirname,"../views/login.ejs"), {errors: "Contraseña invalida"});
                 }
@@ -276,29 +287,23 @@ const controlador = {
     },
 
     logout: (req,res)=>{
-        req.session.log = "no";
-        req.session.nombre = null;
-        req.session.idUser = null;
+        req.session.destroy();
+        res.cookie('email',null,{maxAge: -1});
         res.redirect("/home");
     },
 
     deletePage: (req,res)=>{
-        let productosUsuario = {
-            id: req.session.idUser,
-            nombre: req.session.nombre
-        };
-        res.render(path.resolve(__dirname,"../views/delete.ejs"), {productosUsuario});
+        res.render(path.resolve(__dirname,"../views/delete.ejs"));
     },
 
     delete: (req,res)=>{
         Users.destroy({
             where: {
-                id: req.session.idUser
+                id: req.session.usuario.id
             }
         });
 
-        req.session.idUser = undefined;
-        req.session.log = "no";
+        req.session.usuario = undefined;
 
         res.redirect('/home');
     }

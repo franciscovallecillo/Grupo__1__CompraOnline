@@ -3,7 +3,7 @@ const router = express.Router();
 const formularioCarga = require("../controllers/formulariosController");
 const multer = require('multer');
 const path = require('path');
-const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
+const loginMiddleware = require("../middlewares/loginMiddleware");
 const {check, validationResult, body} = require('express-validator');
 
 
@@ -19,8 +19,8 @@ const upload= multer({ storage })
 
 // router.get('/', home.vistaPrincipal)
 
-router.get('/cargaProducto', logMiddleware, formularioCarga.show);
-router.post('/cargaProducto/carga',logMiddleware, upload.single('imagen'), [
+router.get('/cargaProducto', loginMiddleware, formularioCarga.show);
+router.post('/cargaProducto/carga',loginMiddleware, upload.single('imagen'), [
   check('marca').isLength({min: 5}).withMessage('Nombre muy corto (5 caracteres minimo)'),
   check('descripcion').isLength({min: 20}).withMessage('La descripcion debe tener 20 caracteres como minimo'),
   body('imagen').custom(function (value, { req }) {

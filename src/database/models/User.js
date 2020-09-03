@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         avatar: dataTypes.STRING,
         dni: dataTypes.INTEGER,
         telefono: dataTypes.INTEGER,
-        calle: dataTypes.INTEGER,
+        calle: dataTypes.STRING,
         altura: dataTypes.INTEGER,
         departamento: dataTypes.STRING,
         ciudad: dataTypes.STRING,
@@ -23,9 +23,9 @@ module.exports = (sequelize, dataTypes) => {
         cp: dataTypes.INTEGER,
         dniTitular: dataTypes.INTEGER,
         titularTarjeta: dataTypes.STRING,
-        nroTarjeta: dataTypes.INTEGER,
         tarjeta: dataTypes.STRING,
-        vencimiento: dataTypes.STRING,
+        nroTarjeta: dataTypes.BIGINT,
+        vencimiento: dataTypes.STRING
     };
     let config = {
         tableName: "users",

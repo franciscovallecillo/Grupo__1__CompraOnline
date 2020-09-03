@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const path = require("path");
-const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
+const loginMiddleware = require("../middlewares/loginMiddleware");
 
 const productosControler = require(path.resolve(__dirname,"../controllers/productosControllers.js"))
 
 
 
 // Ruta Visualizacion de Productos de Compra
-router.get('/productos', productosControler.detalleProductos);
+router.get('/productos', loginMiddleware, productosControler.detalleProductos);
 
 // Detalle de Producto para comprar
-router.get("/detalleProducto", productosControler.show);
+router.get("/detalleProducto", loginMiddleware, productosControler.show);
 
 
 

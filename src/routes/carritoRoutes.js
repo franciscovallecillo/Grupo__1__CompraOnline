@@ -2,11 +2,11 @@
 const express = require('express');
 const router = express.Router();
 const carrito = require("../controllers/carritoController");
-const logMiddleware = require("../middlewares/usuariosLoginMiddleware");
+const loginMiddleware = require("../middlewares/loginMiddleware");
 
 
 // router.get('/', home.vistaPrincipal)
 
-router.get('/bolso',logMiddleware, carrito.vistaMasInfo);
+router.get('/bolso',loginMiddleware, carrito.vistaMasInfo);
 
 module.exports = router;
