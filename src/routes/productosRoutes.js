@@ -10,8 +10,14 @@ const productosControler = require(path.resolve(__dirname,"../controllers/produc
 // Ruta Visualizacion de Productos de Compra
 router.get('/productos', productosControler.detalleProductos);
 
+router.get("/detalleProducto/categoria/mujer", productosControler.categoriaMujer);
+router.get("/detalleProducto/categoria/hombre", productosControler.categoriaHombre);
+router.get("/detalleProducto/categoria/nene", productosControler.categoriaNene);
+router.get("/detalleProducto/categoria/accesorios", productosControler.categoriaAccesorios);
+
 // Detalle de Producto para comprar
 router.get("/detalleProducto", productosControler.show);
+
 
 
 

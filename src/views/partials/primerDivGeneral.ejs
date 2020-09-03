@@ -85,18 +85,23 @@
 
             <div class="row d-none d-md-flex my-2">
                 <!-- Categorías -->
-                <div class="dropdown col-lg-2 d-flex justify-content-around">
-                    <a class="btn btn-dark d-none d-lg-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorías</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/productos">Mujer</a>
-                        <a class="dropdown-item" href="/productos">Hombre</a>
-                        <a class="dropdown-item" href="/productos">Nene</a>
-                        <a class="dropdown-item" href="/productos">Accesorios</a>
-                    </div>
-                </div>
+
+       
+                        <div class="dropdown col-lg-2 d-flex justify-content-around">
+                            <a class="btn btn-dark d-none d-lg-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="categoria">Categorías</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/detalleProducto/categoria/mujer">Mujer</a>
+                                <a class="dropdown-item" href="/detalleProducto/categoria/hombre">Hombre</a>
+                                <a class="dropdown-item" href="/detalleProducto/categoria/nene">Nene</a>
+                                <a class="dropdown-item" href="/detalleProducto/categoria/accesorios">Accesorios</a>
+                            </div>
+                        </div>
+    
+                   
                 
                 <!-- Opciones del usuario -->
                 <% if(typeof productosUsuario == 'undefined' || productosUsuario.nombre == null) { %>
+
                     <div class="col d-flex justify-content-end">
                         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" title="¡Empezar!"><img src="/img/icons/on.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline">¡Empezar!</p></a></button>
     
@@ -120,7 +125,12 @@
                         </div>
                         
                         </div>
+                       
+
+                      
+
                 <% } else { %>
+
                     
                     <ul class="nav col col-lg-9 d-flex justify-content-around">
                         <li class="nav-item marginli"><a class="nav-link colorNavegacion p-1" href="/misCompras" title="Mis Compras"><img src="/img/icons/history.svg" class="icono enlinea" alt=""><p class="text-center enlinea ml-lg-2 d-none d-lg-inline"> Mis Compras</p></a></li>

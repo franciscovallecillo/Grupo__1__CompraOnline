@@ -23,10 +23,16 @@ const formularioCarga = {
 
         let errors = validationResult(req);
 
+
         if(errors.isEmpty()){
+
+      
+            
 
             Product
             .create({
+
+
 
                 marca: req.body.marca,
                 modelo: req.body.modelo,
@@ -39,7 +45,7 @@ const formularioCarga = {
                 cantidad: req.body.cantidad,
                 resumen: req.body.resumen,
                 descripcion: req.body.descripcion,
-                imagen: req.files ? req.files[0].filename : "",
+                imagen: req.file ? req.file.filename : '' ,
                 categoria: req.body.categoria,
             })
         
