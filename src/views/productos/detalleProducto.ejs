@@ -13,7 +13,6 @@
         <br>
 
 
-        <br>
              
        
 
@@ -23,21 +22,20 @@
     <section class="bg-home pt-4">
         <div class="container">
             <div class="row" >
-                <div class="col-6  bg-light ">
-                        <ul class="list-group">
-                            <li class="list-group-item">Marca: <%= productoDetalle.marca%></li>
-                            <li class="list-group-item">Categoria: <%= productoDetalle.categoria%></li>
+                
+                <div class="col-md-6 col-xs-10  bg-light ">
+                        <ul class="list-group"> 
+                            <li name="marca" class="list-group-item">Marca: <%= productoDetalle.marca%></li>
                             <li class="list-group-item">Resumen: <%= productoDetalle.resumen%></li>
-                            <li class="list-group-item">Precio: <%= productoDetalle.precio%></li>
-                            <li class="list-group-item">Descripcion: <%= productoDetalle.descripcion%></li>
+                            <li class="list-group-item">Precio: $ <%= productoDetalle.precio%></li>
                             <li class="list-group-item">Temporada: <%= productoDetalle.temporada%></li>
-                            <li class="list-group-item">Temporada: <%= productoDetalle.talle%></li>
+                            <li class="list-group-item">Talle: <%= productoDetalle.talle%></li>
                             <li class="list-group-item">Color: <%= productoDetalle.color%></li>
                         </ul>
                     </div>
-                    <div class="col-6  bg-light ">
+                    <div class="col-md-6 col-xs-10 bg-light ">
                           <figure class="form-group">
-                            <img class="w-100 " src="/imagenesProdCargados/<%= productoDetalle.imagen%>" alt="Plato de comida">
+                            <img class="w-100 " src="/imagenesProdCargados/<%= productoDetalle.imagen%>" alt="Plato de comida" name="imagen">
                             <!-- <form action="/carrito/adicionarAlCarrito" method="post" class="form-inline" >
                               <input type="hidden"  name="productId" value="<%= productoDetalle.id%>">
                               
@@ -46,33 +44,32 @@
                               <label for="cantidad">Cantidad</label>
                               <input  class="form-control" type="number" id="cantidad" name="cantidad" value="1">
                             </form> -->
+
                       </div> 
                     <!-- <a class="btn btn-danger" href="/productos">Volver</a> -->
+                    <div class="row">
+                        <div class="botonesDetalleCompra">
+                          <a  href="/favoritos/<%=productoDetalle.product_id %>"><button type="button" class="btn btn-primary botonCompra button3">Agregar Favorito</button></a>  
+                           <a  href="/bolso/<%=productoDetalle.product_id %>"><button id="carritoFront" type="button" class="btn btn-primary botonCompra2 button3">Agregar Bolso</button></a> 
+                        </div>
+                    </div>
+                   
                 </div>                        
             </div>
         </div>
+
     </section>
         
-    <div class="row">
-        <div class="botonesDetalleCompra">
-            <button type="button" class="btn btn-primary botonCompra button3">Agregar A Favoritos</button>
-            <button type="button" class="btn btn-primary botonCompra2 button3">Agregar Al Bolso</button>
-        </div>
-    </div>
     
-
-
-
-
-
-
     <br>
     <br>
     <br>
-
 
 
 </div>
+
+
+<!-- <script src="/js/carrito.js"></script> -->
 
 <%- include('../partials/footer.ejs') %>
 

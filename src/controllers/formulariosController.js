@@ -55,6 +55,7 @@ const formularioCarga = {
             res.render(path.resolve(__dirname,"../views/formularios/cargaProducto.ejs"), {errors: errors.errors});
         }
     }
+
     
 };
 

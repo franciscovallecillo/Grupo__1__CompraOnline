@@ -57,54 +57,85 @@ const adminController = {               // OK
             nombre: req.session.nombre
         };
         res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{productosUsuario});
-    })
+ 
 
+    })
+ 
 },
 
 
 
+    // editAdminSave: function(req,res){           // OK
+       
+    //     let errors = validationResult(req);
+
+    //     if(errors.isEmpty()){
+
+    //     let idNumero = parseInt(req.params.id);
+
+    //         Product
+    //         .update({
+    //             product_id: idNumero,
+    //             marca: req.body.marca,
+    //             modelo: req.body.modelo,
+    //             producto: req.body.producto,
+    //             temporada: req.body.temporada,
+    //             genero: req.body.genero,
+    //             talle: req.body.talle,
+    //             color: req.body.color,
+    //             precio: req.body.precio,
+    //             cantidad: req.body.cantidad,
+    //             resumen: req.body.resumen,
+    //             descripcion: req.body.descripcion,
+    //             imagen: req.files ? req.files[0].filename : "",
+    //             categoria: req.body.categoria,
+    //         },{
+    //             where:{
+    //                 product_id: idNumero
+    //             }
+    //         })
+    //         res.redirect("/misProductos");
+    //     }else{
+    //         let productoId = req.params.id;
+    //         Product 
+    //         .findByPk(productoId)
+    //         .then(detalleProducto =>{
+    //             let productosUsuario = {
+    //                 detalleProducto: detalleProducto,
+    //                 nombre: req.session.nombre
+    //             };
+    //             res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{productosUsuario});
+    //         })
+    //     }
+    // },
+
     editAdminSave: function(req,res){           // OK
-
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()){
 
         let idNumero = parseInt(req.params.id);
 
-            Product
-            .update({
-                product_id: idNumero,
-                marca: req.body.marca,
-                modelo: req.body.modelo,
-                producto: req.body.producto,
-                temporada: req.body.temporada,
-                genero: req.body.genero,
-                talle: req.body.talle,
-                color: req.body.color,
-                precio: req.body.precio,
-                cantidad: req.body.cantidad,
-                resumen: req.body.resumen,
-                descripcion: req.body.descripcion,
-                imagen: req.files ? req.files[0].filename : "",
-                categoria: req.body.categoria,
-            },{
-                where:{
-                    product_id: idNumero
-                }
-            })
+        Product
+        .update({
+            product_id: idNumero,
+            marca: req.body.marca,
+            modelo: req.body.modelo,
+            producto: req.body.producto,
+            temporada: req.body.temporada,
+            genero: req.body.genero,
+            talle: req.body.talle,
+            color: req.body.color,
+            precio: req.body.precio,
+            cantidad: req.body.cantidad,
+            resumen: req.body.resumen,
+            descripcion: req.body.descripcion,
+            imagen: req.file ? req.file.filename : '' ,
+            categoria: req.body.categoria,
+        },{
+            where:{
+                product_id: idNumero
+            }
+        })
             res.redirect("/misProductos");
-        }else{
-            let productoId = req.params.id;
-            Product 
-            .findByPk(productoId)
-            .then(detalleProducto =>{
-                let productosUsuario = {
-                    detalleProducto: detalleProducto,
-                    nombre: req.session.nombre
-                };
-                res.render(path.resolve(__dirname,"..","views","admin","editProducto"),{productosUsuario});
-            })
-        }
+        
     },
 
     deleteAdmin:function(req,res){    // OK
