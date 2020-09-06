@@ -263,7 +263,7 @@ h5 {
 
 .descripcionProductoCarrito{
     margin-left: 40px;
-    height: 30vh;
+    height: 20vh;
     width: 40%;
     border: solid 1px #CE543A ;
     background-color: lightskyblue
@@ -294,7 +294,7 @@ h5 {
 
 @media (max-width: 750px) {
     .producto1{
-        height: 50vh;
+        height: 80vh;
         width: 100%;
         margin-left: 5px;
         border: solid 1px #CE543A ;
@@ -334,6 +334,20 @@ h5 {
     .descripcion{
         font-size: 0.8rem;
     }
+    .producto1{
+        height: 60vh;
+        width: 40%;
+        margin-left: 50px;
+        border: solid 1px #CE543A ;
+    }
+    .descripcionProductoCarrito{
+        margin-left: 40px;
+        height: 40vh;
+        width: 40%;
+        border: solid 1px #CE543A ;
+        background-color: lightskyblue
+    }
+    
 }
 @media (min-width: 992px) {
     .botones{
@@ -341,6 +355,12 @@ h5 {
     }
     .descripcion{
         font-size: 1rem;
+    }
+    .producto1{
+        height: 60vh;
+        width: 40%;
+        margin-left: 50px;
+        border: solid 1px #CE543A ;
     }
 }
 @media (min-width: 1200px) {
@@ -350,10 +370,37 @@ h5 {
     .descripcion{
         font-size: 1rem;
     }
+    .producto1{
+        height: 50vh;
+        width: 40%;
+        margin-left: 50px;
+        border: solid 1px #CE543A ;
+    }
+    
+    .descripcionProductoCarrito{
+        margin-left: 40px;
+        height: 20vh;
+        width: 40%;
+        border: solid 1px #CE543A ;
+        background-color: lightskyblue
+    }
 }
+@media (min-width: 1400px) {
+    .producto1{
+        height: 70vh;
+        width: 40%;
+        margin-left: 40px;
+        border: solid 1px #CE543A ;
+    }
+    .descripcionProductoCarrito{
+        margin-left: 40px;
+        height: 40vh;
+        width: 40%;
+        border: solid 1px #CE543A ;
+        background-color: lightskyblue
+    }
 
-
-
+}
 
 
 /* FORMULARIO CARGA PRODUCTO */

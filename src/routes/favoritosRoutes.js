@@ -5,5 +5,7 @@ const favoritosController = require(path.resolve(__dirname,"../controllers/favor
 const loginMiddleware = require("../middlewares/loginMiddleware");
 
 router.get("/favoritos",loginMiddleware, favoritosController.favoritos);
+router.get('/favoritos/:id',loginMiddleware, favoritosController.showFavoritos);
+router.get("/favoritos/seleccionados",loginMiddleware,favoritosController.seleccionados)
 
 module.exports=router;

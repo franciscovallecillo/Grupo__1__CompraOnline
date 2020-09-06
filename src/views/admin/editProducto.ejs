@@ -30,7 +30,7 @@
             <div class="form-row">
             <div class="col-md-6 mb-3">
                 <label for="validationServer05">Categoria (*)</label>
-                <select name="producto" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.producto%>">
+                <select name="producto" class="custom-select is-valid" id="validationServer04" value="<%= productosUsuario.detalleProducto.producto%>">
                     <option selected disabled value="">Categoria</option>
                     <option>Mujer</option>
                     <option>Hombre</option>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="validationServer04">Temporada (*)</label>
-                <select name="temporada" class="custom-select is-valid" id="validationServer04" required="required">
+                <select name="temporada" class="custom-select is-valid" id="validationServer04" >
                 <option selected disabled  value="<%= productosUsuario.detalleProducto.temporada%>">Temporada</option>
                 <option>Invierno</option>
                 <option>Verano</option>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="validationServer05">Genero (*)</label>
-                <select name="genero" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.genero%>">
+                <select name="genero" class="custom-select is-valid" id="validationServer04" value="<%= productosUsuario.detalleProducto.genero%>">
                     <option selected disabled value="">Genero</option>
                     <option>Femenino</option>
                     <option>Masculino</option>
@@ -61,7 +61,7 @@
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Talle (*)</label>
-                    <select name="talle" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.talle%>">
+                    <select name="talle" class="custom-select is-valid" id="validationServer04" value="<%= productosUsuario.detalleProducto.talle%>">
                         <option selected disabled value="">Talle</option>
                         <option>L</option>
                         <option>M</option>
@@ -70,8 +70,8 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationServer05">Color (*)</label>
-                    <select name="color" class="custom-select is-valid" id="validationServer04" required="required" value="<%= productosUsuario.detalleProducto.color%>">
-                        <option selected disabled value="">Color</option>
+                    <select name="color" class="custom-select is-valid" id="validationServer04" value="<%= productosUsuario.detalleProducto.color%>">
+                        <option selected disabled value="<%= productosUsuario.detalleProducto.color%>">Color</option>
                         <option>Amarillo</option>
                         <option>Rojo</option>
                         <option>Azul</option>
@@ -120,11 +120,13 @@
                 </label>
             </div>
             </div>
-            <button class="btn btn-primary buttonFormulario" href="/misProductos"><h6 class="text-center">Volver</h6></button>
+         
             <button  type="submit" class="btn btn-primary buttonFormulario"><h6 class="text-center">Guardar Cambios</h6></button>
-
+            
         </form>
+        <br>
 
+        <a href="/misProductos"><button class="btn btn-primary buttonFormulario" ><h6 class="text-center">Volver</h6></button></a>
     </div>
 
     <br>
