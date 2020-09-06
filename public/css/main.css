@@ -148,6 +148,10 @@ ul{
        margin-left: 55px;
    }
 
+   .welcome{
+       height: 100vh
+   }
+
    @media (max-width: 750px) {
     #buscador {
       display: none;
@@ -602,7 +606,7 @@ background-color: lightskyblue
     color: #CE543A ;
     margin-left: 280px;
 }
-.segmentoHijo:hover{
+.segmentoHijoo:hover{
     background-color: #CE543A;
 }
 

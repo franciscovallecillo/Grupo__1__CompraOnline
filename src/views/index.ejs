@@ -4,7 +4,13 @@
   <%- include('./partials/head.ejs') %>
   
 <body>
-
+  <% if(typeof locals.usuario == 'undefined' || locals.usuario.nombre == null) { %>
+    <div class="container-fluid welcome text-center">
+      <img class="img-fluid m-auto align-self-center" src="/img/logo.png" alt="">
+      <h1 class="m-auto align-self-center" style="color: #730019">¡¡¡Bienvenidos!!!</h1>
+      <h3 class="m-auto align-self-center" style="color: #B5193A">CompraOnline.com la mejor tiendo de ropa deportiva de segunda marca</h3>
+    </div>
+  <% } %>
   <%- include('./partials/primerDivGeneral.ejs') %>
    
              <hr id="separador">
@@ -70,48 +76,48 @@
                 <div class="col">
                  <div class="jumbotron jumbotron-fluid jumbo">
                   <div class="container">
-                    <h1 class="display-4 text-center text-light">Ofertas solo para los próximos 30 días!!</h1>
-                    <p class="lead text-center text-light">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    <h1 class="display-4 text-center text-light">¡¡¡Ofertas que solo encontrarás en éste lugar!!!</h1>
+                    <p class="lead text-center text-light">Contamos con las mejores marcas, productos de excelente calidad y al mejor Precio</p>
                   </div>
                 </div>
               </div>
              </div>
   
-             <div class="row mb-4" class="segmentoPadre">
-                <div class="col" class="">
+             <div class="row mb-4">
+                <div class="col  d-flex justify-content-around">
 
-                  <div class="card bloque segmentoHijo" style="width: 18rem;">
+                  <div class="card bloque segmentoHijoo m-2" >
                     <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                       <h5 class="card-title">MUJER</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text text-center">Para que te sientas cómoda con una gran variedad de diseños y talles.</p>
                       <a href="/detalleProducto/categoria/mujer" class="btn btn-dark">Ver Categoria</a>
                     </div>
                   </div>
                   
-                  <div class="card bloque segmentoHijo" style="width: 18rem;">
+                  <div class="card bloque segmentoHijoo m-2" >
                     <img src="img/HOMBRE/hombre4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                       <h5 class="card-title">HOMBRE</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text text-center">Diseños variados y de materiales super resistentes para un mejor desempeño.</p>
                       <a href="/detalleProducto/categoria/hombre" class="btn btn-dark">Ver Categoria</a>
                     </div>
                   </div>
 
-                  <div class="card bloque segmentoHijo" style="width: 18rem;">
+                  <div class="card bloque segmentoHijoo m-2" >
                     <img src="img/NENES/nenes2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                       <h5 class="card-title">NENES</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text text-center">Todas las opciones para los chicos, hechos a medida.</p>
                       <a href="/detalleProducto/categoria/nene" class="btn btn-dark">Ver Categoria</a>
                     </div>
                   </div>
 
-                  <div class="card bloque segmentoHijo" style="width: 18rem;">
+                  <div class="card bloque segmentoHijoo m-2" >
                     <img src="img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                       <h5 class="card-title">ACCESORIOS</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text text-center">Accesorios de todo tipo para las actividades que mas te gusten.</p>
                       <a href="/detalleProducto/categoria/accesorios" class="btn btn-dark">Ver Categoria</a>
                     </div>
                   </div>
@@ -127,6 +133,7 @@
 
     <%- include('./partials/footer.ejs') %>
 
+    <script src="/js/welcome.js"></script>
 
     <%- include('./partials/scriptBootstrap.ejs') %>
 
