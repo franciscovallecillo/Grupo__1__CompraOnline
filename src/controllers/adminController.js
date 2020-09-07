@@ -17,7 +17,12 @@ const adminController = {               // OK
     listadoAdmin:function(req,res){
 
         Product
-        .findAll()
+        .findAll({
+            where: {
+                id : req.session.usuario.id,}
+        })
+
+        
         .then(productos =>{
             //return res.send(platos)
             let productosUsuario = {
@@ -25,7 +30,7 @@ const adminController = {               // OK
                 nombre: req.session.nombre,
                 id: req.session.idUser
             };
-            console.log(productos);
+            // console.log(productos);
             res.render(path.resolve(__dirname , '..','views','admin','misProductos') , {productosUsuario});
         })           
         .catch(error => res.send(error))

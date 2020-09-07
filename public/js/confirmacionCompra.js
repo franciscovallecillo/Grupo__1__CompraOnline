@@ -1,24 +1,35 @@
 
 
 window.addEventListener('load',function(){
+    
+    
+      let compra = document.querySelector("#botonCompraJs")
 
+    compra.addEventListener('click',function(){
 
-    let compra = document.querySelector("#FormularioCompraJs")  
+        if ( localStorage.getItem("numeroCompras") === null){
 
-    compra.addEventListener('submit',function(){
+            localStorage.setItem("numeroCompras", 0)
+            alert("SU COMPRA HA SIDO REALIZADA!!!" + " " + "N° de Orden" + " " + 0);
+                   
+        } else {
 
-        // let ordenes = []
-        // let contador = 0
-        // // ordenes.push(contador);
-        // // let total = ordenes
-      
-        // if ( contador == 0 ){
-        //     contador++;
-        // }
-  
-        let alerta = alert("SU COMPRA HA SIDO REALIZADA!!!");
-        console.log(alerta);
+            let orden = localStorage.getItem("numeroCompras")
+            let ordenNumero = parseInt(orden);
+            let compra = ordenNumero + 1
+           
+            alert("SU COMPRA HA SIDO REALIZADA!!!" + " " + "N° de Orden" + " " + compra);
+            localStorage.setItem("numeroCompras", compra)
 
+        }
+
+       
+
+     
+        
+        
+        
+        // contador++;
 
         
         // let totalVentas = []

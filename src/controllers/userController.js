@@ -38,14 +38,15 @@ const controlador = {
 
         //DB
 
-        console.log("USUARIO ID: "+req.session.usuario.id);
-        console.log("REQ FILES: "+JSON.stringify(req.files));
+        //console.log("USUARIO ID: "+req.session.usuario.id);
+        console.log("REQ FILES: "+req);
+        console.log(req);
 
         Users.update({
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            avatar: req.file ? req.file.filename : 'avatarEmpty.jpg',
+            avatar: req.files ? req.files[0].filename : 'avatarEmpty.jpg',
             usuario: req.body.usuario ? req.body.usuario : null,
             dni: req.body.dni ? req.body.dni : null,
             telefono: req.body.telefono ? req.body.telefono : null,
@@ -146,7 +147,8 @@ const controlador = {
                         nombre: req.body.nombre,
                         apellido: req.body.apellido,
                         email: req.body.email,
-                        password: bcrypt.hashSync(req.body.password,10)
+                        password: bcrypt.hashSync(req.body.password,10),
+                        avatar: 'avatarEmpty.jpg'
                     }).then(
                         res.redirect("/login")
                     ).catch(error => console.log(error));
