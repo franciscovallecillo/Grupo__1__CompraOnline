@@ -15,14 +15,14 @@
 
     <div class="row">
         <div class="col-12">
-            <h1 class="TuBolso">Tus Publicaciones</h1>
+            <h1 class="text-center tituloCategoria col-12">Tus Publicaciones</h1>
         </div>
     </div>
 
  
     <section class="row">
         <article class="col-12" >
-            <a class="nav-link text-center" style="font-size:20px" href="/cargaProducto"><ion-icon name="log-out-outline"></ion-icon>Agregar</a>
+            <a class="nav-link navegador text-center" style="font-size:20px" href="/cargaProducto"><ion-icon name="log-out-outline"></ion-icon>Agregar</a>
         </article>
     </section>
 
@@ -41,9 +41,9 @@
             <tr>
                 <td><%= producto.product_id %> </td>
                 <td><%= producto.marca%> </td>
-                <td><a href="/misProductos/detail/<%= producto.product_id%>"><ion-icon name="eye-outline"></ion-icon></a></td>
-                <td><a href="/misProductos/edit/<%= producto.product_id%>"><ion-icon name="create-outline"></ion-icon></a></td>
-                <td><a href="/misProductos/delete/<%= producto.product_id%>?_method=DELETE"><ion-icon name="trash-outline"></ion-icon></a></td>
+                <td><a class="navegador" href="/misProductos/detail/<%= producto.product_id%>"><ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a class="navegador" href="/misProductos/edit/<%= producto.product_id%>"><ion-icon name="create-outline"></ion-icon></a></td>
+                <td><a class="navegador" href="/misProductos/delete/<%= producto.product_id%>?_method=DELETE"><ion-icon name="trash-outline"></ion-icon></a></td>
             </tr>
         <% }) ; %>
         

@@ -10,123 +10,53 @@
 
   <%- include('../partials/primerDivGeneral.ejs') %>
 
+  <hr id="separador">
+
 
     
   
     <div class="container-fluid">
 
-        <!-- Parte superior -->
-        
+      <div class="row" class="segmentoPadre">
 
+        <div class="col-12">
+          <% if(productos[0].categoria==="Nene") { %>
+            <h1 class="col-12 text-center tituloCategoria">Nenes</h1>
+          <% } else { %>
+            <h1 class="col-12 text-center tituloCategoria"><%= productos[0].categoria %></h1>
+          <% } %>
+          <nav class="col-12 nav d-block d-lg-none d-flex justify-content-around">
+            <a class="nav-link navegador" href="/detalleProducto/categoria/mujer">Mujer</a>
+            <a class="nav-link navegador" href="/detalleProducto/categoria/hombre">Hombre</a>
+            <a class="nav-link navegador" href="/detalleProducto/categoria/nene">Nenes</a>
+            <a class="nav-link navegador" href="/detalleProducto/categoria/accesorios">Accesorios</a>
+          </nav>
+        </div>
 
-        <hr id="separador">
-        <br>
-        
-        <div class="row listados">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 m-0">
 
-          <div class="col-12 primeraColumna">
-            <div class="btn-group filtro">
-                  <button type="button" class="btn btn-danger button">Categoria</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu" >
-                    <a class="dropdown-item" href="#">Mujeres</a>
-                    <a class="dropdown-item" href="#">Hombres</a>
-                    <a class="dropdown-item" href="#">Nenes</a>
-                    <a class="dropdown-item" href="#">Accesorios</a>
-                  </div>
-            </div>
-            
-            
-            <div class="btn-group filtro">
-              <button type="button" class="btn btn-danger button">Talle</button>
-              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Small</a>
-                <a class="dropdown-item" href="#">Medium</a>
-                <a class="dropdown-item" href="#">Large</a>
-              </div>
-            </div>
-            
-            
-            <div class="btn-group filtro">
-              <button type="button" class="btn btn-danger button">Color</button>
-              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Amarillo</a>
-                <a class="dropdown-item" href="#">Rojo</a>
-                <a class="dropdown-item" href="#">Azul</a>
-              </div>
-            </div>
-            
-            <div class="btn-group filtro">
-              <button type="button" class="btn btn-danger button">Temporada</button>
-              <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Invierno</a>
-                <a class="dropdown-item" href="#">Verno</a>
-                <a class="dropdown-item" href="#">Otoño</a>
-                <a class="dropdown-item" href="#">Primavera</a>
-              </div>
-            </div>
-
-          </div>
-
-          
-          <div class="row" class="segmentoPadre">
-
-            <div class="col-12 segundaColumna">
-
-              <% for ( let i = 0; i <productos.length ; i++ ) { %>
-                <div id="producto" class="card bloque segmentoHijo" style="width: 18rem;">
-                    <img src="/imagenesProdCargados/<%= productos[i].imagen%>" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                      <h5 class="card-title"><%= productos[i].marca%></h5>
+            <% for ( let i = 0; i <productos.length ; i++ ) { %>
+              <div>
+                <div id="producto" class="card segmentoHijoo m-3">
+                  <img src="/imagenesProdCargados/<%= productos[i].imagen%>" class="card-img-top" alt="...">
+                  <div class="card-body d-flex flex-column">
+                      <h5 class="card-title tituloCategoria"><%= productos[i].marca%></h5>
                       <p class="card-text"><%= productos[i].resumen%></p>
-                      <p class="card-text">$ <%=  productos[i].precio%></p>
-                      <a href="/detalleProducto/<%=productos[i].product_id %>" class="btn btn-dark">Ver Producto</a>
-                    </div>
+                      <p class="card-text text-right">$ <%=  productos[i].precio%></p>
+                      <div class="d-flex justify-content-center align-items-center mt-auto">
+                        <a href="/detalleProducto/<%=productos[i].product_id %>" class="btn btn-dark">Ver Producto</a>
+                      </div>
+                  </div>
                 </div>
-              <% } %>
+              </div>
+            <% } %>
 
-
-            </div>
-        </div>
         </div>
 
-        <br>
-        <br>
+      </div>
 
-        <div class="col-12 tercerColumna">
-        <nav class="paginas" aria-label="...">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link text-dark" href="#">Anterior</a>
-            </li>
-            <li class="page-item numeroPagina"><a class="page-link text-dark" href="#">1</a></li>
-            <li class="page-item numeroPagina"><a class="page-link text-dark" href="#">2</a></li>
-            <li class="page-item numeroPagina"><a class="page-link text-dark" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link text-dark" href="#">Siguiente</a>
-            </li>
-          </ul>
-        </nav>
-        </div>
-        </div>
+    </div>
         
-        <br>
-        <br>
-  
-
-</div>
 
 <%- include('../partials/footer.ejs') %>
 

@@ -22,11 +22,18 @@ var upload = multer({ storage: storage });
 
 
 router.get("/user/:id", loginMiddleware, userController.profile);
-router.put("/user/:id", loginMiddleware, /*[
-    check('nombre').isLength().withMessage('Completar Nombre'),
-    check('apellido').isLength().withMessage('Completar Apellido'),
-    check('email').isEmail().withMessage('Email invalido')
-],*/upload.any() , userController.profileUpdate);
+router.put("/user/:id", loginMiddleware, [
+    check('nombre').isLength({min: 2}).withMessage('Completar Nombre'),
+    check('apellido').isLength({min: 2}).withMessage('Completar Apellido'),
+    check('email').isEmail().withMessage('Email invalido'),
+    check('password').isLength({min: 8}).withMessage('La contraseña debe tener 8 o mas caracteres'),
+    body('password2').custom(function(value, {req}){
+        if (value !== req.body.password){
+            return false;
+        };
+        return true;
+    }).withMessage('Contraseñas no coinciden')
+], upload.any() , userController.profileUpdate);
 router.get("/updateSuccessful", loginMiddleware, userController.updateSuccessful);
 router.get("/delete", loginMiddleware, userController.deletePage);
 router.delete("/delete", loginMiddleware, userController.delete);

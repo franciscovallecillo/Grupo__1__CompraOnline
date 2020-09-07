@@ -626,6 +626,9 @@ background-color: lightskyblue
 
 /* LISTA DE PRODUCTOS */
 
+.tituloCategoria{
+    color: #B5193A;
+}
 
 .primeraColumna{
     margin-top: 10px;
@@ -642,9 +645,7 @@ background-color: lightskyblue
 }
 
 #producto{
-    margin: 20px;
     border: solid 1px #CE543A ;
-    margin-left: 100px;
 }
 
 .paginas{
@@ -659,6 +660,10 @@ background-color: lightskyblue
 }
 .segmentoHijoo:hover{
     background-color: #FF9900;
+}
+
+.navegador{
+    color: #FF9900;
 }
 
 @media (max-width: 992px) {
@@ -677,10 +682,7 @@ background-color: lightskyblue
         float: left;
     }
     #producto{
-        margin: 10px;
         border: solid 1px #CE543A ;
-        width: 100%;
-        margin-left: 50px;
     }
     .TamanoImagen{
         height: 50vh;
@@ -697,11 +699,7 @@ background-color: lightskyblue
 
 @media (max-width: 576px) {
     #producto{
-        margin: 10px;
         border: solid 1px #CE543A ;
-        width: 100%;
-        text-align: center;
-        left: 130px;
     }
     .segmentoHijo{
         margin-right: 100px;
@@ -725,9 +723,6 @@ background-color: lightskyblue
     .segmentoPadre{
         justify-content: space-around;
     }
-    #producto{
-        margin-left: 60px;
-    }
     .primeraColumna{
         margin-left: 120px;
     }
@@ -738,7 +733,5 @@ background-color: lightskyblue
         right: 80px ;
         padding: none;
     }
-    #producto{
-        left: 2px;
-    }
+    
 }
