@@ -39,7 +39,7 @@ ul{
     font-size: 14px;
 }
 #separador{
-    border-bottom: solid 50px #CE543A ;
+    border-bottom: solid 50px #730019 ;
     
 }
 .TamanoImagen{
@@ -73,6 +73,10 @@ ul{
     align-items: center;
     
 }*/
+.colorfont{
+    color: #FF9900;
+    background-color: rgba(9,9,9,0.4);
+}
 .segmentoHijo{
     border: solid 1px #CE543A ;
     margin-left: 30px;
@@ -654,7 +658,7 @@ background-color: lightskyblue
     margin-left: 280px;
 }
 .segmentoHijoo:hover{
-    background-color: #CE543A;
+    background-color: #FF9900;
 }
 
 @media (max-width: 992px) {
@@ -679,7 +683,7 @@ background-color: lightskyblue
         margin-left: 50px;
     }
     .TamanoImagen{
-        height: 60vh;
+        height: 50vh;
     }
     .primeraColumna{
         margin-top: 0px;
@@ -707,7 +711,7 @@ background-color: lightskyblue
     }
 
     .TamanoImagen{
-        height: 40vh;
+        height: 30vh;
     }
     
     .numeroPagina{

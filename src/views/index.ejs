@@ -6,9 +6,9 @@
 <body>
   <% if(typeof locals.usuario == 'undefined' || locals.usuario.nombre == null) { %>
     <div class="container-fluid welcome text-center">
-      <img class="img-fluid m-auto align-self-center" src="/img/logo.png" alt="">
-      <h1 class="m-auto align-self-center" style="color: #730019">¡¡¡Bienvenidos!!!</h1>
-      <h3 class="m-auto align-self-center" style="color: #B5193A">CompraOnline.com la mejor tiendo de ropa deportiva de segunda marca</h3>
+      <img class="img-fluid my-2 align-self-center" src="/img/logo.png" alt="">
+      <h1 class="my-4 align-self-center" style="color: #730019">¡¡¡Bienvenidos!!!</h1>
+      <h3 class="my-4 align-self-center" style="color: #B5193A">CompraOnline.com la mejor tienda de ropa deportiva de segunda marca</h3>
     </div>
   <% } %>
   <%- include('./partials/primerDivGeneral.ejs') %>
@@ -31,22 +31,22 @@
                           <div class="carousel-item active TamanoImagen">
                             <img src="img/banner/2304.jpg" class="d-block w-100 " alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                              <h5>Ropa de Mujer al mejor precio!</h5>
-                              <p>Busca las prendes que más te gusten!!</p>
+                              <h5 class="colorfont">Crée en tí</h5>
+                              <p class="colorfont">Y todo será posible</p>
                             </div>
                           </div>
                           <div class="carousel-item TamanoImagen">
                             <img src="img/banner/1439.jpg" class="d-block w-100 " alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                              <h5>Second slide label</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                              <h5 class="colorfont">Imposible</h5>
+                              <p class="colorfont">No es un hecho, es una OPINION</p>
                             </div>
                           </div>
                           <div class="carousel-item TamanoImagen">
                             <img src="img/banner/46.jpg" class="d-block w-100 " alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                              <h5>Third slide label</h5>
-                              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                              <h5 class="colorfont">Levántate cada mañana</h5>
+                              <p class="colorfont">y convéncete de que puedes hacerlo.</p>
                             </div>
                           </div>
                         </div>
@@ -76,58 +76,63 @@
                 <div class="col">
                  <div class="jumbotron jumbotron-fluid jumbo">
                   <div class="container">
-                    <h1 class="display-4 text-center text-light">¡¡¡Ofertas que solo encontrarás en éste lugar!!!</h1>
+                    <h1 class="display-5 text-center text-light">¡¡¡Ofertas que solo encontrarás en éste lugar!!!</h1>
                     <p class="lead text-center text-light">Contamos con las mejores marcas, productos de excelente calidad y al mejor Precio</p>
                   </div>
                 </div>
               </div>
              </div>
-  
-             <div class="row mb-4">
-                <div class="col  d-flex justify-content-around">
 
-                  <div class="card bloque segmentoHijoo m-2" >
-                    <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">MUJER</h5>
-                      <p class="card-text text-center">Para que te sientas cómoda con una gran variedad de diseños y talles.</p>
-                      <a href="/detalleProducto/categoria/mujer" class="btn btn-dark">Ver Categoria</a>
+
+             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 m-0 mb-4 ">
+
+                  <div class="m-0 px-3">
+                    <div class="col card segmentoHijoo p-0 my-2">
+                      <img src="img/MUJER/mujer3.jpg" class="card-img-top" alt="...">
+                      <div class="card-body d-flex flex-column pb-3">
+                        <h5 class="card-title mt-2">MUJER</h5>
+                        <p class="card-text text-center">Para que te sientas cómoda con una gran variedad de diseños y talles.</p>
+                        <a href="/detalleProducto/categoria/mujer" class="btn btn-dark mt-auto mb-2">Ver Categoria</a>
+                      </div>
                     </div>
                   </div>
                   
-                  <div class="card bloque segmentoHijoo m-2" >
-                    <img src="img/HOMBRE/hombre4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">HOMBRE</h5>
-                      <p class="card-text text-center">Diseños variados y de materiales super resistentes para un mejor desempeño.</p>
-                      <a href="/detalleProducto/categoria/hombre" class="btn btn-dark">Ver Categoria</a>
+                  <div class="m-0 px-3">
+                    <div class="col card segmentoHijoo p-0 my-2">
+                      <img src="img/HOMBRE/hombre4.jpg" class="card-img-top" alt="...">
+                      <div class="card-body d-flex flex-column pb-3">
+                        <h5 class="card-title mt-2">HOMBRE</h5>
+                        <p class="card-text text-center">Diseños variados y de materiales super resistentes para un mejor desempeño.</p>
+                        <a href="/detalleProducto/categoria/hombre" class="btn btn-dark mt-auto mb-2">Ver Categoria</a>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="card bloque segmentoHijoo m-2" >
-                    <img src="img/NENES/nenes2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">NENES</h5>
-                      <p class="card-text text-center">Todas las opciones para los chicos, hechos a medida.</p>
-                      <a href="/detalleProducto/categoria/nene" class="btn btn-dark">Ver Categoria</a>
+                  <div class="m-0 px-3">
+                    <div class="col card segmentoHijoo p-0 my-2 d-flex align-items-stretch">
+                      <img src="img/NENES/nenes2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body d-flex flex-column pb-3">
+                        <h5 class="card-title mt-2">NENES</h5>
+                        <p class="card-text text-center">Todas las opciones para los chicos, hechos a medida y con diseños divertidos.</p>
+                        <a href="/detalleProducto/categoria/nene" class="btn btn-dark mt-auto mb-2">Ver Categoria</a>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="card bloque segmentoHijoo m-2" >
-                    <img src="img/ACCESORIOS/accesorios1.JPG" class="card-img-top" alt="...">
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">ACCESORIOS</h5>
-                      <p class="card-text text-center">Accesorios de todo tipo para las actividades que mas te gusten.</p>
-                      <a href="/detalleProducto/categoria/accesorios" class="btn btn-dark">Ver Categoria</a>
+                  <div class="m-0 px-3">
+                    <div class="col card segmentoHijoo p-0 my-2">
+                      <img src="img/ACCESORIOS/accesorios1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body d-flex flex-column pb-3">
+                        <h5 class="card-title mt-2">ACCESORIOS</h5>
+                        <p class="card-text text-center">Accesorios de todo tipo para las actividades que más te gusten. Excelente calidad.</p>
+                        <a href="/detalleProducto/categoria/accesorios" class="btn btn-dark mt-auto mb-2">Ver Categoria</a>
+                      </div>
                     </div>
                   </div>
 
-                </div>
-             </div>
+              </div>
         
 
-               </div>
-             </div>
 
     </div>
 

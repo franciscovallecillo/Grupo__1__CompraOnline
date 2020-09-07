@@ -3,8 +3,6 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const userController = require(path.resolve(__dirname,"../controllers/userController.js"));
-const logDBMiddleware = require('../middlewares/logDBMiddleware');
-const actualizaMiddleware = require('../middlewares/actualizaMiddleware');
 const {check, validationResult, body} = require('express-validator');
 const fs = require('fs');
 const multer = require('multer');
@@ -29,7 +27,7 @@ router.put("/user/:id", loginMiddleware, /*[
     check('apellido').isLength().withMessage('Completar Apellido'),
     check('email').isEmail().withMessage('Email invalido')
 ],*/upload.any() , userController.profileUpdate);
-router.get("/updateSuccessful", loginMiddleware, actualizaMiddleware, userController.updateSuccessful);
+router.get("/updateSuccessful", loginMiddleware, userController.updateSuccessful);
 router.get("/delete", loginMiddleware, userController.deletePage);
 router.delete("/delete", loginMiddleware, userController.delete);
 router.get("/altaUsuario",userController.formularioRegistro);
@@ -55,7 +53,7 @@ router.post("/altaUsuario",  [
     }).withMessage('Contraseñas no coinciden')
 ], userController.registro);
 router.get("/login", userController.pageLogin);
-router.post("/login", logDBMiddleware, [
+router.post("/login", [
     check('email').isEmail().withMessage('Email invalido'),
     check('password').isLength({min: 8}).withMessage('La contraseña debe tener 8 o mas caracteres')
 ], userController.login);
